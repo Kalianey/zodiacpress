@@ -1,0 +1,341 @@
+<?php
+/**
+ * ZP_Chart class
+ *
+ * @package     ZodiacPress
+ * @copyright   Copyright (c) 2016, Isabel Castillo
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since       1.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+/**
+ * The class used to generate astrological data for a given moment in time.
+ */
+final class ZP_Chart {
+
+	/**
+	 * Universal Date for this chart
+	 */
+	private $ut_date;
+
+	/**
+	 * Universal Time for this chart
+	 */
+	private $ut_time;
+
+	/**
+	 * Latitude decimal of the location for this chart
+	 */
+	private $latitude;
+
+	/**
+	 * Longitude decimal of the location for this chart
+	 */
+	private $longitude;
+
+	/**
+	 * The chart's house cusps in logitude decimal.
+	 *
+	 * @var array
+	 */
+	private $cusps = array();
+
+	/**
+	 * The positions of the planets and points in logitude decimal.
+	 *
+	 * @var array
+	 */
+	public $planets_longitude = array();
+
+	/**
+	 * The house position number of the planets and points in houses.
+	 *
+	 * @var array
+	 */
+	public $planets_house_numbers = array();
+
+	/**
+	 * Planets list showing whether each planet is conjunct the next house cusp.
+	 *
+	 * @var array
+	 */
+	public $conjunct_next_cusp = array();
+
+	/**
+	 * The speed of the planets and points in longitude decimal degrees per day
+	 *
+	 * @var array
+	 */
+	public $planets_speed = array();
+
+	/**
+	 * The house system used for this chart's house cusps and planets in houses.
+	 */
+	public $house_system;
+
+	/**
+	 * Retrieve ZP_Chart instance.
+	 *
+	 * @static
+	 * @access public
+	 *
+	 * @param array $moment Validated form data for this chart.
+	 * @return ZP_Chart|false Chart object, false otherwise.
+	 */
+	public static function get_instance( $moment = array() ) {
+
+		if ( ! $moment )
+			return false;
+
+		return new ZP_Chart( $moment );
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 * @param array $moment Validated form data
+	 */
+	public function __construct( $moment ) {
+
+		// Set Universal time and date for this chart
+		$this->setup_ut( $moment );
+
+		// Set up coordinates
+		$this->latitude		= $moment['zp_lat_decimal'];
+		$this->longitude	= $moment['zp_long_decimal'];
+
+		$this->setup_chart();
+
+	}
+
+	/**
+	 * Given the moment data, set the Universal time and date properties.
+	 * @param array $moment Validated form data
+	 */
+	private function setup_ut( $moment ) {
+
+		if ( ! is_array( $moment ) ) {
+			return false;
+		}
+
+		// Adjust date and time for minus hour due to timezone offset taking the hour negative.
+		$offset = $moment['zp_offset_geo'];
+			
+		if ( $offset >= 0 ) {
+			$whole		= floor( $offset );
+			$fraction	= $offset - floor( $offset );
+		} else {
+			$whole		= ceil( $offset );
+			$fraction	= $offset - ceil( $offset );
+		}
+			
+		$hour	= $moment['hour'] - $whole;
+		$minute	= $moment['minute'] - ( $fraction * 60 );
+		$second = '00';
+
+		$unix_timestamp	= mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
+		$this->ut_date	= strftime( "%d.%m.%Y", $unix_timestamp );
+		$this->ut_time	= strftime( "%H:%M:%S", $unix_timestamp );
+
+		return true;
+	}
+
+	/**
+	 * Query the Ephemeris.
+	 *
+	 * @param string $planets Planets and points to calculate. Leave blank for only houses.
+	 * @param string $format The format for the output, in sequence letters.
+	 * @param string $house_system The house system to use for house cusp calculations
+	 * @param string $options Additional arbitrary options
+	 */
+	public function query_ephemeris( $planets = '', $format = '', $house_system = '', $options = '' ) {
+
+		$f = $format ? ( '-f' . $format ) : '';
+
+		// house option tells ephemeris to include house cusps
+		$house = '';
+
+		if ( $house_system ) {
+
+			/**
+			* Adjust latitude/longitude coordinates for precision, to match astro.com's calculations since those are more widely accepted among the astrological community. 
+			For example, GeoNames' latitude for Miami = 25.77427, whereas astro.com's is 25.766666666667.
+			(Basically, it seems astro.com is ignoring seconds, or using less significant digits.)
+			While GeoNames is more accurate, astro.com's is more widely accepted, and our discrepancy would reduce precision (from astro.com) in house cusps and ASC/MC calculations by many seconds and possibly even minutes. So here, I recalculate to ignore seconds in favor of precision with astro.com.
+			*/
+			$longitude_degree	= zp_extract_whole_degrees( $this->longitude );
+			$longitude_minute	= zp_extract_whole_minutes( $this->longitude );
+			$latitude_degree	= zp_extract_whole_degrees( $this->latitude );
+			$latitude_minute	= zp_extract_whole_minutes( $this->latitude );
+
+			$east_west		= ( $this->longitude >= 0 ) ? '1' : '-1';
+			$north_south	= ( $this->latitude >= 0 ) ? '1' : '-1';
+
+			$longitude		= $east_west * ( $longitude_degree + ( $longitude_minute/ 60 ) );
+			$latitude		= $north_south * ( $latitude_degree + ( $latitude_minute / 60 ) );
+
+			$house = '-house' . $longitude . ',' . $latitude . ',' . $house_system;
+		}
+
+		// Set up Swiss Ephemeris path
+		$sweph = apply_filters( 'zp_sweph_dir', ZODIACPRESS_PATH . 'sweph' );
+		$PATH = '';
+		putenv( "PATH=$PATH:{$sweph}" );
+		$swetest = apply_filters( 'zp_sweph_file', 'swetest' );
+
+		// Query the ephemeris
+		exec( "$swetest -edir$sweph -b{$this->ut_date} -ut{$this->ut_time} -p$planets $house -eswe $f $options -g, -head", $out);
+
+		return $out;
+		
+	}
+
+	/**
+	 * Set up the chart data.
+	 */
+	private function setup_chart() {
+
+		$this->house_system = apply_filters( 'zp_default_house_system', 'P' );
+
+		// Ephemeris gives wrong calculations for Whole Sign houses, so query it as Placidus, then calculate Whole houses manually.
+		$final_house_system = ( 'W' == $this->house_system ) ? 'P' : $this->house_system;
+
+		$chart = $this->query_ephemeris( '0123456789DAt', 'ls', $final_house_system );
+
+		if ( empty( $chart ) ) {
+			return false;
+		}
+		
+		// Set up chart properties from raw chart data.
+		foreach ( $chart as $key => $line ) {
+			$row = explode( ',',$line );
+
+			// Set up core planet properties
+			if ( $key <= 12 ) {
+				$this->planets_longitude[ $key ]	= trim( $row[0] );
+				$this->planets_speed[ $key ]		= trim( $row[1] );
+			}
+
+			/** 
+			 * The ephemeris output array has Vertex at index 28, ASC at index 25, and MC at 26.
+			 * Move them up to 14, 15, 16.
+			 */
+
+			// Capture the Vertex longitude
+			if ( 28 == $key ) {
+				$this->planets_longitude[14] = trim( $row[0] );
+			}
+
+			// Capture the Asc longitude
+			if ( 25 == $key ) {
+				$this->planets_longitude[15] = trim( $row[0] );
+			}		
+
+			// Capture the MC longitude
+			if ( 26 == $key ) {
+				$this->planets_longitude[16] = trim( $row[0] );
+			}
+
+			// Set up house cusps, but not for Whole Sign houses because Swiss Ephemeris gives wrong Whole Sign cusp calculations.
+			if ( 'W' != $this->house_system ) {
+				// counter to help set house cusp array keys at 1-12, not 0-11
+				if ( ! isset( $i ) ) {
+					$i = 0;
+				}
+				// Capture the house cusps, which ephemeris outputs at index 13-24
+				if ( 12 < $key && $key < 25 ) {
+					$this->cusps[ ++$i ] = $row[0];
+				}
+			}
+
+		} // Finished with raw chart data.
+
+		// Do Whole Sign cusps by hand because Swiss Ephemeris gives wrong Whole Sign calculations.
+		if ( 'W' == $this->house_system ) {
+			$ascendant			= $this->planets_longitude[15];
+			$whole_sign_house_1	= floor( $ascendant / 30 ) * 30;
+			for ( $x = 1; $x <= 12; $x++ ) {
+				$this_house = $whole_sign_house_1 + ( 30 * ( $x - 1 ) );
+				$this->cusps[ $x ] = ( $this_house >= 360 ) ? ( $this_house - 360 ) : $this_house;
+			}
+		}
+
+		// Add Part of Fortune longitude at index 13
+		$this->planets_longitude[13] = $this->calculate_pof( $this->planets_longitude[15], $this->planets_longitude[0], $this->planets_longitude[1] );
+
+		// Order by keys
+		ksort( $this->planets_longitude );
+
+		// Set up house number position for planets
+		for ( $x = 0; $x <= 14; $x++ ) {
+			$this->planets_house_numbers[ $x ] = zp_get_planet_house_num( $this->planets_longitude[ $x ], $this->cusps );
+	
+		}
+		
+		$this->setup_conjunct_next_cusp();
+		
+		do_action( 'zp_setup_chart', $this );
+
+	}
+
+	/**
+	 * Calculate the Part of Fortune (POF)
+	 * @param string $asc ASC's longitude decimal
+	 * @param string $sun Sun's longitude decimal
+	 * @param string $moon Moon's longitude decimal
+	 * @return string The POF position in longitude decimal
+	 */
+	private function calculate_pof( $asc = 0, $sun = 0, $moon = 0 ) {
+
+		$desc = zp_calculate_descendant( $asc );
+
+		// Is this a day chart or a night chart?
+		if ( $asc > $desc ) {
+			if ( $sun <= $asc && $sun > $desc ) {
+				$day_chart = true;
+			} else {
+				$day_chart = false;
+			}
+		} else {
+			if ( $sun > $asc && $sun <= $desc ) {
+				$day_chart = false;
+			} else {
+				$day_chart = true;
+			}
+		}
+
+		if ( true == $day_chart ) {
+			// The day formula is: ASC + Moon - Sun
+			$pof = $asc + $moon - $sun;
+		} else {
+			// The night formula: ASC - Moon + Sun
+			$pof = $asc - $moon + $sun;
+		}
+
+		if ( $pof >= 360 ) {
+			$pof = $pof - 360;
+		}
+
+		if ( $pof < 0 ) {
+			$pof = $pof + 360;
+		}
+
+		return $pof;
+	}
+
+	/**
+	 * Set up the conjunct_next_cusp property.
+	 */
+	private function setup_conjunct_next_cusp() {
+
+		foreach ( $this->planets_longitude as $key => $p_long ) {
+
+			if ( isset( $this->planets_house_numbers[ $key ] ) ) {
+
+				$this->conjunct_next_cusp[ $key ] = zp_conjunct_next_cusp( $key, $p_long, $this->planets_house_numbers[ $key ], $this->cusps );
+			}
+		}
+	}
+}

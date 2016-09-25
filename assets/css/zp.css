@@ -1,0 +1,605 @@
+/**
+ * ZodiacPress Styles
+ */
+
+/* General
+-------------------------------------------------------------- */
+@font-face {
+	font-family: "zodiacpress";
+	src:    url("../fonts/zodiacpress.eot?fr7qsr");
+	src:    url("../fonts/zodiacpress.eot?fr7qsr#iefix") format("embedded-opentype"),
+		url("../fonts/zodiacpress.ttf?fr7qsr") format("truetype"),
+		url("../fonts/zodiacpress.woff?fr7qsr") format("woff"),
+		url("../fonts/zodiacpress.svg?fr7qsr#zodiacpress") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+#zp-form-wrap,
+#zp-report-wrap {
+	display: block;
+	width:100%;
+	max-width:100%;
+	margin:1em auto;
+	font-size:1em;
+	line-height: 1.62em;
+	font-family: Arial,Helvetica,sans-serif;	
+}
+
+.zp-small {
+	font-size: 0.9em;
+}
+
+/* Form
+-------------------------------------------------------------- */
+
+#zp-form-wrap input,
+#zp-form-wrap select,
+.ui-widget {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+
+#zp-form-wrap h2,
+#zp-form-wrap .zp-form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zp-form #hour,
+.zp-form #month,
+.zp-form #day {
+	margin-right:.6em;
+}
+
+#zp-ajax-birth-data label#citylabel {
+	display:block;
+}
+
+#zp-birthreport-form #place,
+#zp-birthreport-form .zp-input-text {
+ 	width: 100%;
+}
+#zp-ajax-birth-data fieldset {
+    border: 0;
+    margin: 0 0 1.62em;
+    padding: 0.8em 0;
+}
+#zp-ajax-birth-data legend{
+	float:left;
+	margin: 5px 10px 0 0;
+}
+#zp-birthreport-form .zp-input-text,
+#zp-birthreport-form select{
+	padding:8px;
+	background: #f7f7f7;
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	color: #1a1a1a;
+	box-sizing: border-box;
+}
+#zp-birthreport-form .zp-form-label {
+	float:left;
+}
+#zp-birthreport-form .zp-input-text-wrap {
+	display: block;
+	overflow: hidden;
+	padding-left: 10px;
+}
+.zp-unknown-time-field {
+	margin-top: 1em;
+	text-align: center;
+}
+.zp-unknown-time-field #unknown_time {
+	vertical-align: middle;
+	margin-right: 0.4em;
+}
+form .zp-button {
+	background: #26264c;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 0.046875em;
+	line-height: 1;
+	padding: 0.84375em 0.875em 0.78125em;
+	text-transform: uppercase;
+	box-sizing: border-box;
+}
+form .zp-button:hover, .zp-button:focus{
+	background-color: #333366;
+}
+#zp-fetch-offset, #zp-fetch-birthreport {
+	margin: 24px 0 36px;
+	width:100%;
+}
+
+
+/* Ajax
+-------------------------------------------------------------- */
+
+#zp-ajax-birth-data #zp-coordinates {
+	margin:14px 0;
+	
+}
+
+#zp-fetch-birthreport,
+#zp-report-wrap,
+#zp-coordinates,
+#zp-offset-wrap,
+#zp-form-tip{
+	display:none;
+}
+
+#zp-coordinates label,
+#zp-coordinates span,
+#zp-coordinates input,
+#zp-offset-label,
+#zp-offset-wrap #zp_offset_geo {
+	background-color:transparent;
+	color:#339933;
+	font-size: 13px;
+	border:0;
+	margin: 0;
+	padding: 0;
+	line-height: 0.9;
+}
+#zp-lat-label, #zp-long-label, #zp-offset-label {
+	display:inline;
+	float:left;
+	clear:left;
+}
+
+#zp_lat_decimal,
+#zp_long_decimal,
+#zp_offset_geo {
+	display:inline;
+	float:left;	
+	width:40%; 
+}
+
+#zp-offset-wrap{
+	margin:0;
+	padding:0;
+}
+#zp-offset-label, #zp_offset_geo {
+	font-weight:bold;
+}
+
+#zp-offset-wrap #zp_offset_geo{padding:0 10px}
+
+/* Report
+-------------------------------------------------------------- */
+
+.zp-report-backlink {
+	text-align: right;
+}
+.zp-report-header,
+.zp-report-caption{
+	border: 1px solid #dddddd;
+	background: #e9e9e9;
+	padding:10px;
+	max-width: 550px;
+	margin: 0 auto;
+}
+.zp-report-header {
+	font-size:0.8em;
+	margin:0;
+}
+.zp-report-header p {
+	margin:0;
+}
+.zp-zodiacal-dms {
+	font-weight: 400;padding-left:1em;font-size:.9em;
+}
+
+.zp-subheading {
+	font-weight: bold;
+}
+.zp-report-section-title{
+	padding:2em 0;font-weight:bold;
+}
+.zp-orb{
+	font-weight: 400;font-style: italic;font-size:.9em;
+}
+
+[class^="zp-icon-"], [class*=" zp-icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "zodiacpress" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	color:  #cf000f;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.zp-icon-aries:before {
+	content: "\e90b";
+}
+.zp-icon-taurus:before {
+	content: "\e909";
+	color:#00D717;
+}
+.zp-icon-gemini:before {
+	content: "\e90a";
+	color: #F5AB35;
+}
+.zp-icon-cancer:before {
+	content: "\e908";
+	color:#4169E1;
+}
+.zp-icon-leo:before {
+	content: "\e907";
+}
+.zp-icon-virgo:before {
+	content: "\e906";
+	color:#00D717;
+}
+.zp-icon-libra:before {
+	content: "\e905";
+	color: #F5AB35;
+}
+.zp-icon-scorpio:before {
+	content: "\e904";
+	color:#4169E1;
+}
+.zp-icon-sagittarius:before {
+	content: "\e903";
+}
+.zp-icon-capricorn:before {
+	content: "\e902";
+	color:#00D717;
+}
+.zp-icon-aquarius:before {
+	content: "\e901";
+	color: #F5AB35;
+}
+.zp-icon-pisces:before {
+	content: "\e900";
+	color:#4169E1;
+}
+
+/*  Misc
+-------------------------------------------------------------- */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.zp-clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Some modified jQuery UI for the autocomplete form field
+-------------------------------------------------------------- */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+.ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: none;
+}
+.ui-menu .ui-menu {
+	position: absolute;
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+	margin: -1px;
+}
+.ui-selectmenu-menu {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.ui-selectmenu-menu .ui-menu {
+	overflow: auto;
+	padding-bottom: 1px;
+}
+.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 2px 0.4em;
+	margin: 0.5em 0 0 0;
+	height: auto;
+	border: 0;
+}
+.ui-selectmenu-open {
+	display: block;
+}
+.ui-selectmenu-button {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	cursor: pointer;
+}
+.ui-selectmenu-button span.ui-selectmenu-text {
+	text-align: left;
+	padding: 0.4em 2.1em 0.4em 1em;
+	display: block;
+	line-height: 1.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ui-menu-item{padding:2px 6px;}
+
+/* Component containers
+----------------------------------*/
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	color: #333333;
+	border-radius:2px;
+	font-size:0.9em;
+}
+.ui-widget-content a {
+	color: #333333;
+}
+.ui-widget-header {
+	border: 1px solid #dddddd;
+	background: #e9e9e9;
+	color: #333333;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #333333;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #c5c5c5;
+	background: #f6f6f6;
+	font-weight: normal;
+	color: #454545;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #454545;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #cccccc;
+	background: #ededed;
+	font-weight: normal;
+	color: #2b2b2b;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+	color: #2b2b2b;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #003eff;
+	background: #007fff;
+	font-weight: normal;
+	color: #ffffff;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #dad55e;
+	background: #fffa90;
+	color: #777620;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #777620;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #f1a899;
+	background: #fddfdf;
+	color: #5f3f3f;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+	color: #5f3f3f;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+	color: #5f3f3f;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+	font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	background-image: none;
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 3px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 3px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 3px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 3px;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	background: #aaaaaa;
+	opacity: .3;
+}
+.ui-widget-shadow {
+	margin: 0;
+	padding: 5px;
+	background: #666666;
+	opacity: .3;
+	border-radius: 8px;
+}
+
+@media screen and ( max-width: 727px ) {
+	.zp-form #hour,
+	.zp-form #minute,
+	.zp-form #month,
+	.zp-form #day {
+		margin-right:.2em;
+	}
+	#zp-ajax-birth-data legend,
+	#zp-birthreport-form .zp-form-label {
+		float:none;
+		padding:0 3px;
+	}
+	#zp-birthreport-form .zp-input-text-wrap {
+		padding:7px 0 0;
+	}
+}
