@@ -51,10 +51,10 @@ function zp_options_page() {
 			?>
 		</h1>
 		<?php
-
 		$number_of_sections = count( $sections );
 		$number = 0;
 		if ( $number_of_sections > 1 ) {
+
 			echo '<div><ul class="subsubsub">';
 			foreach( $sections as $section_id => $section_name ) {
 				echo '<li>';
@@ -78,24 +78,18 @@ function zp_options_page() {
 			echo '</ul></div>';
 		}
 		?>
-		<div id="tab_container">
+		<div id="tab_container" class="<?php echo $active_tab . '_' . $section; ?>">
 			<form method="post" action="options.php">
-				<table class="form-table">
 				<?php
 				settings_fields( 'zodiacpress_settings' );
 
 				if ( 'main' === $section ) {
 					do_action( 'zodiacpress_settings_tab_top', $active_tab );
 				}
-
 				do_action( 'zodiacpress_settings_tab_top_' . $active_tab . '_' . $section );
-
 				do_settings_sections( 'zodiacpress_settings_' . $active_tab . '_' . $section );
-
 				do_action( 'zodiacpress_settings_tab_bottom_' . $active_tab . '_' . $section  );
-				?>
-				</table>
-				<?php submit_button(); ?>
+				submit_button(); ?>
 			</form>
 		</div><!-- #tab_container-->
 	</div><!-- .wrap -->

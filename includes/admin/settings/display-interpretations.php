@@ -90,15 +90,12 @@ function zp_interpretations_page() {
 		?>
 		<div id="tab_container">
 			<form method="post" action="options.php">
-				<table class="form-table">
 				<?php
 				settings_fields( $option_name );
 				do_action( 'zp_interps_tab_top_' . $active_tab . '_' . $section );
 				do_settings_sections( 'zp_interps_' . $active_tab . '_' . $section );
 				do_action( 'zp_interps_tab_bottom_' . $active_tab . '_' . $section  );
-				?>
-				</table>
-				<?php submit_button(); ?>
+				submit_button(); ?>
 			</form>
 		</div><!-- #tab_container-->
 	</div><!-- .wrap -->
