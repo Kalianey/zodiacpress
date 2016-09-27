@@ -1,1924 +1,74 @@
+# Copyright (C) 2016 ZodiacPress
+# This file is distributed under the same license as the ZodiacPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ZodiacPress\n"
-"POT-Creation-Date: 2016-09-25 16:48-0500\n"
-"PO-Revision-Date: 2016-09-25 16:52-0500\n"
-"Last-Translator: Isabel Castillo <me@isabelcastillo.com>\n"
-"Language-Team: \n"
-"Language: English\n"
+"Project-Id-Version: ZodiacPress 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zodiacpress\n"
+"POT-Creation-Date: 2016-09-27 14:51:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n;esc_attr_e;"
-"esc_attr__;esc_html__;esc_html_e;date_i18n\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /var/www/html/wp-content/plugins/zodiacpress\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/ajax-functions.php:58
-msgid "The Swiss Ephemeris is not working."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/ajax-functions.php:63
-msgid "Something went wrong. Please try again."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/EDD_SL_Plugin_Updater.php:195
-#, php-format
+#: includes/EDD_SL_Plugin_Updater.php:195
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/EDD_SL_Plugin_Updater.php:203
-#, php-format
+#: includes/EDD_SL_Plugin_Updater.php:203
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s "
 "or %5$supdate now%6$s."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/EDD_SL_Plugin_Updater.php:357
+#: includes/EDD_SL_Plugin_Updater.php:357
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/EDD_SL_Plugin_Updater.php:357
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:286
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:323
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:327
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:332
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:392
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:396
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:401
+#: includes/EDD_SL_Plugin_Updater.php:357 includes/admin/tools.php:323
+#: includes/admin/tools.php:327 includes/admin/tools.php:332
+#: includes/admin/tools.php:392 includes/admin/tools.php:396
+#: includes/admin/tools.php:401 includes/class-zp-license.php:286
 msgid "Error"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:28
-msgid "Sun"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:33
-msgid "Moon"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:38
-msgid "Mercury"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:43
-msgid "Venus"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:48
-msgid "Mars"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:53
-msgid "Jupiter"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:58
-msgid "Saturn"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:63
-msgid "Uranus"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:68
-msgid "Neptune"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:73
-msgid "Pluto"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:78
-msgid "Chiron"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:83
-msgid "Lilith"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:88
-msgid "North Node"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:93
-msgid "Part of Fortune"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:98
-msgid "Vertex"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:103
-msgid "Ascendant"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:108
-msgid "Midheaven"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:138
-msgid "Conjunction"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:142
-msgid "Sextile"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:146
-msgid "Square"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:150
-msgid "Trine"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:154
-msgid "Quincunx"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:158
-msgid "Opposition"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:171
-msgid "Aries"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:174
-msgid "Taurus"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:177
-msgid "Gemini"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:180
-msgid "Cancer"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:183
-msgid "Leo"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:186
-msgid "Virgo"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:189
-msgid "Libra"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:192
-msgid "Scorpio"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:195
-msgid "Sagittarius"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:198
-msgid "Capricorn"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:201
-msgid "Aquarius"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:204
-msgid "Pisces"
-msgstr ""
-
-# Attention RTL languages. 6 placeholders are zodiac sign degrees, zodiac sign glyph, minutes, minutes symbol, seconds, seconds symbol.
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/astro-functions.php:266
-#, php-format
-msgid "%1$s %2$s %3$s%4$s %5$s%6$s"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/shortcode.php:8
-msgid "Get An Astrology Birth Report"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/shortcode.php:33
-msgid "Start Over"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:85
-msgid "unknown birth time"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:99
-#, php-format
-msgid "%1$s (time zone = UTC %2$s)"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:105
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:113
-#, php-format
-msgid "Chart Data For %s"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:123
-msgid "Placidus"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:125
-#, php-format
-msgid "%s Houses"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:182
-#, php-format
-msgid ""
-"NOTE: Since %s is very close to the next house cusp, the next item is also "
-"relevant."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:196
-msgid "Planets and Points in The Signs"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:199
-msgid "Planets and Points in The Houses"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:202
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:351
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:297
-msgid "Aspects"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:312
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:350
-#, php-format
-msgid "%1$s in %2$s House"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:426
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:441
-msgid "orb"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:483
-msgid "Introduction"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-birth-report.php:494
-msgid "Closing"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:149
-#, php-format
-msgid "%1$s"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:180
-#, php-format
-msgid ""
-"Enter your extension license keys here to receive updates for purchased "
-"extensions. If your license key has expired, please <a href=\"%s\" target="
-"\"_blank\" rel=\"nofollow\">renew your license</a>."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:286
-msgid "Nonce verification failed"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:396
-#, php-format
-msgid ""
-"You have invalid or expired license keys for ZodiacPress. Please go to the "
-"<a href=\"%s\">Licenses page</a> to correct this issue."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/class-zp-license.php:427
-msgid "Enter valid license key for automatic updates."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/scripts.php:35
-msgid "Selected:"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/scripts.php:36
-msgid "Latitude:"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/scripts.php:37
-msgid "Longitude:"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/scripts.php:38
-msgid "UTC time offset:"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:20
-msgid "Zeroth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:21
-msgid "First"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:22
-msgid "Second"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:23
-msgid "Third"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:24
-msgid "Fourth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:25
-msgid "Fifth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:26
-msgid "Sixth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:27
-msgid "Seventh"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:28
-msgid "Eighth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:29
-msgid "Ninth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:30
-msgid "Tenth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:31
-msgid "Eleventh"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:32
-msgid "Twelfth"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/misc-functions.php:205
-msgid "Once Weekly"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:38
-#, php-format
-msgid "%s am, midn"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:42
-#, php-format
-msgid "%s am"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:47
-#, php-format
-msgid "%s pm, noon"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:54
-#, php-format
-msgid "%s pm"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:109
-msgid "January"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:110
-msgid "February"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:111
-msgid "March"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:112
-msgid "April"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:113
-msgid "May"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:114
-msgid "June"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:115
-msgid "July"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:116
-msgid "August"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:117
-msgid "September"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:118
-msgid "October"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:119
-msgid "November"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:120
-msgid "December"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1900"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1901"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1902"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1903"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1904"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1905"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1906"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1907"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1908"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1909"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1910"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1911"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1912"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1913"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1914"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1915"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1916"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1917"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1918"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1919"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1920"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1921"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1922"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1923"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1924"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1925"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1926"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1927"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1928"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1929"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1930"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1931"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1932"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1933"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1934"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1935"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1936"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1937"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1938"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1939"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1940"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1941"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1942"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1943"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1944"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1945"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1946"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1947"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1948"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1949"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1950"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1951"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1952"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1953"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1954"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1955"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1956"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1957"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1958"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1959"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1960"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1961"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1962"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1963"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1964"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1965"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1966"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1967"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1968"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1969"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1970"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1971"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1972"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1973"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1974"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1975"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1976"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1977"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1978"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1979"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1980"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1981"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1982"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1983"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1984"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1985"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1986"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1987"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1988"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1989"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1990"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1991"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1992"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1993"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1994"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1995"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1996"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1997"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1998"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "1999"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2000"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2001"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2002"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2003"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2004"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2005"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2006"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2007"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2008"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2009"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2010"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2011"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2012"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2013"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2014"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2015"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2016"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:136
-msgid "2017"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "1"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "2"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "3"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "4"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "5"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "6"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "7"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "8"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-msgid "9"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "10"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "11"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "12"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "13"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "14"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "15"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "16"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "17"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "18"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "19"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "20"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "21"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "22"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "23"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "24"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "25"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "26"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "27"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "28"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "29"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "30"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:150
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "31"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "00"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "01"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "02"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "03"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "04"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "05"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "06"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "07"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "08"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-msgid "09"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "32"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "33"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "34"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "35"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "36"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "37"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "38"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "39"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "40"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "41"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "42"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "43"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "44"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "45"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "46"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "47"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "48"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "49"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "50"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "51"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "52"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "53"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "54"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "55"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "56"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "57"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "58"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:171
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "59"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "60"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "61"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "62"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "63"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "64"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "65"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "66"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "67"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "68"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "69"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "70"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "71"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "72"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "73"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "74"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "75"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "76"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "77"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "78"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "79"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "80"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "81"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "82"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "83"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "84"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "85"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "86"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "87"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "88"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "89"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "90"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "91"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "92"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "93"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "94"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "95"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "96"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "97"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "98"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "99"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "100"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "101"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "102"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "103"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "104"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "105"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "106"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "107"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "108"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "109"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "110"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "111"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "112"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "113"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "114"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "115"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "116"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "117"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "118"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "119"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "120"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "121"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "122"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "123"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "124"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "125"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "126"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "127"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "128"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "129"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "130"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "131"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "132"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "133"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "134"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "135"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "136"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "137"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "138"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "139"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "140"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "141"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "142"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "143"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "144"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "145"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "146"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "147"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "148"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "149"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "150"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "151"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "152"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "153"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "154"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "155"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "156"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "157"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "158"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "159"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "160"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "161"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "162"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "163"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "164"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "165"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "166"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "167"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "168"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "169"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "170"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "171"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "172"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "173"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "174"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "175"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "176"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "177"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "178"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "179"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:190
-msgid "180"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:195
-msgid "0"
-msgstr ""
-
-# Attention RTL languages. 3 placeholders are degrees, cardinal direction, minutes for coordinates.
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/time-functions.php:242
-#, php-format
-msgid "%1$s%2$s%3$s'"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:52
-msgid "Cleanup"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:53
-msgid "System Info"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:54
-msgid "Export/Import"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:79
-msgid "Natal Planets in Signs"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:80
-msgid "Delete all interpretations text for natal planets/points in the signs."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:83
-msgid "Natal Planets in Houses"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:84
-msgid "Delete all interpretations text for natal planets/points in the houses."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:87
-msgid "Natal Aspects"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:88
-msgid "Delete all interpretations text for natal aspects."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:99
-msgid ""
-"Use these tools to <strong>permanently delete</strong> your Interpretations "
-"text. Be aware that clicking these buttons will <strong>permanently erase</"
-"strong> your Interpretations."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:103
-msgid "Cleanup Interpretations"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:112
-msgid "Delete"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:177
-msgid ""
-"The system info is a built-in debugging tool. If you contact support, please "
-"provide this system info. <strong>Click the button below</strong> to "
-"download a text file with this system report."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:216
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:223
-msgid "Export Interpretations"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:218
-msgid ""
-"Export your ZodiacPress interpretations for this site as a .json file. This "
-"allows you to easily import your interpretations into another site."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:230
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:241
-msgid "Import Interpretations"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:232
-msgid ""
-"Import your ZodiacPress interpretations from a .json file. This file can be "
-"obtained by exporting the interpretations on another site using the button "
-"above."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:233
-msgid ""
-"NOTE: IMPORTED INTERPRETATIONS WILL COMPLETELY OVERRIDE ANY CURRENT EXISTING "
-"INTERPRETATIONS ON THIS SITE. ANY EXISTING INTERPRETATIONS ON THIS SITE WILL "
-"BE DELETED."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:248
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:255
-msgid "Export Settings"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:250
-msgid ""
-"Export the ZodiacPress settings for this site as a .json file. This allows "
-"you to easily import the configuration into another site."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:262
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:272
-msgid "Import Settings"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:264
-msgid ""
-"Import the ZodiacPress settings from a .json file. This file can be obtained "
-"by exporting the settings on another site using the button above."
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:323
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:392
-msgid "Please upload a valid .json file"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:327
-msgid "Please upload a valid ZodiacPress zp-settings-export file"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:332
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:401
-msgid "Please upload a file to import"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/tools.php:396
-msgid "Please upload a valid ZodiacPress interpretations file"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-pages.php:17
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/display-interpretations.php:40
-msgid "ZodiacPress"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-pages.php:19
-msgid "ZodiacPress Tools"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-pages.php:19
-msgid "Tools"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-pages.php:21
-msgid "ZodiacPress Settings"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-pages.php:21
-msgid "Settings"
-msgstr ""
-
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:32
+#: includes/admin/admin-functions.php:32
 msgid "Interpretations for natal planets in signs were erased."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:35
+#: includes/admin/admin-functions.php:35
 msgid "Interpretations for natal planets in houses were erased."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:38
+#: includes/admin/admin-functions.php:38
 msgid "Interpretations for natal aspects were erased."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:41
+#: includes/admin/admin-functions.php:41
 msgid "Your ZodiacPress settings have been imported."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:44
+#: includes/admin/admin-functions.php:44
 msgid "Your ZodiacPress interpretations have been imported."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:59
+#: includes/admin/admin-functions.php:59
 msgid ""
 "The PHP exec() function is disabled on your server. ZodiacPress requires the "
 "exec() function in order to create astrology reports. Please ask your web "
 "host to enable the PHP exec() function."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:67
-#, php-format
+#: includes/admin/admin-functions.php:67
 msgid ""
 "Your website server uses Windows hosting. For ZodiacPress to work on your "
 "server, you need the %1$sZP Windows Server%2$s plugin. See <a href=\"%3$s\" "
 "target=\"_blank\" rel=\"nofollow\">this</a> for details."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:80
-#, php-format
+#: includes/admin/admin-functions.php:80
 msgid ""
 "Your server did not allow ZodiacPress to set the necessary file permissions "
 "for the Ephemeris. ZodiacPress requires this in order to create astrology "
@@ -1926,69 +76,134 @@ msgid ""
 "fix it."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/admin-functions.php:147
+#: includes/admin/admin-functions.php:147
 msgid "See ZodiacPress Extensions"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:81
+#. #-#-#-#-#  plugin.pot (ZodiacPress 1.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/admin/admin-pages.php:17
+#: includes/admin/settings/display-interpretations.php:40
+msgid "ZodiacPress"
+msgstr ""
+
+#: includes/admin/admin-pages.php:19
+msgid "ZodiacPress Tools"
+msgstr ""
+
+#: includes/admin/admin-pages.php:19
+msgid "Tools"
+msgstr ""
+
+#: includes/admin/admin-pages.php:21
+msgid "ZodiacPress Settings"
+msgstr ""
+
+#: includes/admin/admin-pages.php:21
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:62
+msgid "Interpretations For Natal %1$s in The Signs"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:66
+msgid "Interpretations For Natal %1$s in The Houses"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:70
+msgid "Interpretations For Aspects of Natal %1$s"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:74
+msgid "Natal Interpretations"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:163
+msgid "%1$s in %2$s"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:191
+msgid "%1$s in The %2$s House"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:282
+msgid "Interpretations updated."
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:295
+msgid "In Signs"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:296
+msgid "In Houses"
+msgstr ""
+
+#: includes/admin/settings/register-interpretations.php:297
+#: includes/admin/settings/register-settings.php:351
+#: includes/class-zp-birth-report.php:202
+msgid "Aspects"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:81
 msgid "Planets and Points Settings"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:87
+#: includes/admin/settings/register-settings.php:87
 msgid "Enable Planets (and Points) in Signs"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:88
+#: includes/admin/settings/register-settings.php:88
 msgid "Choose which to show on the \"In The Signs\" section of the report."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:95
+#: includes/admin/settings/register-settings.php:95
 msgid "Enable Planets (and Points) in Houses"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:96
+#: includes/admin/settings/register-settings.php:96
 msgid "Choose which to show on the \"In The Houses\" section of the report."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:105
+#: includes/admin/settings/register-settings.php:105
 msgid "Aspects Settings"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:111
+#: includes/admin/settings/register-settings.php:111
 msgid "Enable Aspects"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:112
+#: includes/admin/settings/register-settings.php:112
 msgid "Choose which aspects to show on the report."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:119
+#: includes/admin/settings/register-settings.php:119
 msgid "Aspects To Planets (and Points)"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:120
+#: includes/admin/settings/register-settings.php:120
 msgid "Choose which planets/points to calculate aspects for."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:127
+#: includes/admin/settings/register-settings.php:127
 msgid "Orb For Natal Aspects"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:128
+#: includes/admin/settings/register-settings.php:128
 msgid ""
 "The orb (in degrees) to use for natal aspects. Enter just the number. If "
 "blank, default is 8."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:137
+#: includes/admin/settings/register-settings.php:137
 msgid "Report Settings"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:143
+#: includes/admin/settings/register-settings.php:143
 msgid "Allow Unknown Birth Time"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:145
+#: includes/admin/settings/register-settings.php:145
 msgid ""
 "Allow people with unknown birth times to generate a birth report. If "
 "enabled, this will allow them to generate a basic report, excluding items "
@@ -1996,320 +211,2031 @@ msgid ""
 "Midheaven, Vertex, and Part of Fortune)."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:149
+#: includes/admin/settings/register-settings.php:149
 msgid "Birth Report Intro"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:151
+#: includes/admin/settings/register-settings.php:151
 msgid "Optional \"Introduction\" text for the Birth Report."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:155
+#: includes/admin/settings/register-settings.php:155
 msgid "Birth Report Closing"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:157
+#: includes/admin/settings/register-settings.php:157
 msgid ""
 "Optional \"Closing\" text for the Birth Report. This will appear at the end "
 "of the report."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:168
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:356
+#: includes/admin/settings/register-settings.php:168
+#: includes/admin/settings/register-settings.php:356
 msgid "Misc Settings"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:174
+#: includes/admin/settings/register-settings.php:174
 msgid "GeoNames Username"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:175
-#, php-format
+#: includes/admin/settings/register-settings.php:175
 msgid ""
 "Your username from GeoNames.org is needed to get timezone info from their "
 "webservice. (%1$screate free account%2$s)"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:182
+#: includes/admin/settings/register-settings.php:182
 msgid "Remove Data on Uninstall"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:184
+#: includes/admin/settings/register-settings.php:184
 msgid ""
 "Check this box if you would like ZP to completely remove all of its data "
 "(INCLUDING INTERPRETATIONS TEXT) when the plugin is deleted."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:251
+#: includes/admin/settings/register-settings.php:251
 msgid "Settings updated."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:305
+#: includes/admin/settings/register-settings.php:305
 msgid "Natal Report"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:306
+#: includes/admin/settings/register-settings.php:306
 msgid "Misc"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:309
+#: includes/admin/settings/register-settings.php:309
 msgid "Licenses"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:350
+#: includes/admin/settings/register-settings.php:350
 msgid "Planets and Points"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:352
+#: includes/admin/settings/register-settings.php:352
 msgid "Report"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:474
-#, php-format
+#: includes/admin/settings/register-settings.php:474
 msgid "The callback function used for the %s setting is missing."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:571
-#, php-format
+#: includes/admin/settings/register-settings.php:571
 msgid ""
 "Your license key expired on %1$s. Please <a href=\"%2$s\" target=\"_blank\" "
 "rel=\"nofollow\">renew your license key</a>."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:582
-#, php-format
+#: includes/admin/settings/register-settings.php:582
 msgid ""
 "Your license key has been disabled. Please <a href=\"%s\" target=\"_blank\" "
 "rel=\"nofollow\">contact support</a> for more information."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:593
-#, php-format
+#: includes/admin/settings/register-settings.php:593
 msgid ""
 "Invalid license. Please <a href=\"%s\" target=\"_blank\" rel=\"nofollow"
 "\">visit your account page</a> and verify it."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:605
-#, php-format
+#: includes/admin/settings/register-settings.php:605
 msgid ""
 "Your %1$s is not active for this URL. Please <a href=\"%2$s\" target=\"_blank"
 "\" rel=\"nofollow\">visit your account page</a> to manage your license key "
 "URLs."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:616
-#, php-format
+#: includes/admin/settings/register-settings.php:616
 msgid "This appears to be an invalid license key for %s."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:624
-#, php-format
+#: includes/admin/settings/register-settings.php:624
 msgid ""
 "Your license key has reached its activation limit. <a href=\"%s\" rel="
 "\"nofollow\">View possible upgrades</a> now."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:631
+#: includes/admin/settings/register-settings.php:631
 msgid ""
 "The key you entered belongs to a bundle, please use the product specific "
 "license key."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:638
-#, php-format
+#: includes/admin/settings/register-settings.php:638
 msgid ""
 "There was an error with this license key: %1$s. Please correct the license "
 "key or <a href=\"%2$s\" rel=\"nofollow\">contact our support team for help</"
 "a>."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:655
+#: includes/admin/settings/register-settings.php:655
 msgid "License key never expires."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:662
-#, php-format
+#: includes/admin/settings/register-settings.php:662
 msgid ""
 "Your license key expires soon! It expires on %1$s. <a href=\"%2$s\" target="
 "\"_blank\">Renew your license key</a>."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:671
-#, php-format
+#: includes/admin/settings/register-settings.php:671
 msgid "Your license key expires on %s."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:690
-#, php-format
+#: includes/admin/settings/register-settings.php:690
 msgid "To receive updates, please enter your valid %s license key."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-settings.php:701
+#: includes/admin/settings/register-settings.php:701
 msgid "Deactivate License"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:62
-#, php-format
-msgid "Interpretations For Natal %1$s in The Signs"
+#: includes/admin/tools.php:52
+msgid "Cleanup"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:66
-#, php-format
-msgid "Interpretations For Natal %1$s in The Houses"
+#: includes/admin/tools.php:53
+msgid "System Info"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:70
-#, php-format
-msgid "Interpretations For Aspects of Natal %1$s"
+#: includes/admin/tools.php:54
+msgid "Export/Import"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:74
-msgid "Natal Interpretations"
+#: includes/admin/tools.php:79
+msgid "Natal Planets in Signs"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:163
-#, php-format
-msgid "%1$s in %2$s"
+#: includes/admin/tools.php:80
+msgid "Delete all interpretations text for natal planets/points in the signs."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:191
-#, php-format
-msgid "%1$s in The %2$s House"
+#: includes/admin/tools.php:83
+msgid "Natal Planets in Houses"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:282
-msgid "Interpretations updated."
+#: includes/admin/tools.php:84
+msgid "Delete all interpretations text for natal planets/points in the houses."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:295
-msgid "In Signs"
+#: includes/admin/tools.php:87
+msgid "Natal Aspects"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/admin/settings/register-interpretations.php:296
-msgid "In Houses"
+#: includes/admin/tools.php:88
+msgid "Delete all interpretations text for natal aspects."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:37
+#: includes/admin/tools.php:99
+msgid ""
+"Use these tools to <strong>permanently delete</strong> your Interpretations "
+"text. Be aware that clicking these buttons will <strong>permanently erase</"
+"strong> your Interpretations."
+msgstr ""
+
+#: includes/admin/tools.php:103
+msgid "Cleanup Interpretations"
+msgstr ""
+
+#: includes/admin/tools.php:112
+msgid "Delete"
+msgstr ""
+
+#: includes/admin/tools.php:177
+msgid ""
+"The system info is a built-in debugging tool. If you contact support, please "
+"provide this system info. <strong>Click the button below</strong> to "
+"download a text file with this system report."
+msgstr ""
+
+#: includes/admin/tools.php:216 includes/admin/tools.php:223
+msgid "Export Interpretations"
+msgstr ""
+
+#: includes/admin/tools.php:218
+msgid ""
+"Export your ZodiacPress interpretations for this site as a .json file. This "
+"allows you to easily import your interpretations into another site."
+msgstr ""
+
+#: includes/admin/tools.php:230 includes/admin/tools.php:241
+msgid "Import Interpretations"
+msgstr ""
+
+#: includes/admin/tools.php:232
+msgid ""
+"Import your ZodiacPress interpretations from a .json file. This file can be "
+"obtained by exporting the interpretations on another site using the button "
+"above."
+msgstr ""
+
+#: includes/admin/tools.php:233
+msgid ""
+"NOTE: IMPORTED INTERPRETATIONS WILL COMPLETELY OVERRIDE ANY CURRENT EXISTING "
+"INTERPRETATIONS ON THIS SITE. ANY EXISTING INTERPRETATIONS ON THIS SITE WILL "
+"BE DELETED."
+msgstr ""
+
+#: includes/admin/tools.php:248 includes/admin/tools.php:255
+msgid "Export Settings"
+msgstr ""
+
+#: includes/admin/tools.php:250
+msgid ""
+"Export the ZodiacPress settings for this site as a .json file. This allows "
+"you to easily import the configuration into another site."
+msgstr ""
+
+#: includes/admin/tools.php:262 includes/admin/tools.php:272
+msgid "Import Settings"
+msgstr ""
+
+#: includes/admin/tools.php:264
+msgid ""
+"Import the ZodiacPress settings from a .json file. This file can be obtained "
+"by exporting the settings on another site using the button above."
+msgstr ""
+
+#: includes/admin/tools.php:323 includes/admin/tools.php:392
+msgid "Please upload a valid .json file"
+msgstr ""
+
+#: includes/admin/tools.php:327
+msgid "Please upload a valid ZodiacPress zp-settings-export file"
+msgstr ""
+
+#: includes/admin/tools.php:332 includes/admin/tools.php:401
+msgid "Please upload a file to import"
+msgstr ""
+
+#: includes/admin/tools.php:396
+msgid "Please upload a valid ZodiacPress interpretations file"
+msgstr ""
+
+#: includes/ajax-functions.php:58
+msgid "The Swiss Ephemeris is not working."
+msgstr ""
+
+#: includes/ajax-functions.php:63
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/astro-functions.php:28
+msgid "Sun"
+msgstr ""
+
+#: includes/astro-functions.php:33
+msgid "Moon"
+msgstr ""
+
+#: includes/astro-functions.php:38
+msgid "Mercury"
+msgstr ""
+
+#: includes/astro-functions.php:43
+msgid "Venus"
+msgstr ""
+
+#: includes/astro-functions.php:48
+msgid "Mars"
+msgstr ""
+
+#: includes/astro-functions.php:53
+msgid "Jupiter"
+msgstr ""
+
+#: includes/astro-functions.php:58
+msgid "Saturn"
+msgstr ""
+
+#: includes/astro-functions.php:63
+msgid "Uranus"
+msgstr ""
+
+#: includes/astro-functions.php:68
+msgid "Neptune"
+msgstr ""
+
+#: includes/astro-functions.php:73
+msgid "Pluto"
+msgstr ""
+
+#: includes/astro-functions.php:78
+msgid "Chiron"
+msgstr ""
+
+#: includes/astro-functions.php:83
+msgid "Lilith"
+msgstr ""
+
+#: includes/astro-functions.php:88
+msgid "North Node"
+msgstr ""
+
+#: includes/astro-functions.php:93
+msgid "Part of Fortune"
+msgstr ""
+
+#: includes/astro-functions.php:98
+msgid "Vertex"
+msgstr ""
+
+#: includes/astro-functions.php:103
+msgid "Ascendant"
+msgstr ""
+
+#: includes/astro-functions.php:108
+msgid "Midheaven"
+msgstr ""
+
+#: includes/astro-functions.php:138
+msgid "Conjunction"
+msgstr ""
+
+#: includes/astro-functions.php:142
+msgid "Sextile"
+msgstr ""
+
+#: includes/astro-functions.php:146
+msgid "Square"
+msgstr ""
+
+#: includes/astro-functions.php:150
+msgid "Trine"
+msgstr ""
+
+#: includes/astro-functions.php:154
+msgid "Quincunx"
+msgstr ""
+
+#: includes/astro-functions.php:158
+msgid "Opposition"
+msgstr ""
+
+#: includes/astro-functions.php:171
+msgid "Aries"
+msgstr ""
+
+#: includes/astro-functions.php:174
+msgid "Taurus"
+msgstr ""
+
+#: includes/astro-functions.php:177
+msgid "Gemini"
+msgstr ""
+
+#: includes/astro-functions.php:180
+msgid "Cancer"
+msgstr ""
+
+#: includes/astro-functions.php:183
+msgid "Leo"
+msgstr ""
+
+#: includes/astro-functions.php:186
+msgid "Virgo"
+msgstr ""
+
+#: includes/astro-functions.php:189
+msgid "Libra"
+msgstr ""
+
+#: includes/astro-functions.php:192
+msgid "Scorpio"
+msgstr ""
+
+#: includes/astro-functions.php:195
+msgid "Sagittarius"
+msgstr ""
+
+#: includes/astro-functions.php:198
+msgid "Capricorn"
+msgstr ""
+
+#: includes/astro-functions.php:201
+msgid "Aquarius"
+msgstr ""
+
+#: includes/astro-functions.php:204
+msgid "Pisces"
+msgstr ""
+
+#. translators: Attention RTL languages. 6 placeholders are zodiac sign
+#. degrees, zodiac sign glyph, minutes, minutes symbol, seconds, seconds
+#. symbol.
+#: includes/astro-functions.php:266
+msgid "%1$s %2$s %3$s%4$s %5$s%6$s"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:85
+msgid "unknown birth time"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:99
+msgid "%1$s (time zone = UTC %2$s)"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:105
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:113
+msgid "Chart Data For %s"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:123
+msgid "Placidus"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:125
+msgid "%s Houses"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:182
+msgid ""
+"NOTE: Since %s is very close to the next house cusp, the next item is also "
+"relevant."
+msgstr ""
+
+#: includes/class-zp-birth-report.php:196
+msgid "Planets and Points in The Signs"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:199
+msgid "Planets and Points in The Houses"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:312
+#: includes/class-zp-birth-report.php:350
+msgid "%1$s in %2$s House"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:426
+#: includes/class-zp-birth-report.php:441
+msgid "orb"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:483
+msgid "Introduction"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:494
+msgid "Closing"
+msgstr ""
+
+#: includes/class-zp-license.php:149
+msgid "%1$s"
+msgstr ""
+
+#: includes/class-zp-license.php:180
+msgid ""
+"Enter your extension license keys here to receive updates for purchased "
+"extensions. If your license key has expired, please <a href=\"%s\" target="
+"\"_blank\" rel=\"nofollow\">renew your license</a>."
+msgstr ""
+
+#: includes/class-zp-license.php:286
+msgid "Nonce verification failed"
+msgstr ""
+
+#: includes/class-zp-license.php:396
+msgid ""
+"You have invalid or expired license keys for ZodiacPress. Please go to the "
+"<a href=\"%s\">Licenses page</a> to correct this issue."
+msgstr ""
+
+#: includes/class-zp-license.php:427
+msgid "Enter valid license key for automatic updates."
+msgstr ""
+
+#: includes/form/template.php:19
+msgid "Month"
+msgstr ""
+
+#: includes/form/template.php:36
+msgid "Day"
+msgstr ""
+
+#: includes/form/template.php:49
+msgid "Year"
+msgstr ""
+
+#: includes/form/template.php:72
+msgid "Hour"
+msgstr ""
+
+#: includes/form/template.php:87
+msgid "Minute"
+msgstr ""
+
+#: includes/form/template.php:101
+msgid "Birth Month"
+msgstr ""
+
+#: includes/form/template.php:112
+msgid "Birth Day"
+msgstr ""
+
+#: includes/form/template.php:136
+msgid "Name"
+msgstr ""
+
+#: includes/form/template.php:144
+msgid "Birth Date"
+msgstr ""
+
+#: includes/form/template.php:156
+msgid "Birth Year"
+msgstr ""
+
+#: includes/form/template.php:161
+msgid "Exact Birth Time"
+msgstr ""
+
+#: includes/form/template.php:163
+msgid "Birth Hour"
+msgstr ""
+
+#: includes/form/template.php:166
+msgid "Birth Minute"
+msgstr ""
+
+#: includes/form/template.php:174
+msgid "Unknown Birth Time"
+msgstr ""
+
+#: includes/form/template.php:180
+msgid "Birth time is required for this type of report."
+msgstr ""
+
+#: includes/form/template.php:186
+msgid "Birth City"
+msgstr ""
+
+#: includes/form/template.php:211
+msgid "Next"
+msgstr ""
+
+#: includes/form/template.php:213
+msgid "Submit"
+msgstr ""
+
+#: includes/form/template.php:215
+msgid ""
+"Tip: Make sure the <strong>UTC time offset</strong> is correct. If it's "
+"wrong, you can change it."
+msgstr ""
+
+#: includes/form/template.php:222
+msgid ""
+"<strong>* NOTE: </strong> If birth time is unknown, the report will not "
+"include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or "
+"Part of Fortune, nor will it include House positions for any planets."
+msgstr ""
+
+#: includes/form/validation.php:37
 msgid "Please select a Birth Date"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:42
+#: includes/form/validation.php:42
 msgid "Birth Date is not valid"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:64
+#: includes/form/validation.php:64
 msgid "Please select a Birth Time"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:66
+#: includes/form/validation.php:66
 msgid "Please select a Birth Time or check the box for unknown time"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:73
+#: includes/form/validation.php:73
 msgid "Select a valid birth hour."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:77
+#: includes/form/validation.php:77
 msgid "Select a birth minute between 0 and 59."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:84
+#: includes/form/validation.php:84
 msgid "Please select a Birth City"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:110
+#: includes/form/validation.php:110
 msgid "Please enter a Name"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/validation.php:132
+#: includes/form/validation.php:132
 msgid ""
 "UTC time offset must be a number (like 5). Include a negative sign or "
 "decimal point if needed (like -9.5). If you want the offset to be calculated "
 "automatically, select the Birth City again and click Next."
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:19
-msgid "Month"
+#: includes/misc-functions.php:20
+msgid "Zeroth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:36
-msgid "Day"
+#: includes/misc-functions.php:21
+msgid "First"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:49
-msgid "Year"
+#: includes/misc-functions.php:22
+msgid "Second"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:72
-msgid "Hour"
+#: includes/misc-functions.php:23
+msgid "Third"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:87
-msgid "Minute"
+#: includes/misc-functions.php:24
+msgid "Fourth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:101
-msgid "Birth Month"
+#: includes/misc-functions.php:25
+msgid "Fifth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:112
-msgid "Birth Day"
+#: includes/misc-functions.php:26
+msgid "Sixth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:136
-msgid "Name"
+#: includes/misc-functions.php:27
+msgid "Seventh"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:144
-msgid "Birth Date"
+#: includes/misc-functions.php:28
+msgid "Eighth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:156
-msgid "Birth Year"
+#: includes/misc-functions.php:29
+msgid "Ninth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:161
-msgid "Exact Birth Time"
+#: includes/misc-functions.php:30
+msgid "Tenth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:163
-msgid "Birth Hour"
+#: includes/misc-functions.php:31
+msgid "Eleventh"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:166
-msgid "Birth Minute"
+#: includes/misc-functions.php:32
+msgid "Twelfth"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:174
-msgid "Unknown Birth Time"
+#: includes/misc-functions.php:205
+msgid "Once Weekly"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:180
-msgid "Birth time is required for this type of report."
+#: includes/scripts.php:35
+msgid "Selected:"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:186
-msgid "Birth City"
+#: includes/scripts.php:36
+msgid "Latitude:"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:211
-msgid "Next"
+#: includes/scripts.php:37
+msgid "Longitude:"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:213
-msgid "Submit"
+#: includes/scripts.php:38
+msgid "UTC time offset:"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:215
-msgid ""
-"Tip: Make sure the <strong>UTC time offset</strong> is correct. If it's "
-"wrong, you can change it."
+#: includes/shortcode.php:8
+msgid "Get An Astrology Birth Report"
 msgstr ""
 
-#: /var/www/html/wp-content/plugins/zodiacpress/includes/form/template.php:222
-msgid ""
-"<strong>* NOTE: </strong> If birth time is unknown, the report will not "
-"include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or "
-"Part of Fortune, nor will it include House positions for any planets."
+#: includes/shortcode.php:33
+msgid "Start Over"
+msgstr ""
+
+#: includes/time-functions.php:38
+msgctxt "time meridiem midnight"
+msgid "%s am, midn"
+msgstr ""
+
+#: includes/time-functions.php:42
+msgctxt "time meridiem"
+msgid "%s am"
+msgstr ""
+
+#: includes/time-functions.php:47
+msgctxt "time meridiem noon"
+msgid "%s pm, noon"
+msgstr ""
+
+#: includes/time-functions.php:54
+msgctxt "time meridiem"
+msgid "%s pm"
+msgstr ""
+
+#: includes/time-functions.php:109
+msgid "January"
+msgstr ""
+
+#: includes/time-functions.php:110
+msgid "February"
+msgstr ""
+
+#: includes/time-functions.php:111
+msgid "March"
+msgstr ""
+
+#: includes/time-functions.php:112
+msgid "April"
+msgstr ""
+
+#: includes/time-functions.php:113
+msgid "May"
+msgstr ""
+
+#: includes/time-functions.php:114
+msgid "June"
+msgstr ""
+
+#: includes/time-functions.php:115
+msgid "July"
+msgstr ""
+
+#: includes/time-functions.php:116
+msgid "August"
+msgstr ""
+
+#: includes/time-functions.php:117
+msgid "September"
+msgstr ""
+
+#: includes/time-functions.php:118
+msgid "October"
+msgstr ""
+
+#: includes/time-functions.php:119
+msgid "November"
+msgstr ""
+
+#: includes/time-functions.php:120
+msgid "December"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1900"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1901"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1902"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1903"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1904"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1905"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1906"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1907"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1908"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1909"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1910"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1911"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1912"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1913"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1914"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1915"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1916"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1917"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1918"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1919"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1920"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1921"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1922"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1923"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1924"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1925"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1926"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1927"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1928"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1929"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1930"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1931"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1932"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1933"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1934"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1935"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1936"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1937"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1938"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1939"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1940"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1941"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1942"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1943"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1944"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1945"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1946"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1947"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1948"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1949"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1950"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1951"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1952"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1953"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1954"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1955"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1956"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1957"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1958"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1959"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1960"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1961"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1962"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1963"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1964"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1965"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1966"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1967"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1968"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1969"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1970"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1971"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1972"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1973"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1974"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1975"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1976"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1977"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1978"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1979"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1980"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1981"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1982"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1983"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1984"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1985"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1986"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1987"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1988"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1989"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1990"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1991"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1992"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1993"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1994"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1995"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1996"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1997"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1998"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "1999"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2000"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2001"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2002"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2003"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2004"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2005"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2006"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2007"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2008"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2009"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2010"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2011"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2012"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2013"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2014"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2015"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2016"
+msgstr ""
+
+#: includes/time-functions.php:136
+msgid "2017"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "1"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "2"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "3"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "4"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "5"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "6"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "7"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "8"
+msgstr ""
+
+#: includes/time-functions.php:150
+msgid "9"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "10"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "11"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "12"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "13"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "14"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "15"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "16"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "17"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "18"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "19"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "20"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "21"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "22"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "23"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "24"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "25"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "26"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "27"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "28"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "29"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "30"
+msgstr ""
+
+#: includes/time-functions.php:150 includes/time-functions.php:171
+msgid "31"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "00"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "01"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "02"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "03"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "04"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "05"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "06"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "07"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "08"
+msgstr ""
+
+#: includes/time-functions.php:171
+msgid "09"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "32"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "33"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "34"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "35"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "36"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "37"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "38"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "39"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "40"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "41"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "42"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "43"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "44"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "45"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "46"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "47"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "48"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "49"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "50"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "51"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "52"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "53"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "54"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "55"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "56"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "57"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "58"
+msgstr ""
+
+#: includes/time-functions.php:171 includes/time-functions.php:190
+msgid "59"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "60"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "61"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "62"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "63"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "64"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "65"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "66"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "67"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "68"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "69"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "70"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "71"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "72"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "73"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "74"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "75"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "76"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "77"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "78"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "79"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "80"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "81"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "82"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "83"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "84"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "85"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "86"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "87"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "88"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "89"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "90"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "91"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "92"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "93"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "94"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "95"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "96"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "97"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "98"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "99"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "100"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "101"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "102"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "103"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "104"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "105"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "106"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "107"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "108"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "109"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "110"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "111"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "112"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "113"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "114"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "115"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "116"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "117"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "118"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "119"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "120"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "121"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "122"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "123"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "124"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "125"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "126"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "127"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "128"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "129"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "130"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "131"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "132"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "133"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "134"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "135"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "136"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "137"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "138"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "139"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "140"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "141"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "142"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "143"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "144"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "145"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "146"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "147"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "148"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "149"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "150"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "151"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "152"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "153"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "154"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "155"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "156"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "157"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "158"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "159"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "160"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "161"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "162"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "163"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "164"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "165"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "166"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "167"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "168"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "169"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "170"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "171"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "172"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "173"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "174"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "175"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "176"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "177"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "178"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "179"
+msgstr ""
+
+#: includes/time-functions.php:190
+msgid "180"
+msgstr ""
+
+#: includes/time-functions.php:195
+msgid "0"
+msgstr ""
+
+#. translators: Attention RTL languages. 3 placeholders are degrees, cardinal
+#. direction, minutes for coordinates.
+#: includes/time-functions.php:242
+msgid "%1$s%2$s%3$s'"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://cosmicplugins.com/downloads/zodiacpress/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Generate astrology birth reports with your custom interpretations."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Isabel Castillo, Cosmic Plugins"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://isabelcastillo.com"
 msgstr ""
