@@ -143,7 +143,7 @@ add_action('admin_head', 'zp_custom_admin_menu_icon');
  * Display a link to see ZP extensions.
  */
 function zp_extend_link() {
-	echo '<a href="https://cosmicplugins.com/downloads/category/zodiacpress-extensions/" class="zp-extend-link button-primary alignright" target="_blank" rel="nofollow">';
+	echo '<a href="https://cosmicplugins.com/downloads/category/zodiacpress-extensions/" class="zp-extend-link alignright" target="_blank" rel="nofollow">';
 	_e( 'See ZodiacPress Extensions', 'zodiacpress' );
 	echo '</a>';
 }
