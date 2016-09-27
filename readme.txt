@@ -66,7 +66,11 @@ See the full [ZodiacPress documentation](https://cosmicplugins.com/docs/category
 
 That’s it for the Quick Setup. This allows you to generate a basic report which lists the planets in the signs, planets in the houses, and aspects. Interpretations will not be included in the report until you enter your own natal interpretations. 
 
-To enter your interpretations, go to “ZodiacPress” in your dashboard menu. See the [Full Setup Guide](https://cosmicplugins.com/docs/full-setup-guide/ "ZodiacPress Documentation") for important options. 
+To enter your interpretations, go to “ZodiacPress” in your dashboard menu. See the [Full Setup Guide](https://cosmicplugins.com/docs/full-setup-guide/ "ZodiacPress Documentation") for important options.
+
+**If your website uses Windows hosting**
+
+If your website is running on a Windows operating system (i.e. using Windows hosting), then you’ll need to use the [ZodiacPress Windows Server](https://cosmicplugins.com/downloads/zodiacpress-windows-server/) plugin to make the Ephemeris work on your server. This is because the ephemeris included in ZodiacPress will not run on Windows, by default. Just install and activate the “ZodiacPress Windows Server” plugin, and it will automatically solve this problem.
 
 == Frequently Asked Questions ==
 
