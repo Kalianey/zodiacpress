@@ -18,13 +18,26 @@
 	clear:both;
 	padding-top:1em;
 }
-
 .zp-extend-link::before {
     font-family: "zodiacpress" !important;
     content: "\e90c";
     padding: 0 10px 0 0;
 }
-
+.zp-extend-link {
+	background: #26264c;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	line-height: 1;
+	padding: 0.84375em 0.875em 0.78125em;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+.zp-extend-link:hover, .zp-extend-link:focus{
+	background-color: #333366;
+	color: #fff;
+}
 .wrap-licenses .zp-license-data[class*="zp-license-"] {
 	background: #fafafa;
 	padding: 14px;
