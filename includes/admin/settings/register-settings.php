@@ -8,7 +8,7 @@
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
-if ( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Add all settings sections and fields
@@ -125,7 +125,7 @@ function zp_get_registered_settings() {
 					'natal_orb'	=> array(
 						'id'	=> 'natal_orb',
 						'name'	=> __( 'Orb For Natal Aspects', 'zodiacpress' ),
-						'desc'	=> __( 'The orb (in degrees) to use for natal aspects. Enter just the number. If blank, default is 8.', 'zodiacpress' ),
+						'desc'	=> __( 'The orb (in degrees) to use for natal aspects. Enter just the number. Decimals are ok, as in, "3.5". If blank, default is 8.', 'zodiacpress' ),
 						'type'	=> 'text',
 						'size'	=> 'small',
 						'std'	=> '8',
@@ -322,10 +322,8 @@ function zp_get_settings_tab_sections( $tab = false ) {
 	$tabs     = false;
 	$sections = zp_get_registered_settings_sections();
 
-	if( $tab && ! empty( $sections[ $tab ] ) ) {
+	if ( $tab && ! empty( $sections[ $tab ] ) ) {
 		$tabs = $sections[ $tab ];
-	} elseif ( $tab ) {
-		$tabs = false;
 	}
 
 	return $tabs;
@@ -344,7 +342,6 @@ function zp_get_registered_settings_sections() {
 	if ( false !== $sections ) {
 		return $sections;
 	}
-
 	$sections = array(
 		'natal'		=> apply_filters( 'zp_settings_sections_natal', array(
 			'main'		=> __( 'Planets and Points', 'zodiacpress' ),
