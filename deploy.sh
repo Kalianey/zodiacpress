@@ -47,13 +47,15 @@ echo "Pushing latest commit to origin, with tags"
 git push origin master
 git push origin master --tags
 
-# zip a backup of everything
+# zip a local backup of everything
 echo "Making backup..."
+cd ../
 BACKUPDIR="${HOME}/Documents/LOG/" # destination folder for the backup .zip
 timestamp=$(date +%Y%m%d_%H%M%S)
 zip -r ${PLUGINSLUG}.${timestamp}.zip $PLUGINSLUG
 echo "Moving the backup out to $BACKUPDIR"
 mv ${PLUGINSLUG}.${timestamp}.zip $BACKUPDIR
+cd "$GITPATH"
 
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
