@@ -261,9 +261,8 @@ function zp_settings_sanitize( $input = array() ) {
  */
 function zp_sanitize_text_field( $input, $key ) {
 
-	// validate natal_orb
 	if ( 'natal_orb' == $key ) {
-		if ( ! is_numeric( $key ) ) {
+		if ( ! is_numeric( $input ) ) {
 			return 8;
 		} else {
 			return abs( $input );
@@ -273,7 +272,6 @@ function zp_sanitize_text_field( $input, $key ) {
 	return trim( $input );
 }
 add_filter( 'zp_settings_sanitize_text', 'zp_sanitize_text_field', 10, 2 );
-
 
 /**
  * Sanitize multicheck fields
@@ -368,7 +366,7 @@ function zp_get_registered_settings_sections() {
  * @return void
  */
 function zp_header_callback( $args ) {
-	echo '';
+	echo empty( $args['desc'] ) ? '' : $args['desc'];
 }
 
 /**
