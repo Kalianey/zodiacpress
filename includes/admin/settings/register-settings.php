@@ -34,7 +34,6 @@ function zp_register_settings() {
 			foreach ( $settings as $option ) {
 
 				$name = isset( $option['name'] ) ? $option['name'] : '';
-
 				add_settings_field(
 					'zodiacpress_settings[' . $option['id'] . ']',
 					$name,
@@ -121,14 +120,6 @@ function zp_get_registered_settings() {
 						'type'		=> 'multicheck',
 						'options'	=> zp_get_planets(),
 						'std'		=> zp_get_planets( false, 10 )
-					),
-					'natal_orb'	=> array(
-						'id'	=> 'natal_orb',
-						'name'	=> __( 'Orb For Natal Aspects', 'zodiacpress' ),
-						'desc'	=> __( 'The orb (in degrees) to use for natal aspects. Enter just the number. Decimals are ok, as in, "3.5". If blank, default is 8.', 'zodiacpress' ),
-						'type'	=> 'text',
-						'size'	=> 'small',
-						'std'	=> '8',
 					),
 				),
 				'report'	=> array(
@@ -260,15 +251,14 @@ function zp_settings_sanitize( $input = array() ) {
  * @return string $input Sanitizied value
  */
 function zp_sanitize_text_field( $input, $key ) {
-
-	if ( 'natal_orb' == $key ) {
+	// Sanitize orb fields. Must be numeric and positive.
+	if ( 0 === strpos( $key, 'orb_' ) ) {
 		if ( ! is_numeric( $input ) ) {
 			return 8;
 		} else {
 			return abs( $input );
 		}
 	}
-
 	return trim( $input );
 }
 add_filter( 'zp_settings_sanitize_text', 'zp_sanitize_text_field', 10, 2 );
@@ -344,6 +334,7 @@ function zp_get_registered_settings_sections() {
 		'natal'		=> apply_filters( 'zp_settings_sections_natal', array(
 			'main'		=> __( 'Planets and Points', 'zodiacpress' ),
 			'aspects'	=> __( 'Aspects', 'zodiacpress' ),
+			'orbs'		=> __( 'Orbs', 'zodiacpress' ),
 			'report'	=> __( 'Report', 'zodiacpress' )
 		) ),
 		'licenses'	=> apply_filters( 'zp_settings_sections_licenses', array() ),
@@ -721,3 +712,52 @@ function zp_set_settings_cap( $cap ) {
 	return 'manage_zodiacpress_settings';
 }
 add_filter( 'option_page_capability_zodiacpress_settings', 'zp_set_settings_cap' );
+
+/**
+ * Display help text at the top of the Orbs settings
+ *
+ * @return  void
+ */
+function zp_orbs_settings_help_text() {
+	static $done_ran;
+	if ( ! empty( $done_ran ) ) {
+		return;
+	}
+	echo '<p class="clear zp-helptext">' . __( 'For each aspect, set the orb to use for each planet. If blank, the default (8) will be used.', 'zodiacpress' ) . '</p>';
+	$done_ran = true;
+}
+
+/**
+ * Add granular Orbs settings
+ */
+function zp_orbs_add_orb_settings( $settings ) {
+	$planets = zp_get_planets();
+	$aspects = zp_get_aspects();
+	foreach ( $aspects as $asp ) {
+		$asp_id		= $asp['id'];
+		$header_key	= $asp_id . '_orbs';
+		$settings['orbs'][ $header_key ] = array(
+					'id'	=> $header_key,
+					'name'	=> '<h3>' . $asp['label'] . '</h3>',
+					'type'	=> 'header',
+					'desc'	=> '<hr />'
+		);		
+		foreach ( $planets as $p ) {
+			$p_id	= $p['id'];
+			$key 	= 'orb_' . $asp_id . '_' . $p_id;
+			$settings['orbs'][ $key ] = array(
+					'id'		=> $key,
+					'name'		=> '',
+					'type'		=> 'text',
+					'desc'		=> $p['label'],
+					'size'	=> 'small',
+					'std'	=> '8'
+			);
+		}
+	}
+	return $settings;
+}
+
+
+add_action( 'zodiacpress_settings_tab_top_natal_orbs', 'zp_orbs_settings_help_text' );
+add_action( 'zp_settings_natal', 'zp_orbs_add_orb_settings' );

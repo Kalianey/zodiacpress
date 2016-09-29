@@ -374,18 +374,12 @@ class ZP_Birth_Report {
 			return;
 		}		
 
-		$allowed_orb = empty( $zodiacpress_options['natal_orb'] ) ? 8 : $zodiacpress_options['natal_orb'];
-
-		// validate orb
-		$allowed_orb = is_numeric( $allowed_orb ) ? abs( $allowed_orb ) : 8;
-
 		$aspects_list		= array();
 		$cleared_planets	= $this->get_cleared_planets( 'enable_planet_aspects' );
 
 		if ( $cleared_planets ) {
-
-			$active_aspects 	= $zodiacpress_options['enable_aspects'];// enabled in settings
-			$all_aspects		= zp_get_aspects();
+			$active_aspects = $zodiacpress_options['enable_aspects'];// enabled in settings
+			$all_aspects    = zp_get_aspects();
 
 			foreach ( $cleared_planets as $key_1 => $p_1 ) {
 
@@ -401,9 +395,6 @@ class ZP_Birth_Report {
 							$angular_distance = 360 - $angular_distance;
 						}
 
-						// Allow orb to be filtered by addons
-						$allowed_orb = apply_filters( 'natal_aspects_orbs', $allowed_orb, $key_1, $key_2 );
-
 						$aspecting_planet = ( 'sun' == $p_1['id'] ) ? 'main' : $p_1['id'];
 
 						// Check for aspects within orb
@@ -412,6 +403,15 @@ class ZP_Birth_Report {
 							// Get the numerical degrees for this aspect.
 							$aspect_key	= zp_search_array( $asp['id'], 'id', $all_aspects );
 							$num		= (int) $all_aspects[ $aspect_key ]['numerical'];
+
+							// Check custom orb for both planets and use the smaller orb.
+							$key1			= 'orb_' . $asp['id'] . '_' . $p_1['id'];
+							$allowed_orb1	= empty( $zodiacpress_options[ $key1 ] ) ? 8 : $zodiacpress_options[ $key1 ];
+							$allowed_orb1	= is_numeric( $allowed_orb1 ) ? abs( $allowed_orb1 ) : 8;
+							$key2			= 'orb_' . $asp['id'] . '_' . $p_2['id'];
+							$allowed_orb2	= empty( $zodiacpress_options[ $key2 ] ) ? 8 : $zodiacpress_options[ $key2 ];
+							$allowed_orb2	= is_numeric( $allowed_orb2 ) ? abs( $allowed_orb2 ) : 8;
+							$allowed_orb	=  min( $allowed_orb1, $allowed_orb2 );
 
 							// Check for oppositions differently than for other aspects.
 							if ( 180 === $num ) {

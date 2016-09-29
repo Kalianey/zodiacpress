@@ -133,31 +133,31 @@ function zp_get_planets( $houses = '', $include = '' ) {
  */
 function zp_get_aspects() {
 	$aspects = array(
- 		array(
- 			'id'		=> 'conjunction',
- 			'label'		=> __( 'Conjunction', 'zodiacpress' ),
- 			'numerical'	=> '0' ),
- 		array(
- 			'id'		=> 'sextile',
- 			'label'		=> __( 'Sextile', 'zodiacpress' ),
- 			'numerical'	=> 60 ),
- 		array(
- 			'id'		=> 'square',
- 			'label'		=> __( 'Square', 'zodiacpress' ),
- 			'numerical'	=> 90 ),
- 		array(
- 			'id'		=> 'trine',
- 			'label'		=> __( 'Trine', 'zodiacpress' ),
- 			'numerical'	=> 120 ),
- 		array(
- 			'id'		=> 'quincunx',
- 			'label'		=> __( 'Quincunx', 'zodiacpress' ),
- 			'numerical'	=> 150 ),
- 		array(
- 			'id'		=> 'opposition',
- 			'label'		=> __( 'Opposition', 'zodiacpress' ),
- 			'numerical'	=> 180 ),
- 		);
+		array(
+			'id'		=> 'conjunction',
+			'label'		=> __( 'Conjunction', 'zodiacpress' ),
+			'numerical'	=> '0' ),
+		array(
+			'id'		=> 'sextile',
+			'label'		=> __( 'Sextile', 'zodiacpress' ),
+			'numerical'	=> 60 ),
+		array(
+			'id'		=> 'square',
+			'label'		=> __( 'Square', 'zodiacpress' ),
+			'numerical'	=> 90 ),
+		array(
+			'id'		=> 'trine',
+			'label'		=> __( 'Trine', 'zodiacpress' ),
+			'numerical'	=> 120 ),
+		array(
+			'id'		=> 'quincunx',
+			'label'		=> __( 'Quincunx', 'zodiacpress' ),
+			'numerical'	=> 150 ),
+		array(
+			'id'		=> 'opposition',
+			'label'		=> __( 'Opposition', 'zodiacpress' ),
+			'numerical'	=> 180 ),
+	);
 	
 	return apply_filters( 'zp_get_aspects', $aspects );
 }

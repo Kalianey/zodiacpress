@@ -274,4 +274,3 @@ function zp_extract_whole_minutes( $decimal ) {
 	return $m;
 }
 
-

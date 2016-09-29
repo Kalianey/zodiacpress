@@ -37,6 +37,18 @@
 	background-color: #333366;
 	color: #fff;
 }
+.zp-helptext{
+	padding-top:2em;
+}
+#tab_container.natal_orbs th {
+  padding:0;
+}
+#tab_container.natal_orbs td {
+  
+  /*    @todo mobile larger spacing */
+  padding:0 0 4px 0;
+  margin-bottom: 0;
+}
 .wrap-licenses .zp-license-data[class*="zp-license-"] {
 	background: #fafafa;
 	padding: 14px;
@@ -83,5 +95,10 @@
 }
 
 @media screen and ( max-width: 727px ) {
-	.zp-tools-desc {display: block;padding-top:10px}
+	.zp-tools-desc {
+		display: block;padding-top:10px;
+	}
+	#tab_container.natal_orbs td {
+		padding-bottom: 8px;
+	}
 }

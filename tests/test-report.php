@@ -7,6 +7,19 @@ class Test_Report extends WP_UnitTestCase {
 	public function setUp() {
 		$this->charts	= ZP_Helper::create_charts();
 		$this->chart	= $this->charts[0];
+
+		// Clear all custom orbs to reset them to 8.
+		$options = get_option( 'zodiacpress_settings' );
+		foreach( $options  as $k => $v ) {
+			if ( 0 === strpos( $k, 'orb_' ) ) {
+				unset( $options[ $k ] );
+			}
+		}
+		// update the option
+		global $zodiacpress_options;
+		$zodiacpress_options = $options;
+		update_option( 'zodiacpress_settings', $options );			
+
 	}
 
 	/**
@@ -361,12 +374,11 @@ class Test_Report extends WP_UnitTestCase {
  		$actual = $property->getValue( $zp_object );
 
 		$this->assertInternalType( 'array', $actual );
-		$this->assertCount( 10, $actual );
-
 		$actual_aspects_list = wp_list_pluck( $actual, 'id' );
 		foreach ( $expected as $expect ) {
 			$this->assertContains( $expect, $actual_aspects_list );
 		}
+		$this->assertCount( 10, $actual );
 
 	}
 
@@ -404,49 +416,6 @@ class Test_Report extends WP_UnitTestCase {
 		}
 
 	}
-		/**
-	 * Test enabled_aspects with decreased orb
-	 */
-	public function test_enabled_aspects_decreased_orb() {
-
-		$options = get_option( 'zodiacpress_settings' );
-		
-		// decrease orb
-		$options['natal_orb'] = 5;
-
-		// update the global variable.
-		global $zodiacpress_options;
-		$zodiacpress_options = $options;
-		update_option( 'zodiacpress_settings', $options );
-
-		$expected = array(
-			'moon_square_nn',
-			// 'mercury_quincunx_jupiter',
-			// 'mercury_square_saturn',
-			// 'mercury_opposition_pof',
-			// 'mercury_quincunx_asc',
-			'saturn_square_pluto',
-			'saturn_square_pof',
-			'saturn_quincunx_mc',
-			// 'pluto_conjunction_pof',
-			'asc_square_mc'
-			);
-
-		// Get actual value of ZP_Birth_Report::enabled_aspects
-		$zp_object = new ZP_Birth_Report( $this->chart, array( 'unknown_time' => '' ) );		
-		$property = ZP_Helper::get_private_property( 'ZP_Birth_Report', 'enabled_aspects' );
- 		$actual = $property->getValue( $zp_object );
-
-		$this->assertInternalType( 'array', $actual );
-		$this->assertCount( 5, $actual );
-
-		$actual_aspects_list = wp_list_pluck( $actual, 'id' );
-		foreach ( $expected as $expect ) {
-			$this->assertContains( $expect, $actual_aspects_list );
-		}
-
-	}
-
 	/**
 	 * Test the ZP_Birth_Report::enabled_planets_in_houses property with only some planets enabled.
 	 */
