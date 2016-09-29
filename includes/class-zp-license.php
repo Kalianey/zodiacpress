@@ -156,9 +156,8 @@ class ZP_License {
 		return $settings;
 	}
 
-
 	/**
-	 * Display help text at the top of the Licenses tag
+	 * Display help text at the top of the Licenses tab
 	 *
 	 * @access  public
 	 * @param   string   $active_tab
