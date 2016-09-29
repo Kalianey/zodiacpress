@@ -541,13 +541,12 @@ function zp_license_key_callback( $args ) {
 
 	if ( ! empty( $license ) && is_object( $license ) ) {
 
-
 		$now				= current_time( 'timestamp' );
 		$expiration			= strtotime( $license->expires, $now );
 		$format_expiration	= date_i18n( get_option( 'date_format' ), $expiration );
 
 		// Since we only check for licenses weekly, it may be expired so check the date even though we don't check license status on every page load.
-		if ( $expiration < $now ) {
+		if ( 'lifetime' != $license->expires && $expiration < $now ) {
 			$license->license = 'expired';
 		}
 
