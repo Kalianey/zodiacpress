@@ -30,14 +30,15 @@ You have the option to allow people with unknown birth times to generate basic n
 
 The Planets in Houses section of the report will tell you if you have a planet in one house, but conjunct the next house (within 1.5 degrees orb; orb can be modified with a filter).
 
+Entering your interpretations is not required since you can generate reports without interpretations text. See the screenshots (link above) to see how a basic report without interpretations text looks.
+
 **Technical Details**
 
 ZodiacPress gets birth place latitude/longitude coordinates from the GeoNames geographical database which uses the latest revision of World Geodetic System (WGS 84). 
 
-ZodiacPress uses the Swiss Ephemeris (under GNU GPLv2) to get the longitude of the planets/celestial bodies.
+ZP uses the Swiss Ephemeris (under GNU GPLv2) to get the longitude of the planets/celestial bodies.
 
-ZodiacPress uses the tropical zodiac.
-
+ZP uses the tropical zodiac.
 
 **Internationalization**
 
@@ -48,6 +49,10 @@ Much effort has been made to internationalize even the digits (numbers, years, a
 If your website uses Windows hosting, you'll need to use the [ZodiacPress Windows Server](https://cosmicplugins.com/downloads/zodiacpress-windows-server/ "ZodiacPress Windows Server") plugin for the birth reports to be generated correctly.
 
 See the full [ZodiacPress documentation](https://cosmicplugins.com/docs/category/zodiacpress/ "ZodiacPress documentation").
+
+**Support**
+
+Need help? I'm glad to help via the plugin's official support forum (link above).
 
 == Installation ==
 
@@ -81,6 +86,14 @@ See these [troubleshooting articles](https://cosmicplugins.com/docs/category/zod
 = What house system is used for the "Planets in Houses" section of the report? =
 
 The Placidus House System is used. To change the house system, you need the [ZP House Systems](https://cosmicplugins.com/downloads/zodiacpress-house-systems/ "ZP House Systems") extension.
+
+= How can I get help or support? =
+
+I'm happy to help via the plugin's official support forum (link above).
+
+= How can I give back? =
+
+Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plugin. Thank you.
 
 == Screenshots ==
 
