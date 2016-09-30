@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=me%40
 Tags: zodiacpress, zodiac, astrology, natal report, natal reports, birth report, birth reports, astrology reports, horoscope
 Requires at least: 3.7
 Tested up to: 4.6.1
-Stable tag: 1.0
+Stable tag: 1.2
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,8 @@ The Planets in Houses section of the report will tell you if you have a planet i
 Entering your interpretations is not required since you can generate reports without interpretations text. See the screenshots (link above) to see how a basic report without interpretations text looks.
 
 **Technical Details**
+
+You get granular control over aspect orbs. It lets you assign different orbs for each planet and each type of aspect.
 
 ZodiacPress gets birth place latitude/longitude coordinates from the GeoNames geographical database which uses the latest revision of World Geodetic System (WGS 84). 
 
@@ -108,10 +110,19 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
  
 == Changelog ==
 
+= 1.2 =
+* New - Added granular control over orbs. Custom orbs can now be set per each type of aspect and per each planet.
+* Fix - Birth report was not working on https/SSL/encrypted pages. The free Geonames webservices only serves over http. The call to Geonames is now made from the server side, rather than in the browser, to support https/SSL.
+* Fix - Orb setting was stuck on 8 even if a custom orb was set.
+* Maintenance - Updated the .pot language file.
+
 = 1.0 =
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.2 =
+NEW - Orb controls. FIX - Now works on https/SSL encrypted pages.
 
 = 1.0 =
 * Initial public release.
