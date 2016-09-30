@@ -14,8 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function zp_register_scripts() {
 
-	global $zodiacpress_options;
-
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style( 'zp', ZODIACPRESS_URL . 'assets/css/zp' . $suffix . '.css', array(), ZODIACPRESS_VERSION );
@@ -28,16 +26,13 @@ function zp_register_scripts() {
 	$langcode = substr( $wplang, 0, 2 );
 	$city_list_lang = ( 'en' != $langcode ) ? $langcode : '';
 
-	$geonames_username = empty( $zodiacpress_options[ 'geonames_user' ] ) ? 'demo' : trim( $zodiacpress_options[ 'geonames_user' ] );
-
 	$data = array(
 			'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
 			'selected'		=> __( 'Selected:', 'zodiacpress' ),
 			'lat'			=> __( 'Latitude:', 'zodiacpress' ),
 			'long'			=> __( 'Longitude:', 'zodiacpress' ),
 			'utc'			=> __( 'UTC time offset:', 'zodiacpress' ),
-			'lang'			=> $city_list_lang,
-			'geonames_user'	=> $geonames_username
+			'lang'			=> $city_list_lang
 		);
 	wp_localize_script( 'zp', 'zp_ajax_object', $data );
 

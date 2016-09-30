@@ -4,12 +4,13 @@
 		
 		// Get timezone id by coordinates from Geonames webservice
 		$.ajax({
-			url: "//api.geonames.org/timezoneJSON",
-			dataType: "jsonp",			
+			url: zp_ajax_object.ajaxurl,
+			dataType: "json",
+			type: "POST",		
 			data: {
+				action: 'zp_get_timezone_id',
 				lat: latdeci,
 				lng: longdeci,
-				username: zp_ajax_object.geonames_user
 			},
 			success: function( response ) {
 				$('<input>').attr({
@@ -24,19 +25,17 @@
 	}
 
 	$(function() {
-
+		
 		// Autocomplete city
 		$( '#city' ).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
-					url: "//api.geonames.org/searchJSON",
-					dataType: "jsonp",
+					url: zp_ajax_object.ajaxurl,
+					dataType: "json",
+					type: "POST",
 					data: {
-						featureClass: "P",
-						style: "full",
-						maxRows: 12,
+						action: 'zp_get_cities_list',
 						name_startsWith: request.term,
-						username: zp_ajax_object.geonames_user,
 						lang: zp_ajax_object.lang
 					},
 					success: function( data ) {
@@ -72,8 +71,8 @@
 				getGeoTZ( ui.item.latdeci, ui.item.lngdeci );// get timezone, to get offset				
 			}
 		});
-
-		// Fill in time offset upon clicking Next.		
+	
+		// Fill in time offset upon clicking Next.
 		$('#zp-fetch-offset').click(function(e) {
 			var data = {
 				action: 'zp_tz_offset',
