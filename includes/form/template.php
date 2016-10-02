@@ -11,6 +11,17 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Render the HTML for the Name form field.
+ */
+function zp_name_form_field() {
+	?>
+	<p class="zp-name-field">
+		<label for="name" class="zp-form-label"><?php _e( 'Name', 'zodiacpress' ); ?> </label>
+		<span class="zp-input-text-wrap"><input id="name" name="name" class="zp-input-text" type="text" /></span>
+	</p>
+	<?php
+}
+/**
  * Renders the HTML select options for the Month form field.
  */
 function zp_month_select_options() {
@@ -126,18 +137,19 @@ function zp_form( $report, $args = array() ) {
 	global $zodiacpress_options;
 	$allow_unknown_bt_key = $report . '_allow_unknown_bt';
 	$allow_unknown_bt = empty( $zodiacpress_options[ $allow_unknown_bt_key ] ) ? false : true;
-
 	?>
 	<form id="zp-<?php echo esc_attr( $report ); ?>-form" method="post" class="zp-form">
 	
-		<?php do_action( 'zp_form_above_name', $report, $args ); ?>
+		<?php 
+		// Show name field only for reports that require it
+		if (  apply_filters( 'zp_form_show_name_field', true, $args['report'] ) ) {
 
-		<p class="zp-name-field">
-			<label for="name" class="zp-form-label"><?php _e( 'Name', 'zodiacpress' ); ?> </label>
-			<span class="zp-input-text-wrap"><input id="name" name="name" class="zp-input-text" type="text" required /></span>
-		</p>
-
-		<?php do_action( 'zp_form_below_name', $report, $args ); ?>
+			do_action( 'zp_form_above_name', $report, $args );
+			zp_name_form_field();
+			do_action( 'zp_form_below_name', $report, $args );
+	
+		}
+		?>
 
 		<div id="zp-ajax-birth-data">
 			<fieldset class="zp-birthdate">

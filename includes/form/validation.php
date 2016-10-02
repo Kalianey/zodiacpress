@@ -106,11 +106,14 @@ function zp_validate_form( $data, $partial = false ) {
 
 	// Validate the remaining fields (on full final submission)
 
-	if ( empty( $data['name'] ) ) {
-		return __('Please enter a Name', 'zodiacpress');
-	} else {
-		$name = sanitize_text_field( $data['name'] );
+	// Require name only if field is shown for this type of report.
+	if ( apply_filters( 'zp_form_show_name_field', true, $report_var ) ) {
+		if ( empty( $data['name'] ) ) {
+			return __('Please enter a Name', 'zodiacpress');
+		}
 	}
+
+	$name = ! empty( $data['name'] ) ? sanitize_text_field( $data['name'] ) : '';
 
 	// Validate offset.
 
