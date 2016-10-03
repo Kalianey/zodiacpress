@@ -142,9 +142,10 @@
 							$( '#zp-report-content' ).append(reportData.report);
 							$( '#zp-form-wrap' ).hide();
 							// Scroll to top of report
-							var distance = $('#zp-report-wrap').offset().top
-							$( 'html,body' ).animate({scrollTop: distance}, 'slow');
-
+							var distance = $('#zp-report-wrap').offset().top - 70;
+							$( 'html,body' ).animate({
+								scrollTop: distance
+							}, 'slow');
 						}
 					
 					}					
