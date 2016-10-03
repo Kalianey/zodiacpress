@@ -29,11 +29,18 @@ function zp_birthreport_shortcode( $atts ) {
 
 	<div id="zp-report-wrap">
 
-		<p class="zp-report-backlink">
-			<a href="<?php the_permalink(); ?>"><?php _e('Start Over', 'zodiacpress'); ?></a></p>
-			<?php do_action( 'zp_birthreport_content_before', array( 'report' => $report_atts['report'] ) ); ?>
-		<div id="zp-report-content"></div><!-- will be filled by ajax -->
+		<?php
+		// allow Start Over link to be manipulated with filter
+		if ( apply_filters( 'zp_show_start_over_link', true, $report_atts['report'] ) ) { ?>
+			<p class="zp-report-backlink">
+				<a href="<?php the_permalink(); ?>"><?php _e('Start Over', 'zodiacpress'); ?></a>
+			</p>
+		<?php
+		}
 
+		do_action( 'zp_birthreport_content_before', array( 'report' => $report_atts['report'] ) );
+		?>
+		<div id="zp-report-content"></div><!-- will be filled by ajax -->
 	</div>
 	<?php
 	return ob_get_clean();
