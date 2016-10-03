@@ -28,13 +28,10 @@
 
 /* Ajax
 -------------------------------------------------------------- */
-#zp-lat-label, #zp-long-label, #zp-offset-label{
+#zp-offset-label{
 	float:right;
 	clear:right;
 }
-
-#zp_lat_decimal,
-#zp_long_decimal,
 #zp_offset_geo {
 	float:right;	
 }

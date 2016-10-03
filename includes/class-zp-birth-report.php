@@ -472,7 +472,7 @@ class ZP_Birth_Report {
 
 		// Variation of the Natal rerport. For use by extensions.
 		$report_var = $this->form['zp-report-variation'];
-	
+
 		$out = '';
 		$out .= apply_filters( 'zp_report_header', $this->header(), $report_var );
 

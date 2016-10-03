@@ -150,8 +150,7 @@ function zp_get_registered_settings() {
 				)
 			)
 		),
-		'licenses' => apply_filters('zp_settings_licenses', array()	),
-		'misc' => apply_filters('zp_settings_misc',
+		'misc' => apply_filters( 'zp_settings_misc',
 			array(
 				'main' => array(
 					'misc_settings' => array(
@@ -176,7 +175,8 @@ function zp_get_registered_settings() {
 					),
 				)
 			)
-		),		
+		),
+		'licenses' => apply_filters('zp_settings_licenses', array()	),
 	);
 
 	return apply_filters( 'zp_registered_settings', $zp_settings );

@@ -27,7 +27,8 @@
 	$(function() {
 		
 		// Autocomplete city
-		$( '#city' ).autocomplete({
+
+		$( '#place' ).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
 					url: zp_ajax_object.ajaxurl,
@@ -41,8 +42,9 @@
 					success: function( data ) {
 						response( $.map( data.geonames, function( item ) {
 							return {
-								label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName, 
-								value: item.name,
+								value: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName, 
+								label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+
 								lngdeci: item.lng,
 								latdeci: item.lat
 							}
@@ -52,27 +54,41 @@
 			},
 			minLength: 2,
 			select: function( event, ui ) {
+
 				$( '.ui-state-error' ).hide();
-				// Display selected city and coordinates.
-				$( '#citylabel' ).text( zp_ajax_object.selected );
-				$( '#place' ).val( ui.item.label );
-				$( '#zp-lat-label' ).text( zp_ajax_object.lat );
-				$( '#zp-long-label' ).text( zp_ajax_object.long );
-				$( '#zp-coordinates' ).show();
-				$( '#zp_lat_decimal' ).val(ui.item.latdeci);
-				$( '#zp_long_decimal' ).val(ui.item.lngdeci);
 
 				// Reset the Offset section in case of changing city.
+				
 				$( '#zp-offset-wrap' ).hide();
 				$( '#zp-fetch-birthreport' ).hide();
 				$( '#zp-form-tip' ).hide();
 				$( '#zp-fetch-offset' ).show();
 
-				getGeoTZ( ui.item.latdeci, ui.item.lngdeci );// get timezone, to get offset				
+				// get timezone, which will be used to get offset
+
+				getGeoTZ( ui.item.latdeci, ui.item.lngdeci );
+
+				// Grab the birthplace coordinates
+
+				$('<input>').attr({
+					type: 'hidden',
+					id: 'zp_lat_decimal',
+					name: 'zp_lat_decimal',
+					value:  ui.item.latdeci
+				}).appendTo( '#zp-timezone-id' );
+				
+				$('<input>').attr({
+					type: 'hidden',
+					id: 'zp_long_decimal',
+					name: 'zp_long_decimal',
+					value:  ui.item.lngdeci
+				}).appendTo( '#zp-timezone-id' );
+
 			}
 		});
 	
 		// Fill in time offset upon clicking Next.
+
 		$('#zp-fetch-offset').click(function(e) {
 			var data = {
 				action: 'zp_tz_offset',
@@ -84,6 +100,7 @@
 				data: data,
 				dataType: "json",
 				success: function( data ) {
+		
 					if (data.error) {
 						$( '.ui-state-error' ).hide();
 						var span = $( '<span />' );
@@ -106,15 +123,15 @@
 							$( '#zp-fetch-offset' ).hide();
 							$( '#zp-fetch-birthreport' ).show();
 						}
-					
 					}
+					
 				}
 			});
 			return false;
 		});
 
-
 		// Fetch birth report upon clicking submit
+
 		$( '#zp-fetch-birthreport' ).click(function() {
 			$.ajax({
 				url: zp_ajax_object.ajaxurl,
@@ -156,6 +173,7 @@
 		});
 
 		// Reset the Offset if date is changed.
+
 		$('#month, #day, #year').on('change', function () {
 			var changed = !this.options[this.selectedIndex].defaultSelected;
 			if (changed) {

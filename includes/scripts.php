@@ -27,12 +27,9 @@ function zp_register_scripts() {
 	$city_list_lang = ( 'en' != $langcode ) ? $langcode : '';
 
 	$data = array(
-			'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
-			'selected'		=> __( 'Selected:', 'zodiacpress' ),
-			'lat'			=> __( 'Latitude:', 'zodiacpress' ),
-			'long'			=> __( 'Longitude:', 'zodiacpress' ),
-			'utc'			=> __( 'UTC time offset:', 'zodiacpress' ),
-			'lang'			=> $city_list_lang
+			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+			'utc'		=> __( 'UTC time offset:', 'zodiacpress' ),
+			'lang'		=> $city_list_lang
 		);
 	wp_localize_script( 'zp', 'zp_ajax_object', $data );
 

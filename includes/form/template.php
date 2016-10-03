@@ -193,21 +193,14 @@ function zp_form( $report, $args = array() ) {
 
 				<?php } ?>
 			</fieldset>
-
 			<p class="zp-birthplace">
-				<label class="zp-form-label"><?php _e( 'Birth City', 'zodiacpress' ); ?></label>
+				<label for="place" class="zp-form-label"><?php _e( 'Birth City', 'zodiacpress' ); ?></label>
 				<span class="ui-widget zp-input-text-wrap">
-					<input id="city" name="city" class="zp-input-text" />
-				</span></p>
+					<input id="place" name="place" class="zp-input-text" />
+				</span>
+			</p>
 			
 			<span id="zp-timezone-id"></span>
-			<p id="zp-coordinates" class="zp-clear">
-				<label id="citylabel" for="place"></label>
-				<input id="place" name="place" size="47" type="text" tabindex="-1" readonly />
-				<span id="zp-lat-label"></span>
-				<input id="zp_lat_decimal" name="zp_lat_decimal" size="47" type="text" tabindex="-1" readonly />
-				<span id="zp-long-label"></span>
-				<input id="zp_long_decimal" name="zp_long_decimal" size="47" type="text" tabindex="-1" readonly /></p>
 
 			<?php do_action( 'zp_form_below_person_one_ajax', $report, $args ); ?>
 			<input type="hidden" name="zp-report-variation" value="<?php echo $args['report']; ?>">
@@ -216,7 +209,8 @@ function zp_form( $report, $args = array() ) {
 
 		<p id="zp-offset-wrap" class="zp-clear">
 			<span id="zp-offset-label"></span>
-			<input id="zp_offset_geo" name="zp_offset_geo" size="47" type="text" tabindex="-1" /></p>
+			<input id="zp_offset_geo" name="zp_offset_geo" size="47" type="text" tabindex="-1" />
+		</p>
 		<?php do_action( 'zp_form_below_person_one_offset', $report, $args ); ?>
 
 		<p>
