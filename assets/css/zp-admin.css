@@ -2,7 +2,7 @@
 	font-size: 23px;
 	line-height: 29px;
 	padding: 9px 15px 4px 0px;
-	display: block;
+	display: inline-block;
 }
 #system-info-textarea {
 	width: 800px;
@@ -18,12 +18,7 @@
 	clear:both;
 	padding-top:1em;
 }
-.zp-extend-link::before {
-    font-family: "zodiacpress" !important;
-    content: "\e90c";
-    padding: 0 10px 0 0;
-}
-.zp-extend-link {
+.zp-button {
 	background: #26264c;
 	border: 0;
 	border-radius: 2px;
@@ -33,19 +28,27 @@
 	box-sizing: border-box;
 	text-decoration: none;
 }
-.zp-extend-link:hover, .zp-extend-link:focus{
+.zp-button:hover, .zp-button:focus{
 	background-color: #333366;
 	color: #fff;
+}
+.zp-feedback-link {
+	margin-right:7px;
+}
+.zp-extend-link::before {
+	font-family: "zodiacpress" !important;
+	content: "\e90c";
+	padding: 0 10px 0 0;
 }
 .zp-helptext{
 	padding-top:2em;
 }
 #tab_container.natal_orbs th {
-  padding:0;
+	padding:0;
 }
 #tab_container.natal_orbs td {
-  padding:0 0 4px 0;
-  margin-bottom: 0;
+	padding:0 0 4px 0;
+	margin-bottom: 0;
 }
 .wrap-licenses .zp-license-data[class*="zp-license-"] {
 	background: #fafafa;

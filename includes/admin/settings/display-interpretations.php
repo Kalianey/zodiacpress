@@ -38,7 +38,8 @@ function zp_interpretations_page() {
 	?>
 	<div class="wrap">
 		<span class="zp-admin-title"><?php _e( 'ZodiacPress', 'zodiacpress' ); ?></span>
-		<?php zp_extend_link(); ?>
+		<?php zp_extend_link();
+			zp_feedback_link()?>
 		<h1 class="nav-tab-wrapper clear">
 			<?php
 			settings_errors( 'zp-intpers-notices' );

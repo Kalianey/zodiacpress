@@ -28,7 +28,8 @@ function zp_options_page() {
 	ob_start();
 	?>
 	<div class="wrap <?php echo 'wrap-' . $active_tab; ?>">
-		<?php zp_extend_link(); ?>
+		<?php zp_extend_link();
+			zp_feedback_link(); ?>
 		<h1 class="nav-tab-wrapper clear">
 			<?php
 			settings_errors( 'zp-notices' );

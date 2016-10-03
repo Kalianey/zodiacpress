@@ -21,7 +21,8 @@ function zp_tools_page() {
 	$active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : 'cleanup';
 	?>
 	<div class="wrap">
-	<?php zp_extend_link(); ?>
+	<?php zp_extend_link();
+		zp_feedback_link(); ?>
 	<h1 class="nav-tab-wrapper clear">
 		<?php foreach( zp_get_tools_tabs() as $tab_id => $tab_name ) {
 			$active = $active_tab == $tab_id ? ' nav-tab-active' : '';
