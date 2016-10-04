@@ -1,6 +1,6 @@
 === ZodiacPress  ===
 Contributors: isabel104
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=me%40isabelcastillo%2ecom
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZQKG2M58G&lc=US&no_note=1&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 Tags: zodiacpress, zodiac, astrology, natal report, natal reports, birth report, birth reports, astrology reports, horoscope
 Requires at least: 3.7
 Tested up to: 4.6.1
