@@ -143,56 +143,6 @@ final class ZP_Chart {
 	}
 
 	/**
-	 * Query the Ephemeris.
-	 *
-	 * @param string $planets Planets and points to calculate. Leave blank for only houses.
-	 * @param string $format The format for the output, in sequence letters.
-	 * @param string $house_system The house system to use for house cusp calculations
-	 * @param string $options Additional arbitrary options
-	 */
-	public function query_ephemeris( $planets = '', $format = '', $house_system = '', $options = '' ) {
-
-		$f = $format ? ( '-f' . $format ) : '';
-
-		// house option tells ephemeris to include house cusps
-		$house = '';
-
-		if ( $house_system ) {
-
-			/**
-			* Adjust latitude/longitude coordinates for precision, to match astro.com's calculations since those are more widely accepted among the astrological community. 
-			For example, GeoNames' latitude for Miami = 25.77427, whereas astro.com's is 25.766666666667.
-			(Basically, it seems astro.com is ignoring seconds, or using less significant digits.)
-			While GeoNames is more accurate, astro.com's is more widely accepted, and our discrepancy would reduce precision (from astro.com) in house cusps and ASC/MC calculations by many seconds and possibly even minutes. So here, I recalculate to ignore seconds in favor of precision with astro.com.
-			*/
-			$longitude_degree	= zp_extract_whole_degrees( $this->longitude );
-			$longitude_minute	= zp_extract_whole_minutes( $this->longitude );
-			$latitude_degree	= zp_extract_whole_degrees( $this->latitude );
-			$latitude_minute	= zp_extract_whole_minutes( $this->latitude );
-
-			$east_west		= ( $this->longitude >= 0 ) ? '1' : '-1';
-			$north_south	= ( $this->latitude >= 0 ) ? '1' : '-1';
-
-			$longitude		= $east_west * ( $longitude_degree + ( $longitude_minute/ 60 ) );
-			$latitude		= $north_south * ( $latitude_degree + ( $latitude_minute / 60 ) );
-
-			$house = '-house' . $longitude . ',' . $latitude . ',' . $house_system;
-		}
-
-		// Set up Swiss Ephemeris path
-		$sweph = apply_filters( 'zp_sweph_dir', ZODIACPRESS_PATH . 'sweph' );
-		$PATH = '';
-		putenv( "PATH=$PATH:{$sweph}" );
-		$swetest = apply_filters( 'zp_sweph_file', 'swetest' );
-
-		// Query the ephemeris
-		exec( "$swetest -edir$sweph -b{$this->ut_date} -ut{$this->ut_time} -p$planets $house -eswe $f $options -g, -head", $out);
-
-		return $out;
-		
-	}
-
-	/**
 	 * Set up the chart data.
 	 */
 	private function setup_chart() {
@@ -202,7 +152,19 @@ final class ZP_Chart {
 		// Ephemeris gives wrong calculations for Whole Sign houses, so query it as Placidus, then calculate Whole houses manually.
 		$final_house_system = ( 'W' == $this->house_system ) ? 'P' : $this->house_system;
 
-		$chart = $this->query_ephemeris( '0123456789DAt', 'ls', $final_house_system );
+		// Args for the ephermis query
+		$args = array(
+			'planets'		=> '0123456789DAt',
+			'format'		=> 'ls',
+			'house_system'	=> $final_house_system,
+			'latitude'		=> $this->latitude,
+			'longitude'		=> $this->longitude,
+			'ut_date'		=> $this->ut_date,
+			'ut_time'		=> $this->ut_time
+		);
+
+		$ephemeris	= new ZP_Ephemeris( $args );
+		$chart		= $ephemeris->query();
 
 		if ( empty( $chart ) ) {
 			return false;
