@@ -67,14 +67,15 @@ class ZP_Ephemeris {
 
 		$options = wp_parse_args( $args, $default );
 
-		$this->planets	= $options['planets'];
-		$this->format	= $options['format'] ? ( '-f' . $options['format'] ) : '';
-
-		$this->setup_house( $options['house_system'], $options['latitude'], $options['longitude'] );
-
 		$this->ut_date	= $options['ut_date'];
+		$this->planets	= $options['planets'];
+
+		// Optional options
+		$this->format	= $options['format'] ? ( '-f' . $options['format'] ) : '';		
 		$this->ut_time	= $options['ut_time'] ? ( '-ut' . $options['ut_time'] ) : '';
 		$this->options	= $options['options'];
+
+		$this->setup_house( $options['house_system'], $options['latitude'], $options['longitude'] );
 
 	}
 
@@ -91,9 +92,9 @@ class ZP_Ephemeris {
 
 			/**
 			* Adjust latitude/longitude coordinates for precision, to match astro.com's calculations since those are more widely accepted among the astrological community. 
-			For example, GeoNames' latitude for Miami = 25.77427, whereas astro.com's is 25.766666666667.
-			(Basically, it seems astro.com is ignoring seconds, or using less significant digits.)
-			While GeoNames is more accurate, astro.com's is more widely accepted, and our discrepancy would reduce precision (from astro.com) in house cusps and ASC/MC calculations by many seconds and possibly even minutes. So here, I recalculate to ignore seconds in favor of precision with astro.com.
+			* For example, GeoNames' latitude for Miami = 25.77427, whereas astro.com's is 25.766666666667.
+			* (Basically, it seems astro.com is ignoring seconds (and just using degree and minutes to make the decimal), or using less significant digits.)
+			* While GeoNames is more accurate, astro.com's is more widely accepted, and our discrepancy would reduce precision (from astro.com) in house cusps and ASC/MC calculations by many seconds and possibly even minutes. So here, I recalculate the decimal using only degree and minutes, to ignore seconds in favor of precision with astro.com.
 			*/
 			$longitude_degree	= zp_extract_whole_degrees( $longitude );
 			$longitude_minute	= zp_extract_whole_minutes( $longitude );
