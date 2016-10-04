@@ -80,7 +80,7 @@ function zp_get_planets( $houses = '', $include = '' ) {
 		),
 		array(
 			'id'		=> 'lilith',
-			'label'		=> __( 'Lilith', 'zodiacpress' ),
+			'label'		=> __( 'Black Moon Lilith', 'zodiacpress' ),
 			'supports'	=> array( 'houses' )
 		),
 		array(
