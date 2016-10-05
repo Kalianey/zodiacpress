@@ -18,7 +18,7 @@ final class ZP_Chart {
 	/**
 	 * Universal Date for this chart
 	 */
-	private $ut_date;
+	public $ut_date;
 
 	/**
 	 * Universal Time for this chart
@@ -135,9 +135,12 @@ final class ZP_Chart {
 		$minute	= $moment['minute'] - ( $fraction * 60 );
 		$second = '00';
 
-		$unix_timestamp	= mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
-		$this->ut_date	= strftime( "%d.%m.%Y", $unix_timestamp );
-		$this->ut_time	= strftime( "%H:%M:%S", $unix_timestamp );
+		// mktime() uses whatever zone its server wants, so force it to use UTC here
+		date_default_timezone_set('UTC');
+
+		$unix_timestamp = mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
+		$this->ut_date = strftime( "%d.%m.%Y", $unix_timestamp );
+		$this->ut_time = strftime( "%H:%M:%S", $unix_timestamp );
 
 		return true;
 	}
@@ -154,7 +157,7 @@ final class ZP_Chart {
 	 */
 	public function query_ephemeris( $planets = '', $format = '', $house_system = '', $options = '' ) {
 		
-		// Args for the ephermis query
+		// Args for the ephemeris query
 		$args = array(
 			'planets'		=> $planets,
 			'format'		=> $format,
@@ -182,7 +185,7 @@ final class ZP_Chart {
 		// Ephemeris gives wrong calculations for Whole Sign houses, so query it as Placidus, then calculate Whole houses manually.
 		$final_house_system = ( 'W' == $this->house_system ) ? 'P' : $this->house_system;
 
-		// Args for the ephermis query
+		// Args for the ephemeris query
 		$args = array(
 			'planets'		=> '0123456789DAt',
 			'format'		=> 'ls',
