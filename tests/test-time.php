@@ -7,7 +7,10 @@ class Test_Time extends WP_UnitTestCase {
 	public function test_get_timezone_offset() {
 	
 		$datetimes = array(
-			array( 'America/Los_Angeles',	'1955-02-24 19:15', '-8' ),
+			// this is the dtstamp in ajax-functions.php:
+			array( 'America/Los_Angeles',	'1955-02-24 19:15:00', '-8' ),
+			// this is the dtstamp in phpfiddle.net:
+			array( 'America/Los_Angeles',	'1955-02-25 03:15:00', '-8' ),
 			array( 'America/Chicago',		'1958-08-29 19:33', '-5' ),
 			array( 'America/Managua',		'1979-03-19 11:00', '-5' ),
 			array( 'Asia/Tokyo',			'1972-09-12 07:55', '9' ),
@@ -73,5 +76,50 @@ class Test_Time extends WP_UnitTestCase {
 		}
 
 	}
+
+	/**
+	 * Test the formatted 12 hour time displayed in the report header
+	 */
+	public function test_formatted_12_hour_time() {
+
+		// local form hour (in 24-hr) and minute:
+		$expected = array(
+			array( '19', '15', '7:15 pm' ),
+			array( '07', '15', '7:15 am' ),
+			);
+			
+		foreach ( $expected as $expect ) {
+
+			$time = $expect[0] . ':' . $expect[1];
+
+			$this->assertEquals( $expect[2], date( 'g:i a', strtotime( $time ) ) );
+		}
+
+	}
+
+	/**
+	 * Test the formatted 12 hour time displayed in the report header with off timezone
+	 */
+	public function test_formatted_12_hour_time_off_timezone() {
+
+		// random timezone
+		date_default_timezone_set( 'America/Chicago' );
+
+		// local form hour (in 24-hr) and minute:
+		$expected = array(
+			array( '19', '15', '7:15 pm' ),
+			array( '07', '15', '7:15 am' ),
+			);
+			
+		foreach ( $expected as $expect ) {
+
+			$time = $expect[0] . ':' . $expect[1];
+
+			$this->assertEquals( $expect[2], date( 'g:i a', strtotime( $time ) ) );
+		}
+
+	}
+
+	
 
 }

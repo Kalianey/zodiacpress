@@ -279,7 +279,8 @@ class ZP_Birth_Report {
 
 			foreach ( $cleared_planets as $k => $planet ) {
 
-				$sign_pos	= floor( $this->chart->planets_longitude[ $k ] / 30 );
+				$sign_num	= floor( $this->chart->planets_longitude[ $k ] / 30 );
+
 				$retrograde	= '';
 
 				// Check for retrograde, but not for POF, Vertex, Asc, or MC
@@ -287,11 +288,36 @@ class ZP_Birth_Report {
 					$retrograde = '&nbsp; R<sub>x</sub> ';
 				}
 
+				// If birthtime is unknown, check if planet ingress occurs this day
+
+				if ( $this->form['unknown_time'] ) {
+
+					/*	For ephemeris, I need a timestring for midnight, the start of day,
+						at the chart's local date, then convert that to UT. I will scan 24 hours from that time.
+						Midnight in their local timezone will not be the same as UT midnight.
+						They don't know their birth time but they know they were born
+						on that day at THAT location. 
+						Use the original form date which is their local date in their
+						own timezone, not UT date. ut_date may be different from date entered on form due to adjusting for tz offset. */
+
+					$form_date_midnight = $this->form['year'] . '-' .
+										$this->form['month'] . '-' .
+										$this->form['day'] . ' 00:00:00' . ' ' .
+										$this->form['geo_timezone_id'];
+
+					$timestamp = strtotime( $form_date_midnight );
+
+					$ingress = zp_is_planet_ingress_today( $k, $this->chart->planets_longitude[ $k ], $timestamp );
+
+				}
+
 				$planets_in_signs[] = array(
-									'id'	=> $planet['id'] . '_' . $signs[ $sign_pos ]['id'],
-									'label'	=> $planet['label'] . ' in ' . $signs[ $sign_pos ]['label'],
-									'zodiacal_dms' => zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde
-									);
+									'id'	=> $planet['id'] . '_' . $signs[ $sign_num ]['id'],
+									'label'	=> $planet['label'] . ' in ' . $signs[ $sign_num ]['label'],
+									'zodiacal_dms' => zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde,
+									'ingress_0' => isset( $ingress[0] ) ? $ingress[0] : '',
+									'ingress_1' => isset( $ingress[1] ) ? $ingress[1] : '',
+									);// @todo incorporate ingress notes into report output
 			}
 		}
 
@@ -338,8 +364,6 @@ class ZP_Birth_Report {
 
 				$house_num = $this->chart->planets_house_numbers[ $k ];
 
-				$next = '';
-				
 				// Check if planet is conjunct the next house cusp.
 				if ( ! empty( $this->chart->conjunct_next_cusp[ $k ] ) ) {
 					$next = $this->planet_in_next_house( $planet, $house_num );

@@ -67,6 +67,80 @@ class Test_Astro extends WP_UnitTestCase {
 		foreach ( $longitudes as $expected ) {
 			$this->assertEquals( $expected[1], zp_get_zodiac_sign_dms( $expected[0] ), 'Wrong zodiac sign dms for: ' . $expected[0] );
 		}
+	}
+
+	public function test_is_planet_near_ingress() {
+
+		/*
+		 * 
+			limits for planet 0 are < 2 and > 28
+			limits for planet 2 are < 2 and > 28
+			limits for planet 3 are < 2 and > 28
+			limits for planet 4 are < 2 and > 28
+			limits for planet 5 are < 0.5 and > 29.5
+			limits for planet 6 are < 0.266666666667 and > 29.7333333333
+			limits for planet 7 are < 0.15 and > 29.85
+			limits for planet 8 are < 0.116666666667 and > 29.8833333333
+			limits for planet 9 are < 0.116666666667 and > 29.8833333333
+			limits for planet 10 are < 0.3 and > 29.7
+			limits for planet 11 are < 0.333333333333 and > 29.6666666667
+			limits for planet 12 are < 0.5 and > 29.5 
+
+		 */
+		
+		$expected = array(
+			array( '0', '1.98', true ),
+			array( '0', '2.012', false ),
+			array( '0', '28.012', true ),
+			array( '0', '27.012', false ),
+			array( '6', '.012', true ),
+			array( '6', '27.012', false ),
+			array( '6', '29.721555', false ),
+			array( '7', '29.98', true ),
+			array( '8', '0.11445', true ),
+			array( '8', '0.1167', false ),
+			array( '8', '29.88443', true ),
+			array( '8', '29.8831145', false ),
+			array( '10', '29.8831145', true ),
+			array( '11', '0.32255', true ),
+			array( '11', '0.3335', false ),
+		);
+
+		foreach ( $expected as $expect ) {
+
+			if ( $expect[2] ) {
+				$this->assertTrue( zp_is_planet_near_ingress( $expect[0], $expect[1] ), 'for planet ' . $expect[0] . ', longitude ' . $expect[1] );	
+			} else {
+				$this->assertFalse( zp_is_planet_near_ingress( $expect[0], $expect[1] ), 'for planet ' . $expect[0] . ', longitude ' . $expect[1] );
+			}
+		}
 
 	}
+	/**
+	 * @todo
+	 */
+	public function test_is_planet_ingress_today_true() {
+
+		$expected = array(
+			array( '0', '1.98' ),
+			array( '0', '2.012' ),
+			array( '0', '28.012' ),
+			array( '0', '27.012' ),
+			array( '6', '.012' ),
+			array( '6', '27.012' ),
+			array( '6', '29.721555' ),
+			array( '7', '29.98' ),
+			array( '8', '0.11445' ),
+			array( '8', '0.1167' ),
+			array( '8', '29.88443' ),
+			array( '8', '29.8831145' ),
+			array( '10', '29.8831145' ),
+			array( '11', '0.32255' ),
+			array( '11', '0.3335' ),
+		);
+
+		//zp_is_planet_ingress_today( $planet, $longitude, $date ) 
+
+	}
+
 }

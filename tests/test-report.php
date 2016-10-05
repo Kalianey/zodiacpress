@@ -6,7 +6,7 @@ class Test_Report extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->charts	= ZP_Helper::create_charts();
-		$this->chart	= $this->charts[0];
+		$this->chart	= $this->charts[0]; // Steve Jobs
 
 		// Clear all custom orbs to reset them to 8.
 		$options = get_option( 'zodiacpress_settings' );
@@ -209,10 +209,28 @@ class Test_Report extends WP_UnitTestCase {
 
 		$this->chart->unknown_time = 'on';
 
+		$form = array(
+				'name'					=> 'Steve Jobs',
+				'month'					=> '2',
+				'day'					=> '24',
+				'year'					=> '1955',
+				'hour'					=> '19',
+				'minute'				=> '15',
+				'city'					=> 'San Francisco',
+				'geo_timezone_id'		=> 'America/Los_Angeles',
+				'place'					=> 'San Francisco, California, United States',
+				'zp_lat_decimal'		=> '37.77493',
+				'zp_long_decimal'		=> '-122.41942',
+				'zp_offset_geo'			=> '-8',
+				'action'				=> 'zp_birthreport',
+				'zp-report-variation'	=> 'birthreport',
+				'unknown_time'			=> 'on'
+		);
+
 		$expected = array( 'sun', 'saturn' );
 
 		// Get calculated planets_in_signs
-		$zp_object	= new ZP_Birth_Report( $this->chart, array( 'unknown_time' => 'on' ) );		
+		$zp_object	= new ZP_Birth_Report( $this->chart, $form );		
 		$property	= ZP_Helper::get_private_property( 'ZP_Birth_Report', 'enabled_planets_in_signs' );
 		$calculated_planets_in_signs = $property->getValue( $zp_object );
 
@@ -389,6 +407,24 @@ class Test_Report extends WP_UnitTestCase {
 
 		$this->chart->unknown_time = 'on';
 
+		$form = array(
+				'name'					=> 'Steve Jobs',
+				'month'					=> '2',
+				'day'					=> '24',
+				'year'					=> '1955',
+				'hour'					=> '19',
+				'minute'				=> '15',
+				'city'					=> 'San Francisco',
+				'geo_timezone_id'		=> 'America/Los_Angeles',
+				'place'					=> 'San Francisco, California, United States',
+				'zp_lat_decimal'		=> '37.77493',
+				'zp_long_decimal'		=> '-122.41942',
+				'zp_offset_geo'			=> '-8',
+				'action'				=> 'zp_birthreport',
+				'zp-report-variation'	=> 'birthreport',
+				'unknown_time'			=> 'on'
+		);
+
 		$expected = array(
 			// 'moon_square_nn',
 			'mercury_quincunx_jupiter',
@@ -403,7 +439,7 @@ class Test_Report extends WP_UnitTestCase {
 			);
 
 		// Get actual value of ZP_Birth_Report::enabled_aspects
-		$zp_object = new ZP_Birth_Report( $this->chart, array( 'unknown_time' => 'on' ) );		
+		$zp_object = new ZP_Birth_Report( $this->chart, $form );		
 		$property = ZP_Helper::get_private_property( 'ZP_Birth_Report', 'enabled_aspects' );
  		$actual = $property->getValue( $zp_object );
 

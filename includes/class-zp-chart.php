@@ -120,6 +120,7 @@ final class ZP_Chart {
 			return false;
 		}
 
+		// Convert to UT
 		// Adjust date and time for minus hour due to timezone offset taking the hour negative.
 		$offset = $moment['zp_offset_geo'];
 			

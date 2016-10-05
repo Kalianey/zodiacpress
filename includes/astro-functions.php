@@ -76,7 +76,7 @@ function zp_get_planets( $houses = '', $include = '' ) {
 		array(
 			'id'		=> 'chiron',
 			'label'		=> __( 'Chiron', 'zodiacpress' ),
-			'supports'	=> array( 'houses' )
+			'supports'	=> array( 'houses' ) //t true lunar node
 		),
 		array(
 			'id'		=> 'lilith',
@@ -214,7 +214,7 @@ function zp_get_zodiac_signs() {
 
 function zp_get_zodiac_sign_dms( $longitude ) {
 
-	// incoming $longitude should never reach 360
+	// incoming $longitude should never reach 360. Only 359.999999 then goes to 0 degrees.
 	if ( $longitude >= 360 ) {
 		return 'ERROR 360: undefined';
 	}
@@ -329,9 +329,9 @@ function zp_get_planet_house_num( $planet, $cusps ) {
 /**
  * Check if a planet is conjunct the next house cusp.
  *
- * @param int $p_key The planet key
- * @param int $p_long The planet longitude decimal
- * @param int $p_house The house number which the planet resides in.
+ * @param int	$p_key The planet key
+ * @param float	$p_long The planet longitude decimal
+ * @param int	$p_house The house number which the planet resides in.
  * @param array $cusps Cusps for a single house system
  * 
  * @return bool True if planet is conjunct to next house cusp, otherwise false.
@@ -363,7 +363,7 @@ function zp_conjunct_next_cusp( $p_key = '', $p_long, $p_house, $cusps ) {
 
 /**
  * Calculate the Descendant longitude degrees for a chart
- * @param int $asc the Ascendant longitude degrees of the chart
+ * @param float $asc the Ascendant longitude degrees of the chart
  */
 function zp_calculate_descendant( $asc ) {
 	if ( empty( $asc ) ) {
@@ -371,4 +371,120 @@ function zp_calculate_descendant( $asc ) {
 	}
 	$desc = (int) $asc + 180;
 	return ( $desc >= 360 ) ? ( $desc - 360 ) : $desc;
+}
+
+/**
+ * Check if a planet is near ingress or recently ingressed into a new sign. Within approx. 48 hours.
+ * @param int $planet The planet's official index key
+ * @param float	$longitude The longitude decimal of the planet
+ * @return bool
+ */
+function zp_is_planet_near_ingress( $planet, $longitude ) {
+		
+	// Get the degree position in the sign, as in between 0 - 29.9999
+	$sign_num		= floor( $longitude / 30 );
+	$pos_in_sign	= $longitude - ( $sign_num * 30 );
+
+	/*
+	* Min, max limits, in degrees, for clearing that a planet did not ingress today.
+	* Keys are the official planet keys.
+	* This is done to narrow the window so we don't have to query the ephemeris to check for ingress on every planet.
+	* If the planet falls outside of these limits, we'll check the ephemeris for ingress.
+	*/
+	$limits = array(
+		0	=> array( 2, 28 ),// Sun, within 2 degrees of next/previous sign
+		2	=> array( 2, 28 ),// Mercury
+		3	=> array( 2, 28 ),// Venus
+		4	=> array( 2, 28 ),// Mars
+		5	=> array( 0.5, 29.5 ),// Jupiter, within 0.5 deg of next/previous sign
+		6	=> array( 1 / 3.75, 30 - ( 1 / 3.75 ) ), // Saturn, within 16min = (1/3.75)deg
+		7	=> array( 1 / ( 60 / 9 ), 30 - ( 1 / ( 60 / 9 ) ) ), // Uranus, within 9min = (1/(60/9))deg
+		8	=> array( 1 / ( 60 / 7 ), 30 - ( 1 / ( 60 / 7 ) ) ), // Neptune, within 7min = (1/(60/7))deg
+		9	=> array( 1 / ( 60 / 7 ), 30 - ( 1 / ( 60 / 7 ) ) ), // Pluto, within 7min = (1/(60/7))deg
+		10	=> array( 1 / ( 60 / 18 ), 30 - ( 1 / ( 60 / 18 ) ) ), // Chiron, within 18min = (1/(60/18))deg
+		11	=> array( 1 / 3, 30 - ( 1 / 3 ) ),// Black Moon Lilith, within 20 min
+		12	=> array( 0.5, 29.5 ),// north node, within 0.5 deg
+	);
+
+	if ( ! isset( $limits[ $planet ] ) ) {
+		return false;
+	}
+
+	// Check if a planet is within specific degrees of next sign or previous sign
+
+	if ( $pos_in_sign <= $limits[ $planet ][0] ||  $pos_in_sign >= $limits[ $planet ][1] ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
+ * Check if a planet ingress into a new sign 
+ occurs this day.
+ *
+ * @todo create phpunit tests for this
+ * @param int $planet The planet's official index key
+ * @param float	$longitude The longitude decimal of the planet
+ * @param string $timestamp Unix timestamp for midnight on the date to check for ingress
+ * @return mixed $ingress array of sign keys if ingress occurs this day, otherwise false 
+ */
+function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
+	
+	// Do not check time-sensitve points or planets, i.e. moon, asc, mc, pof, vertex
+	$planets = zp_get_planets();
+	if ( ! empty( $planets[ $planet ]['supports'] ) && in_array( 'birth_time_required', $planets[ $planet ]['supports'] ) ) {
+
+			return false;
+	}
+
+	$ingress = false;
+
+	// Avoid querying ephemeris for every planet unless it's near ingress
+	if ( zp_is_planet_near_ingress( $planet, $longitude ) ) {
+
+		// Map planet keys to official planet selection letters for Swiss Ephemeris
+		switch ( $planet ) {
+			case '10':
+				$planet = 'D';// Chiron
+				break;
+			case '11':
+				$planet = 'A';// mean lunar apogee (Lilith, Black Moon)
+				break;
+			case '12':
+				$planet = 't';// true node
+				break;
+		}
+
+		// Convert unix timestamp to UT string for ephemeris. 
+		$ut_date = strftime( "%d.%m.%Y", $timestamp );
+		$ut_time = strftime( "%H:%M:%S", $timestamp );
+
+		// Args for ephemeris query
+		$args = array(
+			'planets'	=> $planet,
+			'format'	=> 'l',
+			'ut_date'	=> $ut_date,
+			'ut_time'	=> $ut_time,// This should be the UT equivalent of the local midnight
+			'options'	=> '-n2 -s1 -hor -roundsec'// get 2 days
+		);
+
+		// Query ephemeris for this planet for 2 days (this day & next)
+		$ephemeris	= new ZP_Ephemeris( $args );
+		$data		= $ephemeris->query();
+
+		if ( empty( $data ) ) {
+			return false;
+		}
+
+		// Check the sign at 00:00 each day
+		$sign[] = floor( $data[0] / 30 );// this chart day
+		$sign[] = floor( $data[1] / 30 );// next day
+
+		if ( $sign[0] != $sign[1] ) {
+			// sign ingress occurs this day
+			$ingress = $sign;
+		}
+	}
+	return $ingress;
 }

@@ -65,17 +65,17 @@ class ZP_Ephemeris {
 			'options'		=> ''
 		);
 
-		$options = wp_parse_args( $args, $default );
+		$params = wp_parse_args( $args, $default );
 
-		$this->ut_date	= $options['ut_date'];
-		$this->planets	= $options['planets'];
+		$this->ut_date	= $params['ut_date'];
+		$this->planets	= $params['planets'];
 
 		// Optional options
-		$this->format	= $options['format'] ? ( '-f' . $options['format'] ) : '';		
-		$this->ut_time	= $options['ut_time'] ? ( '-ut' . $options['ut_time'] ) : '';
-		$this->options	= $options['options'];
+		$this->format	= $params['format'] ? ( '-f' . $params['format'] ) : '';		
+		$this->ut_time	= $params['ut_time'] ? ( '-ut' . $params['ut_time'] ) : '';
+		$this->options	= $params['options'];
 
-		$this->setup_house( $options['house_system'], $options['latitude'], $options['longitude'] );
+		$this->setup_house( $params['house_system'], $params['latitude'], $params['longitude'] );
 
 	}
 
