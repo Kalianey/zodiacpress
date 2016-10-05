@@ -32,7 +32,7 @@ function zp_ajax_autocomplete_cities() {
 		'featureClass'		=> 'P',
 		'style'				=> 'full',
 		'maxRows'			=> 12,
-		'name_startsWith'	=> urlencode( sanitize_text_field( $_POST['name_startsWith'] ) ),
+		'name_startsWith'	=> sanitize_text_field( $_POST['name_startsWith'] ),
 		'username'			=> urlencode( $geonames_user ),
 		'lang'				=> ! empty( $_POST['lang'] ) ? sanitize_text_field( $_POST['lang'] ) : '',
 	);
@@ -104,7 +104,6 @@ function zp_ajax_get_time_offset() {
 
 	}
 
-	// get datetime stamp
 	$dtstamp = strftime("%Y-%m-%d %H:%M:%S", mktime( $validated['hour'], $validated['minute'], 0, $validated['month'], $validated['day'], $validated['year'] ));
 
 	// get time offset
