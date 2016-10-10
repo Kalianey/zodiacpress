@@ -164,31 +164,48 @@ class ZP_Birth_Report {
 				$interps = get_option( $option_name );
 			}
 
-			$content .= '<p class="zp-subheading">' . $v['label'];
-			if ( isset( $v['zodiacal_dms'] ) ) {
-				$content .= ' <span class="zp-zodiacal-dms">' . $v['zodiacal_dms'] . '</span>';
-			}
-			$content .= '</p>';
+			// If birth time is unknown, check if planet ingress happens today
 
-			// Does interpretation exist for this?
-			if ( ! empty( $interps[ $v['id'] ] ) ) {
-				$content .= '<p>' . wp_kses_post( wpautop( $interps[ $v['id'] ] ) ) . '</p>';
-			}
+			if ( $this->form['unknown_time'] &&
+				'planets_in_signs' == $section &&
+				'' !== $v['ingress_0'] &&
+				'' !== $v['ingress_1'] ) {
+				
+				$content .= '<p class="zp-subheading">' .
+							sprintf( __( 'NOTE: %1$s changed signs the day you were born. It moved from %2$s to %3$s. Therefore, you will need your exact time of birth to know which of these two signs your %1$s is in.', 'zodiacpress' ),
+								zp_get_planets()[ $v['planet_key'] ]['label'],
+								zp_get_zodiac_signs()[ $v['ingress_0'] ]['label'],
+								zp_get_zodiac_signs()[ $v['ingress_1'] ]['label'] ) . 
+							'</p>';
 
-			// Check for planets conjunct the next house cusp.
-			if ( 'planets_in_houses' == $section ) {
-				if ( ! empty( $v['next_label'] ) ) {
-					$content .= '<p class="zp-subheading">' .
-							sprintf( __( 'NOTE: Since %s is very close to the next house cusp, the next item is also relevant.', 'zodiacpress' ), $v['planet_label'] ) .
-							'</p>' . 
-							'<p class="zp-subheading">' . $v['next_label'] . '</p>';
+			} else {
+				$content .= '<p class="zp-subheading">' . $v['label'];
+				if ( isset( $v['zodiacal_dms'] ) ) {
+					$content .= ' <span class="zp-zodiacal-dms">' . $v['zodiacal_dms'] . '</span>';
+				}
+				$content .= '</p>';
 
-					// Does interpretation exist for this?
-					if ( ! empty( $interps[ $v['next_id'] ] ) ) {
-						$content .=	'<p>' . wp_kses_post( wpautop( $interps[ $v['next_id'] ] ) ) . '</p>';
+				// Does interpretation exist for this?
+				if ( ! empty( $interps[ $v['id'] ] ) ) {
+					$content .= '<p>' . wp_kses_post( wpautop( $interps[ $v['id'] ] ) ) . '</p>';
+				}
+
+				// Check for planets conjunct the next house cusp.
+				if ( 'planets_in_houses' == $section ) {
+					if ( ! empty( $v['next_label'] ) ) {
+						$content .= '<p class="zp-subheading">' .
+								sprintf( __( 'NOTE: Since %s is very close to the next house cusp, the next item is also relevant.', 'zodiacpress' ), $v['planet_label'] ) .
+								'</p>' . 
+								'<p class="zp-subheading">' . $v['next_label'] . '</p>';
+
+						// Does interpretation exist for this?
+						if ( ! empty( $interps[ $v['next_id'] ] ) ) {
+							$content .=	'<p>' . wp_kses_post( wpautop( $interps[ $v['next_id'] ] ) ) . '</p>';
+						}
 					}
 				}
 			}
+			
 		}
 
 		switch ( $section ) {
@@ -293,10 +310,9 @@ class ZP_Birth_Report {
 				if ( $this->form['unknown_time'] ) {
 
 					/*	For ephemeris, I need a timestring for midnight, the start of day,
-						at the chart's local date, then convert that to UT. I will scan 24 hours from that time.
+						at the chart's local date, then convert that to UT. I will look for ingress within 24 hours from that time.
 						Midnight in their local timezone will not be the same as UT midnight.
-						They don't know their birth time but they know they were born
-						on that day at THAT location. 
+						Why use local midnight rather than UT midnight: they don't know their birth time but they know they were born that day at THAT location. I want to look for ingress from local start of day to local end of day.
 						Use the original form date which is their local date in their
 						own timezone, not UT date. ut_date may be different from date entered on form due to adjusting for tz offset. */
 
@@ -312,12 +328,13 @@ class ZP_Birth_Report {
 				}
 
 				$planets_in_signs[] = array(
-									'id'	=> $planet['id'] . '_' . $signs[ $sign_num ]['id'],
-									'label'	=> $planet['label'] . ' in ' . $signs[ $sign_num ]['label'],
-									'zodiacal_dms' => zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde,
-									'ingress_0' => isset( $ingress[0] ) ? $ingress[0] : '',
-									'ingress_1' => isset( $ingress[1] ) ? $ingress[1] : '',
-									);// @todo incorporate ingress notes into report output
+									'id'			=> $planet['id'] . '_' . $signs[ $sign_num ]['id'],
+									'label'			=> $planet['label'] . ' in ' . $signs[ $sign_num ]['label'],
+									'zodiacal_dms'	=> zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde,
+									'ingress_0'		=> isset( $ingress[0] ) ? $ingress[0] : '',
+									'ingress_1'		=> isset( $ingress[1] ) ? $ingress[1] : '',
+									'planet_key'	=> $k
+									);
 			}
 		}
 

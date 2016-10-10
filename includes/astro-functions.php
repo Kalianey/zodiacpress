@@ -330,7 +330,7 @@ function zp_get_planet_house_num( $planet, $cusps ) {
  * Check if a planet is conjunct the next house cusp.
  *
  * @param int	$p_key The planet key
- * @param float	$p_long The planet longitude decimal
+ * @param string $p_long The planet longitude decimal
  * @param int	$p_house The house number which the planet resides in.
  * @param array $cusps Cusps for a single house system
  * 
@@ -363,7 +363,7 @@ function zp_conjunct_next_cusp( $p_key = '', $p_long, $p_house, $cusps ) {
 
 /**
  * Calculate the Descendant longitude degrees for a chart
- * @param float $asc the Ascendant longitude degrees of the chart
+ * @param string $asc the Ascendant longitude degrees of the chart
  */
 function zp_calculate_descendant( $asc ) {
 	if ( empty( $asc ) ) {
@@ -376,7 +376,8 @@ function zp_calculate_descendant( $asc ) {
 /**
  * Check if a planet is near ingress or recently ingressed into a new sign. Within approx. 48 hours.
  * @param int $planet The planet's official index key
- * @param float	$longitude The longitude decimal of the planet
+ * @param string $longitude The longitude decimal of the planet
+ * @since 1.3
  * @return bool
  */
 function zp_is_planet_near_ingress( $planet, $longitude ) {
@@ -420,17 +421,16 @@ function zp_is_planet_near_ingress( $planet, $longitude ) {
 }
 
 /**
- * Check if a planet ingress into a new sign 
- occurs this day.
+ * Check if a planet ingress into a new sign occurs this day.
  *
- * @todo create phpunit tests for this
  * @param int $planet The planet's official index key
- * @param float	$longitude The longitude decimal of the planet
- * @param string $timestamp Unix timestamp for midnight on the date to check for ingress
+ * @param string $longitude The longitude decimal of the planet
+ * @param int $timestamp UNIX timestamp for midnight on the date to check for ingress
+ * @since 1.3
  * @return mixed $ingress array of sign keys if ingress occurs this day, otherwise false 
  */
 function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
-	
+
 	// Do not check time-sensitve points or planets, i.e. moon, asc, mc, pof, vertex
 	$planets = zp_get_planets();
 	if ( ! empty( $planets[ $planet ]['supports'] ) && in_array( 'birth_time_required', $planets[ $planet ]['supports'] ) ) {
@@ -466,9 +466,9 @@ function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
 			'format'	=> 'l',
 			'ut_date'	=> $ut_date,
 			'ut_time'	=> $ut_time,// This should be the UT equivalent of the local midnight
-			'options'	=> '-n2 -s1 -hor -roundsec'// get 2 days
+			'options'	=> '-n2 -s1 -roundsec'// get 2 days
 		);
-
+	
 		// Query ephemeris for this planet for 2 days (this day & next)
 		$ephemeris	= new ZP_Ephemeris( $args );
 		$data		= $ephemeris->query();
@@ -478,8 +478,8 @@ function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
 		}
 
 		// Check the sign at 00:00 each day
-		$sign[] = floor( $data[0] / 30 );// this chart day
-		$sign[] = floor( $data[1] / 30 );// next day
+		$sign[] = floor( trim( $data[0] ) / 30 );// this chart day
+		$sign[] = floor( trim( $data[1] ) / 30 );// next day
 
 		if ( $sign[0] != $sign[1] ) {
 			// sign ingress occurs this day

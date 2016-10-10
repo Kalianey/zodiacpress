@@ -71,7 +71,7 @@ class ZP_Ephemeris {
 		$this->planets	= $params['planets'];
 
 		// Optional options
-		$this->format	= $params['format'] ? ( '-f' . $params['format'] ) : '';		
+		$this->format	= $params['format'] ? ( '-f' . $params['format'] ) : '';
 		$this->ut_time	= $params['ut_time'] ? ( '-ut' . $params['ut_time'] ) : '';
 		$this->options	= $params['options'];
 
@@ -119,7 +119,7 @@ class ZP_Ephemeris {
 	 * Query the Ephemeris.
 	 *
 	 */
-	public function query( ) {
+	public function query() {
 
 		// Set up Swiss Ephemeris path
 		$sweph = apply_filters( 'zp_sweph_dir', ZODIACPRESS_PATH . 'sweph' );

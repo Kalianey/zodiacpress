@@ -116,30 +116,59 @@ class Test_Astro extends WP_UnitTestCase {
 		}
 
 	}
+
 	/**
-	 * @todo
+	 * Test the zp_is_planet_ingress_today() function for a true
 	 */
-	public function test_is_planet_ingress_today_true() {
+	public function test_is_planet_ingress_today_true_mars() {
 
-		$expected = array(
-			array( '0', '1.98' ),
-			array( '0', '2.012' ),
-			array( '0', '28.012' ),
-			array( '0', '27.012' ),
-			array( '6', '.012' ),
-			array( '6', '27.012' ),
-			array( '6', '29.721555' ),
-			array( '7', '29.98' ),
-			array( '8', '0.11445' ),
-			array( '8', '0.1167' ),
-			array( '8', '29.88443' ),
-			array( '8', '29.8831145' ),
-			array( '10', '29.8831145' ),
-			array( '11', '0.32255' ),
-			array( '11', '0.3335' ),
-		);
+		$timestamp = -468518400;// 2/26/1955 8 am
 
-		//zp_is_planet_ingress_today( $planet, $longitude, $date ) 
+		$actual = zp_is_planet_ingress_today( 4, '29.9308316', $timestamp );
+
+		$this->assertInternalType('array', $actual);
+		$this->assertEquals( 0, $actual[0] );// aries
+		$this->assertEquals( 1, $actual[1] );// taurus
+
+	}
+
+	/**
+	 * Test the zp_is_planet_ingress_today() function for a false
+	 */
+	public function test_is_planet_ingress_today_false_mars() {
+
+		$timestamp = -468432000;//2/27/1955 8 am utc
+
+		$actual = zp_is_planet_ingress_today( 4, '30.6317917', $timestamp );
+
+		$this->assertFalse( $actual );
+
+	}
+
+	/**
+	 * Test the zp_is_planet_ingress_today() function for a true
+	 */
+	public function test_is_planet_ingress_today_true_mars_2() {
+
+		$timestamp = 372412800;// 10/20/1981 8 am
+
+		$actual = zp_is_planet_ingress_today( 4, '149.5622890', $timestamp );
+
+		$this->assertInternalType('array', $actual);
+ 		$this->assertEquals( 4, $actual[0] );// leo
+		$this->assertEquals( 5, $actual[1] );// virgo
+	}
+	
+	/**
+	 * Test the zp_is_planet_ingress_today() function for a false
+	 */
+	public function test_is_planet_ingress_today_false_mars_2() {
+
+		$timestamp = -372499200;// 10/21/1981 8 am
+
+		$actual = zp_is_planet_ingress_today( 4, '150.1477661', $timestamp );
+
+		$this->assertFalse( $actual );
 
 	}
 

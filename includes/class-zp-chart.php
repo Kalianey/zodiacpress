@@ -140,6 +140,7 @@ final class ZP_Chart {
 		date_default_timezone_set('UTC');
 
 		$unix_timestamp = mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
+
 		$this->ut_date = strftime( "%d.%m.%Y", $unix_timestamp );
 		$this->ut_time = strftime( "%H:%M:%S", $unix_timestamp );
 
@@ -206,7 +207,7 @@ final class ZP_Chart {
 		
 		// Set up chart properties from raw chart data.
 		foreach ( $chart as $key => $line ) {
-			$row = explode( ',',$line );
+			$row = explode( ',', $line );
 
 			// Set up core planet properties
 			if ( $key <= 12 ) {
