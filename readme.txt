@@ -30,7 +30,9 @@ You have the option to allow people with unknown birth times to generate basic n
 
 The Planets in Houses section of the report will tell you if you have a planet in one house, but conjunct the next house (within 1.5 degrees orb; orb can be modified with a filter).
 
-Entering your interpretations is not required since you can generate reports without interpretations text. See the screenshots (link above) to see how a basic report without interpretations text looks.
+**Interpretations Are Optional**
+
+Entering your interpretations is not required since you can generate reports without interpretations text. See the [screenshots](https://wordpress.org/plugins/zodiacpress/screenshots/) to see how a basic report **without** interpretations text looks.
 
 **Technical Details**
 
