@@ -1,11 +1,10 @@
 <?php
 class Test_Chart extends WP_UnitTestCase {
 
-	protected $charts						= array();
-	protected $expected_planets_longitude	= array();
-	protected $expected_h_pos				= array();
-	protected $expected_conjunctions		= array();
-	protected $expected_cusps				= array();
+	protected $charts					= array();
+	protected $expected_h_pos			= array();
+	protected $expected_conjunctions	= array();
+	protected $expected_cusps			= array();
 
 	public function setUp() {
 	
@@ -20,7 +19,7 @@ class Test_Chart extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test Universal Date
+	 * Test that Universal Date is properly adjusted either a day forward or backward for timezone offset.
 	 */
 	public function test_ut_date() {
 
@@ -55,38 +54,6 @@ class Test_Chart extends WP_UnitTestCase {
 			$calculated_ut_time = $property->getValue( $chart );
 
 			$this->assertEquals( $expected_ut_time[ $person ], $calculated_ut_time, 'Wrong UT time for Person ' . $person );
-		}
-
-	}
-	/**
-	 * Test the ephemeris output for planet/points longitudes for Placidus houses
-	 */
-	public function test_ephemeris_planets_longitudes() {
-				
-		foreach ( $this->charts as $person => $chart ) {
-
-			// Check core planets longitudes
-			for ( $x = 0; $x <= 12; $x++ ) {
-				$expected	= round( $this->expected_planets_longitude[ $person ][ $x ], 5 );
-				$actual		= round( $chart->planets_longitude[ $x ], 5 );
-				$this->assertEquals( $expected, $actual, 'Wrong longitude for planet ' . $x . ', Person ' . $person );
-
-			}
-
-			// Test the Vertex
-			$expected_v	= round( $this->expected_planets_longitude[ $person ][28], 5 );
-			$actual_v	= round( $chart->planets_longitude[14], 5 );
-			$this->assertEquals( $expected_v, $actual_v, 'Wrong Vertex for Person ' . $person );
-
-			// Test the Ascendant
-			$expected_a	= round( $this->expected_planets_longitude[ $person ][25], 5 );
-			$actual_a	= round( $chart->planets_longitude[15], 5 );
-			$this->assertEquals( $expected_a, $actual_a, 'Wrong Ascendant for Person ' . $person);
-
-			// Test the MC
-			$expected_mc	= round( $this->expected_planets_longitude[ $person ][26], 5 );
-			$actual_mc		= round( $chart->planets_longitude[16], 5 );
-			$this->assertEquals( $expected_mc, $actual_mc, 'Wrong MC for Person ' . $person );
 		}
 
 	}
