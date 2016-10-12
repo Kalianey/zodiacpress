@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Validate and sanitize the form data
  * @param array $data The form data
- * @param bool $partial Whether only partial data has been sent (for Ajax)
+ * @param bool $partial Whether only partial data has been sent (for 1st Ajax request for timezone offset)
  * @return mixed|array|string Array of form values if all is valid, otherwise the error string
  */
 function zp_validate_form( $data, $partial = false ) {
@@ -135,10 +135,14 @@ function zp_validate_form( $data, $partial = false ) {
 		return __( 'UTC time offset must be a number (like 5). Include a negative sign or decimal point if needed (like -9.5). If you want the offset to be calculated automatically, select the Birth City again and click Next.', 'zodiacpress' );
 	}
 
+	// Validate the sidereal hidden field
+	$sidereal = empty( $data['zp_report_sidereal'] ) ? false : sanitize_text_field( $data['zp_report_sidereal'] );
+
 	// Update the sanitize values
 	if ( is_array( $out ) ) {
 		$out['zp_offset_geo']	= $offset;
 		$out['name']			= $name;
+		$out['sidereal']		= $sidereal;
 	}
 	
 	return $out;

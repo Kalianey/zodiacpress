@@ -116,7 +116,28 @@ class ZP_Birth_Report {
 				'<br />' .
 				esc_html( stripslashes( $this->form['place'] ) . ' (' . $coordinates . ')' );
 
-		// House system used for this chart
+
+		// Type of zodiac used
+		$zodiac_type = __( 'Tropical Zodiac', 'zodiacpress' );
+
+		if ( $this->chart->sidereal ) {
+
+			$zodiac_type = __( 'Sidereal Zodiac,', 'zodiacpress' );
+
+			// i18n the ayanamsa
+			$ayanamsa = zp_transliterated_degrees_minutes_seconds( $this->chart->ayanamsa );
+
+			$zodiac_type .= ' ' .
+						sprintf( __( 'ayanamsa = %1$s (%2$s)', 'zodiacpress' ),
+						$ayanamsa,
+						$this->chart->sidereal_methods[ $this->chart->sidereal ]['label'] );
+
+		}
+
+		$header .= '<br />' . $zodiac_type;
+
+
+		// House system used
 
 		if ( empty( $this->form['unknown_time'] ) ) {
 
@@ -378,6 +399,8 @@ class ZP_Birth_Report {
 		if ( $cleared_planets ) {
 
 			foreach ( $cleared_planets as $k => $planet ) {
+
+				unset( $next ); // This is absolutely necessary.
 
 				$house_num = $this->chart->planets_house_numbers[ $k ];
 

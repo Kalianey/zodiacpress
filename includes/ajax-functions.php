@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Handles ajax request to get cities list for autocomplete birth place field.
  * 
  * It's done like this rather than from the browswer so that I can make this work
- * on HTTPS pages (SSL), otherwise GeoNames only serves http pages.
+ * on HTTPS pages, otherwise GeoNames only serves http pages.
  */
 function zp_ajax_autocomplete_cities() {
 
@@ -56,7 +56,7 @@ add_action( 'wp_ajax_nopriv_zp_get_cities_list', 'zp_ajax_autocomplete_cities' )
  * Ajax handler to get Geonames Timezone ID based on coordinates after a city is selected.
  * 
  * It's done like this rather than from the browswer so that I can make this work
- * on HTTPS pages (SSL), otherwise GeoNames only serves http pages.
+ * on HTTPS pages, otherwise GeoNames only serves http pages.
  */
 function zp_ajax_get_geonames_timezone_id() {
 

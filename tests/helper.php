@@ -27,7 +27,8 @@ class ZP_Helper extends WP_UnitTestCase {
 				'zp_offset_geo'			=> '-8',
 				'action'				=> 'zp_birthreport',
 				'zp-report-variation'	=> 'birthreport',
-				'unknown_time'			=> ''
+				'unknown_time'			=> '',
+				'sidereal'				=> false
 			),
 			array(
 				'name'					=> 'Michael Jackson',
@@ -44,7 +45,8 @@ class ZP_Helper extends WP_UnitTestCase {
 				'zp_offset_geo'			=> '-5',
 				'action'				=> 'zp_birthreport',
 				'zp-report-variation'	=> 'birthreport',
-				'unknown_time'			=> ''
+				'unknown_time'			=> '',
+				'sidereal'				=> false
 			)
 		);
 

@@ -215,6 +215,11 @@ function zp_form( $report, $args = array() ) {
 
 		<p>
 			<button id="zp-fetch-offset" class="zp-button"><?php _e('Next', 'zodiacpress'); ?></button>
+
+			<?php if ( $args['sidereal'] ) { ?>
+				<input type="hidden" name="zp_report_sidereal" value="<?php echo $args['sidereal']; ?>">
+			<?php } ?>
+
 			<input type="hidden" name="action" value="zp_<?php echo esc_attr( $report ); ?>">
 			<input type="button" id="zp-fetch-<?php echo esc_attr( $report ); ?>" class="zp-button" value="<?php _e('Submit', 'zodiacpress'); ?>" /></p>
 

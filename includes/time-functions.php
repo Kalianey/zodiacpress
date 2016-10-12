@@ -273,5 +273,42 @@ function zp_extract_whole_minutes( $decimal ) {
 	$m = round( ( abs( $decimal ) - $d ) * 60 );
 	return $m;
 }
+/**
+ * Internationalize a degrees minutes seconds string
+ * @param string $dms A dms string with symbols like 24° 6'50"
+ * @return string $out In English, the same string but with leading zeros for minutes and seconds if less than 10. In other languages, the numbers will be transliterated.
+ */
+function zp_transliterated_degrees_minutes_seconds( $dms ) {
 
+	$parts		= explode( chr( 176), $dms );
+	$deg 		= trim( $parts[0] );
+	$min_sec	= explode( "'", $parts[1] );
+	$min		= (int) trim( $min_sec[0] );
+	$sec		= (int) trim( strstr( $min_sec[1], '"', true ) );
 
+	if ( is_rtl() ) {
+		$degrees = '&#176;' . zp_i18n_coordinates( $deg );
+	} else {
+		$degrees = zp_i18n_coordinates( $deg ) . '&#176;';
+	}
+
+	// Insert leading zero when needed
+	if ( $min < 10 ) {
+		$min = '0' . $min;
+	}
+	if ( $sec < 10 ) {
+		$sec = '0' . $sec;
+	}
+
+	/* translators: Attention RTL languages. 5 placeholders are degrees, minutes, minutes symbol, seconds, seconds symbol. */
+	$out = sprintf( __( '%1$s %2$s%3$s %4$s%5$s', 'zodiacpress' ),
+				$degrees,
+				zp_i18n_numbers_zeros( $min ),
+				chr(39),
+				zp_i18n_numbers_zeros( $sec ),
+				chr(34)
+		);
+
+	return $out;
+
+}

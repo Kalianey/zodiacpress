@@ -76,6 +76,21 @@ final class ZP_Chart {
 	public $house_system;
 
 	/**
+	 * The sidereal method for this chart, if this is a sidereal chart.
+	 */
+	public $sidereal;
+
+	/**
+	 * Available sidereal methods
+	 */
+	public $sidereal_methods = array();
+
+	/**
+	 * The calculated Ayanamsa, if this is a sidereal chart.
+	 */
+	public $ayanamsa;	
+
+	/**
 	 * Retrieve ZP_Chart instance.
 	 *
 	 * @static
@@ -105,6 +120,17 @@ final class ZP_Chart {
 		// Set up coordinates
 		$this->latitude		= $moment['zp_lat_decimal'];
 		$this->longitude	= $moment['zp_long_decimal'];
+
+		$this->sidereal = $moment['sidereal'];
+
+		$this->sidereal_methods = array(
+			'fagan/bradley' => array( 'id' => '0',
+									'label' => __( 'Fagan/Bradley', 'zodiacpress' ) ),
+			'lahiri'		=> array( 'id' => '1',
+									'label' => __( 'Lahiri', 'zodiacpress' ) ),
+			'raman'			=> array( 'id' => '3',
+									'label' => __( 'Raman', 'zodiacpress' ) )
+		);
 
 		$this->setup_chart();
 
@@ -197,6 +223,20 @@ final class ZP_Chart {
 			'ut_date'		=> $this->ut_date,
 			'ut_time'		=> $this->ut_time
 		);
+
+		// Is this a sidereal chart?
+		if ( $this->sidereal ) {
+
+			// Set the Ayanamsa property so we can show it in the report header
+			$args['options']	= '-ay' . $this->sidereal_methods[ $this->sidereal ]['id'] . ' -roundsec';
+			$ephemeris			= new ZP_Ephemeris( $args );
+			$ayanamsa_data		= $ephemeris->query();
+			$row				= explode( ',', $ayanamsa_data[0] );
+			$this->ayanamsa		= trim( $row[1] );
+
+			// Set the sidereal flag for the chart query
+			$args['options'] = '-sid' . $this->sidereal_methods[ $this->sidereal ]['id'];
+		}
 
 		$ephemeris	= new ZP_Ephemeris( $args );
 		$chart		= $ephemeris->query();

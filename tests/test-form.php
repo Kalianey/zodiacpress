@@ -20,7 +20,8 @@ class Test_Form extends WP_UnitTestCase {
 				'zp_offset_geo'			=> '-5',
 				'action'				=> 'zp_birthreport',
 				'zp-report-variation'	=> 'birthreport',
-				'unknown_time'			=> 'on'
+				'unknown_time'			=> 'on',
+				'sidereal'				=> false
 		);
 	}
 
@@ -38,7 +39,7 @@ class Test_Form extends WP_UnitTestCase {
 		update_option('zodiacpress_settings', $zodiacpress_options);
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false) );
 		$form = ob_get_clean();
 
 		$this->assertContains( $str, $form, 'Error: Form is missing "Unknown birth time" checkbox.' );
@@ -54,7 +55,7 @@ class Test_Form extends WP_UnitTestCase {
 		$str = 'If birth time is unknown, the report will not include positions or aspects for the Moon';
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false ) );
 		$form = ob_get_clean();
 
 		$this->assertContains( $str, $form, 'Error 5: Form is missing the unkown birth time NOTE even though "Allow unknown time" is enabled.' );
@@ -75,7 +76,7 @@ class Test_Form extends WP_UnitTestCase {
 		update_option('zodiacpress_settings', $zodiacpress_options );
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false ) );
 		$form = ob_get_clean();
 
 		$this->assertFalse( strpos( $form, $str ), 'Error 6: Form is showing the unkown birth time NOTE at bottom of form even though "Allow unknown time" is disabled.' );
@@ -89,7 +90,7 @@ class Test_Form extends WP_UnitTestCase {
 		$str = '<input type="checkbox" id="unknown_time" name="unknown_time"';
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false ) );
 		$form = ob_get_clean();
 
 		$this->assertFalse( strpos( $form, $str ), 'Error: Form shows "Unknown birth time" checkbox even though the setting to allow it is disabled.' );
@@ -104,7 +105,7 @@ class Test_Form extends WP_UnitTestCase {
 		$str = 'Birth time is required for this type of report';
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false ) );
 		$form = ob_get_clean();
 
 		$this->assertFalse( strpos( $form, $str ), 'Error 3: Form shows "Birth time required".' );
@@ -116,7 +117,7 @@ class Test_Form extends WP_UnitTestCase {
 		update_option('zodiacpress_settings', $zodiacpress_options);
 
 		ob_start();
-		zp_form( 'birthreport', array( 'report' => 'birthreport' ) );
+		zp_form( 'birthreport', array( 'report' => 'birthreport', 'sidereal'				=> false ) );
 		$form = ob_get_clean();
 
 		$this->assertFalse( strpos( $form, $str ), 'Error 4: Form shows "Birth time required".' );
