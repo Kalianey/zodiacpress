@@ -16,6 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 final class ZP_Chart {
 
 	/**
+	 * The Unix Epoch time for this chart.
+	 */
+	public $unix_timestamp;
+
+	/**
 	 * Universal Date for this chart
 	 */
 	public $ut_date;
@@ -23,17 +28,17 @@ final class ZP_Chart {
 	/**
 	 * Universal Time for this chart
 	 */
-	private $ut_time;
+	public $ut_time;
 
 	/**
 	 * Latitude decimal of the location for this chart
 	 */
-	private $latitude;
+	public $latitude;
 
 	/**
 	 * Longitude decimal of the location for this chart
 	 */
-	private $longitude;
+	public $longitude;
 
 	/**
 	 * The chart's house cusps in logitude decimal.
@@ -100,7 +105,6 @@ final class ZP_Chart {
 	 * @return ZP_Chart|false Chart object, false otherwise.
 	 */
 	public static function get_instance( $moment = array() ) {
-
 		if ( ! $moment )
 			return false;
 
@@ -164,11 +168,10 @@ final class ZP_Chart {
 
 		// mktime() uses whatever zone its server wants, so force it to use UTC here
 		date_default_timezone_set('UTC');
+		$this->unix_timestamp = mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
 
-		$unix_timestamp = mktime( (int) $hour, (int) $minute, (int) $second, (int) $moment['month'], (int) $moment['day'], (int) $moment['year'] );
-
-		$this->ut_date = strftime( "%d.%m.%Y", $unix_timestamp );
-		$this->ut_time = strftime( "%H:%M:%S", $unix_timestamp );
+		$this->ut_date = strftime( "%d.%m.%Y", $this->unix_timestamp );
+		$this->ut_time = strftime( "%H:%M:%S", $this->unix_timestamp );
 
 		return true;
 	}

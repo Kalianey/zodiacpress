@@ -12,7 +12,6 @@ class Test_Form extends WP_UnitTestCase {
 				'year'					=> '1958',
 				'hour'					=> '19',
 				'minute'				=> '33',
-				'city'					=> 'Gary',
 				'geo_timezone_id'		=> 'America/Chicago',
 				'place'					=> 'Gary, Indiana, United States',
 				'zp_lat_decimal'		=> '41.59337',

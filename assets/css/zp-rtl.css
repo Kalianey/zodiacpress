@@ -41,7 +41,11 @@
 .zp-report-backlink {
 	text-align: left;
 }
-
+.zp-report-header,
+.zp-report-caption {
+	/* @todo reminify RTL.min.css !!!! */
+	text-align: right;
+}
 .zp-zodiacal-dms {
 	padding-right:1em;
 }

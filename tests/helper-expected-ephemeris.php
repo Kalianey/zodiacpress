@@ -1,7 +1,6 @@
 <?php
 // Expected longitudes for Steve Jobs
 $this->expected_planets_longitude[] = array(
-
 	0 => 335.7481352,
 	1 =>  7.7473318,
 	2 => 314.3617290,

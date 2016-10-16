@@ -53,33 +53,34 @@ class ZP_Birth_Report {
 	 * @param array $form Form data submitted by user requesting report	 
 	 */
 	public function __construct( $_chart, $_form ) {
-
 		$this->chart	= $_chart;
 		$this->form		= $_form;
 		$this->setup_in_signs();
 		$this->setup_in_houses();
 		$this->setup_aspects_list();
-
 	}
 
 	/**
 	 * Get the birth report header.
-	 * @return string Formatted chart data including birth time, zone, place, and house system.
+	 * @return string $header Formatted chart data including birth time, zone, place, type of zodiac, and house system.
 	 */
 	public function header() {
-
 		// Check if we have i18n of the year (we haven't i18n years prior to 1900)
 		$year = zp_i18n_years( $this->form['year'] - 1900 );
-		if ( is_array( $year ) ) {
-			$year = $this->form['year'];
-		}
+		$year = is_array( $year ) ? $this->form['year'] : $year;
+
+		// Local date
 
 		$birth_date = zp_i18n_numbers( $this->form['day'] ) . ' ' .
 						zp_get_i18n_months( $this->form['month'] ) . ' ' .
 						$year;
 
+		// Coordinates
+
 		$coordinates = zp_dd_to_dms( $this->form['zp_lat_decimal'], 'latitude' ) . ' ' .
 						zp_dd_to_dms( $this->form['zp_long_decimal'], 'longitude' );
+
+		// Local Time
 
 		if ( $this->form['unknown_time'] ) {
 			$birth_time = __( 'unknown birth time', 'zodiacpress' );
@@ -96,7 +97,7 @@ class ZP_Birth_Report {
 			// append 12-hour formatted time
 			$time .= ' (' . date( 'g:i a', strtotime( $time ) ) . ')';
 
-			$birth_time = sprintf( __( '%1$s (time zone = UTC %2$s)', 'zodiacpress' ),
+			$birth_time = sprintf( __( '%1$s <span class="zp-mobile-wrap">(time zone = UTC %2$s)</span>', 'zodiacpress' ),
 				$time,
 				$tz
 			);
@@ -107,49 +108,69 @@ class ZP_Birth_Report {
 			$birth_time
 		);
 
-		// Begin header 
-		
-		$header = '<section class="zp-report-header"><p><strong>' .
-				sprintf( __( 'Chart Data For %s', 'zodiacpress' ), $this->form['name'] ) .
-				'</strong><br />' .
-				esc_html( $birth_data ) .
-				'<br />' .
-				esc_html( stripslashes( $this->form['place'] ) . ' (' . $coordinates . ')' );
+		// Universal Time
 
+		$ut = strftime( "%H:%M", $this->chart->unix_timestamp );
+		// maybe append UT date if different from date entered on form
+		$entered_day	= ( $this->form['day'] < 10 ) ? ( '0' . $this->form['day'] ) : $this->form['day'];		
+		$entered_month	= ( $this->form['month'] < 10 ) ? ( '0' . $this->form['month'] ) : $this->form['month'];
+		$entered_date	= $entered_day . '.' . $entered_month . '.' . $this->form['year'];
+		if ( $this->chart->ut_date != $entered_date ) {
+			$ut_year		= trim( strftime( "%Y", $this->chart->unix_timestamp ) );
+			$i18n_ut_year	= zp_i18n_years( $ut_year - 1900 );
+			$ut_year		= is_array( $i18n_ut_year ) ? $ut_year : $i18n_ut_year;
+
+			$ut .= ' <small>' .
+					zp_i18n_numbers( trim( strftime( "%e", $this->chart->unix_timestamp ) ) ) .
+					' ' . zp_get_i18n_months( date( 'n', $this->chart->unix_timestamp ) ) .
+					' ' . $i18n_ut_year .
+					'</small>';
+		}
 
 		// Type of zodiac used
+
 		$zodiac_type = __( 'Tropical Zodiac', 'zodiacpress' );
-
 		if ( $this->chart->sidereal ) {
-
 			$zodiac_type = __( 'Sidereal Zodiac,', 'zodiacpress' );
 
 			// i18n the ayanamsa
 			$ayanamsa = zp_transliterated_degrees_minutes_seconds( $this->chart->ayanamsa );
-
 			$zodiac_type .= ' ' .
-						sprintf( __( 'ayanamsa = %1$s (%2$s)', 'zodiacpress' ),
+						sprintf( __( 'ayanamsa = %1$s <span class="zp-mobile-wrap">(%2$s)</span>', 'zodiacpress' ),
 						$ayanamsa,
 						$this->chart->sidereal_methods[ $this->chart->sidereal ]['label'] );
-
 		}
 
-		$header .= '<br />' . $zodiac_type;
-
+		// Begin header HTML
+  
+		$header = '<table class="zp-report-header"><caption class="zp-report-caption">' .
+				sprintf( __( 'Chart Data For %s', 'zodiacpress' ), $this->form['name'] ) .
+				'</caption>' .
+				'<tr>' .
+					'<td>' . $birth_data . '</td>' .
+				'</tr><tr>' .
+					'<td>' . __( 'Universal Time:', 'zodiacpress' ) . ' ' . $ut . ' </td>' .
+				'</tr><tr>' .
+					'<td>' . stripslashes( $this->form['place'] ) . '</td>' .
+				'</tr><tr>' .					
+					'<td>' . esc_html( $coordinates ) . '</td>' .
+				'</tr><tr>' .
+					'<td>' . $zodiac_type . '</td>' .
+				'</tr>';
 
 		// House system used
 
 		if ( empty( $this->form['unknown_time'] ) ) {
-
 			$houses_label = apply_filters( 'zp_house_system_label', __( 'Placidus', 'zodiacpress' ), $this->chart->house_system );
 
-			$houses = '<br />' .  sprintf( __( '%s Houses', 'zodiacpress' ), $houses_label );
-	
+			$houses = '<tr><td colspan="3">' .
+					sprintf( __( '%s Houses', 'zodiacpress' ), $houses_label ) .
+					'</td></tr>';
 			// Allow house system to be removed with filter
 			$header .= apply_filters( 'zp_report_header_houses', $houses, $this->form['zp-report-variation'] );
 		}
 
-		$header .= '</section>';
+		$header .= '</table>';
 		
 		return $header;
 
@@ -160,7 +181,6 @@ class ZP_Birth_Report {
 	 * @param string $section Which section of interpretations to get, whether planets_in_signs, planets_in_houses, or aspects.
 	 */
 	private function get_interpretations( $section ) {
-
 		if ( empty( $section ) ) {
 			return;
 		}
@@ -261,7 +281,6 @@ class ZP_Birth_Report {
 	 * @return array of planets with official planet #s as keys
 	 */
 	private function get_cleared_planets( $planets_key ) {
-
 		global $zodiacpress_options;
 
 		if ( empty( $zodiacpress_options[ $planets_key ] ) ) {
@@ -308,7 +327,6 @@ class ZP_Birth_Report {
 	 * Set up the planets and points in signs, limited to those enabled in the settings and omittimg moon and time-sensitive points if birth time is unknown.
 	 */
 	private function setup_in_signs() {
-
 		$signs				= zp_get_zodiac_signs();
 		$planets_in_signs	= array();
 		$cleared_planets	= $this->get_cleared_planets( 'enable_planet_signs' );

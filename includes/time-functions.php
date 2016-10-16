@@ -131,7 +131,6 @@ function zp_get_i18n_months( $key = '' ) {
  * @return mixed|array|string If key is passed, a string for that year (key+1900) if it exists, otherwise array of all years 
  */
 function zp_i18n_years( $key = '' ) {
-
 	$years = array(
 		__( '1900', 'zodiacpress' ), __( '1901', 'zodiacpress' ), __( '1902', 'zodiacpress' ), __( '1903', 'zodiacpress' ), __( '1904', 'zodiacpress' ), __( '1905', 'zodiacpress' ), __( '1906', 'zodiacpress' ), __( '1907', 'zodiacpress' ), __( '1908', 'zodiacpress' ), __( '1909', 'zodiacpress' ), __( '1910', 'zodiacpress' ), __( '1911', 'zodiacpress' ), __( '1912', 'zodiacpress' ), __( '1913', 'zodiacpress' ), __( '1914', 'zodiacpress' ), __( '1915', 'zodiacpress' ), __( '1916', 'zodiacpress' ), __( '1917', 'zodiacpress' ), __( '1918', 'zodiacpress' ), __( '1919', 'zodiacpress' ), __( '1920', 'zodiacpress' ), __( '1921', 'zodiacpress' ), __( '1922', 'zodiacpress' ), __( '1923', 'zodiacpress' ), __( '1924', 'zodiacpress' ), __( '1925', 'zodiacpress' ), __( '1926', 'zodiacpress' ), __( '1927', 'zodiacpress' ), __( '1928', 'zodiacpress' ), __( '1929', 'zodiacpress' ), __( '1930', 'zodiacpress' ), __( '1931', 'zodiacpress' ), __( '1932', 'zodiacpress' ), __( '1933', 'zodiacpress' ), __( '1934', 'zodiacpress' ), __( '1935', 'zodiacpress' ), __( '1936', 'zodiacpress' ), __( '1937', 'zodiacpress' ), __( '1938', 'zodiacpress' ), __( '1939', 'zodiacpress' ), __( '1940', 'zodiacpress' ), __( '1941', 'zodiacpress' ), __( '1942', 'zodiacpress' ), __( '1943', 'zodiacpress' ), __( '1944', 'zodiacpress' ), __( '1945', 'zodiacpress' ), __( '1946', 'zodiacpress' ), __( '1947', 'zodiacpress' ), __( '1948', 'zodiacpress' ), __( '1949', 'zodiacpress' ), __( '1950', 'zodiacpress' ), __( '1951', 'zodiacpress' ), __( '1952', 'zodiacpress' ), __( '1953', 'zodiacpress' ), __( '1954', 'zodiacpress' ), __( '1955', 'zodiacpress' ), __( '1956', 'zodiacpress' ), __( '1957', 'zodiacpress' ), __( '1958', 'zodiacpress' ), __( '1959', 'zodiacpress' ), __( '1960', 'zodiacpress' ), __( '1961', 'zodiacpress' ), __( '1962', 'zodiacpress' ), __( '1963', 'zodiacpress' ), __( '1964', 'zodiacpress' ), __( '1965', 'zodiacpress' ), __( '1966', 'zodiacpress' ), __( '1967', 'zodiacpress' ), __( '1968', 'zodiacpress' ), __( '1969', 'zodiacpress' ), __( '1970', 'zodiacpress' ), __( '1971', 'zodiacpress' ), __( '1972', 'zodiacpress' ), __( '1973', 'zodiacpress' ), __( '1974', 'zodiacpress' ), __( '1975', 'zodiacpress' ), __( '1976', 'zodiacpress' ), __( '1977', 'zodiacpress' ), __( '1978', 'zodiacpress' ), __( '1979', 'zodiacpress' ), __( '1980', 'zodiacpress' ), __( '1981', 'zodiacpress' ), __( '1982', 'zodiacpress' ), __( '1983', 'zodiacpress' ), __( '1984', 'zodiacpress' ), __( '1985', 'zodiacpress' ), __( '1986', 'zodiacpress' ), __( '1987', 'zodiacpress' ), __( '1988', 'zodiacpress' ), __( '1989', 'zodiacpress' ), __( '1990', 'zodiacpress' ), __( '1991', 'zodiacpress' ), __( '1992', 'zodiacpress' ), __( '1993', 'zodiacpress' ), __( '1994', 'zodiacpress' ), __( '1995', 'zodiacpress' ), __( '1996', 'zodiacpress' ), __( '1997', 'zodiacpress' ), __( '1998', 'zodiacpress' ), __( '1999', 'zodiacpress' ), __( '2000', 'zodiacpress' ), __( '2001', 'zodiacpress' ), __( '2002', 'zodiacpress' ), __( '2003', 'zodiacpress' ), __( '2004', 'zodiacpress' ), __( '2005', 'zodiacpress' ), __( '2006', 'zodiacpress' ), __( '2007', 'zodiacpress' ), __( '2008', 'zodiacpress' ), __( '2009', 'zodiacpress' ), __( '2010', 'zodiacpress' ), __( '2011', 'zodiacpress' ), __( '2012', 'zodiacpress' ), __( '2013', 'zodiacpress' ), __( '2014', 'zodiacpress' ), __( '2015', 'zodiacpress' ), __( '2016', 'zodiacpress' ), __( '2017', 'zodiacpress' ) );
 
@@ -281,16 +280,13 @@ function zp_extract_whole_minutes( $decimal ) {
 function zp_transliterated_degrees_minutes_seconds( $dms ) {
 
 	$parts		= explode( chr( 176), $dms );
-	$deg 		= trim( $parts[0] );
+	$deg 		= (int) trim( $parts[0] );
 	$min_sec	= explode( "'", $parts[1] );
 	$min		= (int) trim( $min_sec[0] );
 	$sec		= (int) trim( strstr( $min_sec[1], '"', true ) );
-
-	if ( is_rtl() ) {
-		$degrees = '&#176;' . zp_i18n_coordinates( $deg );
-	} else {
-		$degrees = zp_i18n_coordinates( $deg ) . '&#176;';
-	}
+	$i18n_degrees = zp_i18n_coordinates( $deg );
+	$i18n_degrees = is_array( $i18n_degrees ) ? $deg : $i18n_degrees;
+	$degrees = is_rtl() ? ( '&#176;' . $i18n_degrees ) : ( $i18n_degrees . '&#176;' );
 
 	// Insert leading zero when needed
 	if ( $min < 10 ) {
@@ -301,7 +297,7 @@ function zp_transliterated_degrees_minutes_seconds( $dms ) {
 	}
 
 	/* translators: Attention RTL languages. 5 placeholders are degrees, minutes, minutes symbol, seconds, seconds symbol. */
-	$out = sprintf( __( '%1$s %2$s%3$s %4$s%5$s', 'zodiacpress' ),
+	$out = sprintf( __( '%1$s %2$s%3$s%4$s%5$s', 'zodiacpress' ),
 				$degrees,
 				zp_i18n_numbers_zeros( $min ),
 				chr(39),

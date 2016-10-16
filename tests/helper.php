@@ -19,7 +19,6 @@ class ZP_Helper extends WP_UnitTestCase {
 				'year'					=> '1955',
 				'hour'					=> '19',
 				'minute'				=> '15',
-				'city'					=> 'San Francisco',
 				'geo_timezone_id'		=> 'America/Los_Angeles',
 				'place'					=> 'San Francisco, California, United States',
 				'zp_lat_decimal'		=> '37.77493',
@@ -37,7 +36,6 @@ class ZP_Helper extends WP_UnitTestCase {
 				'year'					=> '1958',
 				'hour'					=> '19',
 				'minute'				=> '33',
-				'city'					=> 'Gary',
 				'geo_timezone_id'		=> 'America/Chicago',
 				'place'					=> 'Gary, Indiana, United States',
 				'zp_lat_decimal'		=> '41.59337',
@@ -80,5 +78,11 @@ class ZP_Helper extends WP_UnitTestCase {
  
 		return $method;
 	}
+	/**
+	 * Print output to the terminal
+	 */
+	public static function print_to_terminal( $var ) {
+        fwrite( STDERR, print_r( $var, TRUE ) );
+    }	
 
 }

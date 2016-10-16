@@ -1,4 +1,7 @@
 <?php
+/**
+ * Tests for the ZP_Ephemeris class
+ */
 class Test_Ephemeris extends WP_UnitTestCase {
 
 	protected $charts						= array();
@@ -26,7 +29,6 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		include dirname( __FILE__ ) . '/helper-expected-ephemeris.php';
 		
 	}
-
 	/**
 	 * Test query the ephemeris
 	 */
@@ -106,7 +108,7 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		$this->assertInternalType('array', $data);
 			
 		// Get calculated house cusps which ephemeris outputs at index 13-24
-		$calculated_cusps = array_slice($data, 13, 12);
+		$calculated_cusps = array_slice( $data, 13, 12 );
 
 		$this->assertEquals( '172.2929065', trim( $calculated_cusps[0] ), 'GOOD NEWS, the ephemeris may have been fixed to calculate Whole Sign house cusps. Test 12 cusps to be sure.' );
 
@@ -135,7 +137,6 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		for ( $x = 0; $x <= 12; $x++ ) {
 
 			$expected	= round( (int) $this->expected_sidereal_fagan[ $x ], 6 );
-			// $actual		= (int) trim( $data[ $x ] );
 			$actual		= round( (int) trim( $data[ $x ] ), 6 );
 			$this->assertEquals( $expected, $actual, 'Wrong Sidereal Fagan/Bradley longitude for planet ' . $x );
 
@@ -177,7 +178,6 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		for ( $x = 13; $x <= 24; $x++ ) {
 
 			$expected	= round( (int) $this->expected_sidereal_fagan[ $x ], 6 );
-			// $actual		= (int) trim( $data[ $x ] );
 			$actual		= round( (int) trim( $data[ $x ] ), 6 );
 			$this->assertEquals( $expected, $actual, 'Wrong Sidereal Fagan/Bradley cusp for house ' . ( $x - 12 ) );
 

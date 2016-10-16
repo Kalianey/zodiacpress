@@ -120,6 +120,89 @@ class Test_Time extends WP_UnitTestCase {
 
 	}
 
-	
+	/**
+	 * Test the zp_transliterated_degrees_minutes_seconds() function
+	 */
+	public function test_transliterate_dms() {
+
+		$expected = array(
+			array( ' 24° 6\'50" ', '24&#176; 06\'50"' ),
+			);
+
+		foreach ( $expected as $e ) {
+			$actual = zp_transliterated_degrees_minutes_seconds( $e[0] );
+			$this->assertEquals( $e[1], $actual );
+
+		}
+
+	}
+
+	/**
+	 * Test that Universal Date is properly adjusted a month and year forward for timezone offset.
+	 */
+	public function test_ut_date_day_change_next_year() {
+
+		$person = array(
+			'name'					=> 'Led Zeppelin',
+			'month'					=> '12',
+			'day'					=> '31',
+			'year'					=> '1955',
+			'hour'					=> '20',
+			'minute'				=> '30',
+			'place'					=> 'San Francisco, California, United States',
+			'zp_lat_decimal'		=> '37.77493',
+			'zp_long_decimal'		=> '-122.41942',
+			'geo_timezone_id'		=> 'America/Los_Angeles',
+			'zp-report-variation'	=> 'birthreport',
+			'zp_offset_geo'			=> '-8',
+			'action'				=> 'zp_birthreport',
+			'unknown_time'			=> '',
+			'sidereal'				=> false,
+			);
+
+		$chart = ZP_Chart::get_instance( $person );
+
+		$expected_ut_date = '01.01.1956';
+
+		$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_date' );
+		$calculated_ut_date = $property->getValue( $chart );
+
+		$this->assertEquals( $expected_ut_date, $calculated_ut_date );
+
+	}
+
+
+	/**
+	 * Test that Universal Date is properly adjusted a month and year backward for timezone offset.
+	 */
+	public function test_ut_date_day_change_previous_year() {
+
+		$person = array(
+			// 'name'					=> 'The Who',
+			'month'					=> '1',
+			'day'					=> '1',
+			'year'					=> '1978',
+			'hour'					=> '01',
+			'minute'				=> '00',
+			'place'					=> 'Hong, Arunachal Pradesh, Republic of India',
+			'zp_lat_decimal'		=> '27.55922',
+			'zp_long_decimal'		=> '93.8495',
+			'geo_timezone_id'		=> 'Asia/Kolkata',
+			'zp-report-variation'	=> 'birthreport',
+			'zp_offset_geo'			=> '5.5',
+			'action'				=> 'zp_birthreport',
+			'unknown_time'			=> '',
+			'sidereal'				=> false,
+		);
+		$chart = ZP_Chart::get_instance( $person );
+
+		$expected_ut_date = '31.12.1977';
+
+		$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_date' );
+		$calculated_ut_date = $property->getValue( $chart );
+
+		$this->assertEquals( $expected_ut_date, $calculated_ut_date );		
+
+	}
 
 }

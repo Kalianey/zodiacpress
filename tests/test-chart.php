@@ -19,46 +19,6 @@ class Test_Chart extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test that Universal Date is properly adjusted either a day forward or backward for timezone offset.
-	 */
-	public function test_ut_date() {
-
-		$expected_ut_date = array(
-			'25.02.1955',// Steve Jobs
-			'30.08.1958'// Michael Jackson
-		);
-				
-		foreach ( $this->charts as $person => $chart ) {
-
-			$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_date' );
-			$calculated_ut_date = $property->getValue( $chart );
-
-			$this->assertEquals( $expected_ut_date[ $person ], $calculated_ut_date, 'Wrong UT date for Person ' . $person );
-		}
-
-	}
-
-	/**
-	 * Test Universal Time
-	 */
-	public function test_ut_time() {
-
-		$expected_ut_time = array(
-			'03:15:00',// Steve Jobs
-			'00:33:00'// Michael Jackson
-		);
-				
-		foreach ( $this->charts as $person => $chart ) {
-
-			$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_time' );
-			$calculated_ut_time = $property->getValue( $chart );
-
-			$this->assertEquals( $expected_ut_time[ $person ], $calculated_ut_time, 'Wrong UT time for Person ' . $person );
-		}
-
-	}
-
-	/**
 	 * Test the house cusps for Placidus houses
 	 */
 	public function test_house_cusps() {
@@ -132,5 +92,44 @@ class Test_Chart extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * Test Universal Time
+	 */
+	public function test_ut_time() {
+
+		$expected_ut_time = array(
+			'03:15:00',// Steve Jobs
+			'00:33:00'// Michael Jackson
+		);
+				
+		foreach ( $this->charts as $person => $chart ) {
+
+			$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_time' );
+			$calculated_ut_time = $property->getValue( $chart );
+
+			$this->assertEquals( $expected_ut_time[ $person ], $calculated_ut_time, 'Wrong UT time for Person ' . $person );
+		}
+
+	}
+
+	/**
+	 * Test that Universal Date is properly adjusted a day forward for timezone offset.
+	 */
+	public function test_ut_date_day_change_forward() {
+
+		$expected_ut_date = array(
+			'25.02.1955',// Steve Jobs
+			'30.08.1958'// Michael Jackson
+		);
+				
+		foreach ( $this->charts as $person => $chart ) {
+
+			$property = ZP_Helper::get_private_property( 'ZP_Chart', 'ut_date' );
+			$calculated_ut_date = $property->getValue( $chart );
+
+			$this->assertEquals( $expected_ut_date[ $person ], $calculated_ut_date, 'Wrong UT date for Person ' . $person );
+		}
+
+	}
 
 }
