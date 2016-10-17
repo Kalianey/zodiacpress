@@ -214,8 +214,8 @@ class ZP_Birth_Report {
 				$content .= '<p class="zp-subheading">' .
 							sprintf( __( 'NOTE: %1$s changed signs the day you were born. It moved from %2$s to %3$s. Therefore, you will need your exact time of birth to know which of these two signs your %1$s is in.', 'zodiacpress' ),
 								zp_get_planets()[ $v['planet_key'] ]['label'],
-								zp_get_zodiac_signs()[ $v['ingress_0'] ]['label'],
-								zp_get_zodiac_signs()[ $v['ingress_1'] ]['label'] ) . 
+								$v['ingress_0'],
+								$v['ingress_1'] ) . 
 							'</p>';
 
 			} else {
@@ -350,13 +350,13 @@ class ZP_Birth_Report {
 				}
 
 				$planets_in_signs[] = array(
-									'id'			=> $planet['id'] . '_' . $signs[ $sign_num ]['id'],
-									'label'			=> $planet['label'] . ' in ' . $signs[ $sign_num ]['label'],
-									'zodiacal_dms'	=> zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde,
-									'ingress_0'		=> isset( $ingress[0] ) ? $ingress[0] : '',
-									'ingress_1'		=> isset( $ingress[1] ) ? $ingress[1] : '',
-									'planet_key'	=> $k
-									);
+							'id'			=> $planet['id'] . '_' . $signs[ $sign_num ]['id'],
+							'label'			=> $planet['label'] . ' in ' . $signs[ $sign_num ]['label'],
+							'zodiacal_dms'	=> zp_get_zodiac_sign_dms( $this->chart->planets_longitude[ $k ] ) . $retrograde,
+							'ingress_0'		=> isset( $ingress[0] ) ? $signs[ $ingress[0] ]['label'] : '',
+							'ingress_1'		=> isset( $ingress[1] ) ? $signs[ $ingress[1] ]['label'] : '',
+							'planet_key'	=> $k
+						);
 			}
 		}
 
