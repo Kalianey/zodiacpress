@@ -1,10 +1,10 @@
 === ZodiacPress  ===
 Contributors: isabel104
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZQKG2M58G&lc=US&no_note=1&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
-Tags: zodiacpress, zodiac, astrology, natal report, natal reports, birth report, birth reports, astrology reports, horoscope
+Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
-Tested up to: 4.6.1
-Stable tag: 1.2
+Tested up to: 4.7
+Stable tag: 1.3
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Generate astrology birth reports with your custom interpretations.
 
 ZodiacPress is the first WordPress plugin that lets you generate astrology birth reports with your custom interpretations, directly on your site. 
 
-This is **not** an embedded script that pulls astrology data from another astrology site. ZodiacPress turns your site into an astrology report press. Your astrology interpretations reside on your own site, and the reports are created on your own site. The Swiss Ephemeris is included inside.
+This is **not** an embedded script that pulls astrology data from another astrology site. ZodiacPress turns your site into an astrology report press. Your astrology interpretations reside on your own site, and the reports are created on your own site. The Swiss Ephemeris is included inside. Also includes Sidereal zodiac options.
 
 The birth report includes three parts: 
 
@@ -23,6 +23,10 @@ The birth report includes three parts:
 3. Aspects
 
 You can choose which planets and aspects to include in the birth report.
+
+Tropical zodiac is the default, but you can choose to use the Sidereal Zodiac. Choose from 4 sidereal methods: Hindu/Lahiri, Fagan/Bradley, Raman, or Krishnamurti.
+
+You can set a house system to be used for the report. The default is Placidus, but you can choose from 12 house systems.
 
 You can add an optional Intro and Closing to the birth report.
 
@@ -38,11 +42,11 @@ Entering your interpretations is not required since you can generate reports wit
 
 You get granular control over aspect orbs. It lets you assign different orbs for each planet and each type of aspect.
 
+If birth time is unknown, ZP checks for ingress on that day rather than simply using the planet's noon position. If an ingress occurs at any time on the that day, it lets the person know that the planet changed signs on that day, and from which sign to which it changed.
+
 ZodiacPress gets birth place latitude/longitude coordinates from the GeoNames geographical database which uses the latest revision of World Geodetic System (WGS 84). 
 
 ZP uses the Swiss Ephemeris (under GNU GPLv2) to get the longitude of the planets/celestial bodies.
-
-ZP uses the tropical zodiac.
 
 **Internationalization**
 
@@ -87,9 +91,9 @@ If your website is running on a Windows operating system (i.e. using Windows hos
 
 See these [troubleshooting articles](https://cosmicplugins.com/docs/category/zodiacpress/troubleshooting/ "Troubleshooting ZodiacPress").
 
-= What house system is used for the "Planets in Houses" section of the report? =
+= How can I set the house system to be used for the "Planets in Houses" section of the report? =
 
-The Placidus House System is used. To change the house system, you need the [ZP House Systems](https://cosmicplugins.com/downloads/zodiacpress-house-systems/ "ZP House Systems") extension.
+The Placidus House System is used by default. To change the house system, you can either use the [ZP House Systems](https://cosmicplugins.com/downloads/zodiacpress-house-systems/ "ZP House Systems") extension, or [set the house system](https://cosmicplugins.com/docs/choose-a-house-system/) directly in the shortcode.
 
 = How can I get help or support? =
 
@@ -112,6 +116,21 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
  
 == Changelog ==
 
+= 1.3 =
+* New - Option to use the Sidereal zodiac. Choose from 4 sidereal methods - Hindu/Lahiri, Fagan/Bradley, Raman, or Krishnamurti.
+* New - You can now set the house system to be used in the shortcode. 12 house systems are included.
+* New - The report header will now show which zodiac is used, whether Tropical or Sidereal.
+* New - The report header will now show Universal Time in addition to the local time formats.
+* New - If birth time is unknown, check for ingress on that day. Let the person know that the planet changed signs on that day, and from which sign to which it changed.
+* New - Add filter to omit name field on form.
+* New - Allow Start Over link to be removed with a filter.
+* New - Added a Feedback link in the ZP admin.
+* New - New ZP_Ephemeris class to query the Swiss Ephemeris to seperate this from the ZP_Chart class. The ZP_Chart::query_ephemeris method is deprecated. Use the new ZP_Ephemeris instead
+* Fix - the Birth City field was broken and/or missing many cities because urlencode() was breaking the autocomplete cities list.
+* Tweak - Update Lilith's label to Black Moon Lilith.
+* Tweak - Simplified form no longer shows coordinates.
+* Tweak - Force the PHP mktime() function to use UTC when creating the unix timestamp for the chart since mktime() uses whatever zone its server wants. This is to prevent giving bad times in case some server is not using UTC.
+
 = 1.2 =
 * New - Added granular control over orbs. Custom orbs can now be set per each type of aspect and per each planet.
 * Fix - Birth report was not working on https/SSL/encrypted pages. The free Geonames webservices only serves over http. The call to Geonames is now made from the server side, rather than in the browser, to support https/SSL.
@@ -122,6 +141,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.3 =
+Fixes the Birth City field.
 
 = 1.2 =
 NEW - Orb controls. FIX - Now works on https/SSL encrypted pages.
