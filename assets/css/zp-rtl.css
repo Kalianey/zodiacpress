@@ -43,7 +43,6 @@
 }
 .zp-report-header,
 .zp-report-caption {
-	/* @todo reminify RTL.min.css !!!! */
 	text-align: right;
 }
 .zp-zodiacal-dms {
