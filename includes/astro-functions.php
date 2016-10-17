@@ -516,7 +516,9 @@ function zp_get_sidereal_methods() {
 			'lahiri'		=> array( 'id' => '1',
 									'label' => __( 'Lahiri', 'zodiacpress' ) ),
 			'raman'			=> array( 'id' => '3',
-									'label' => __( 'Raman', 'zodiacpress' ) )
+									'label' => __( 'Raman', 'zodiacpress' ) ),
+			'krishnamurti'	=> array( 'id' => '5',
+									'label' => __( 'Krishnamurti', 'zodiacpress' ) )
 	);
 
 	return $sidereal_methods;
