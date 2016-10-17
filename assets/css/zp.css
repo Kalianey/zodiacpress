@@ -54,15 +54,20 @@
 #zp-birthreport-form .zp-input-text {
  	width: 100%;
 }
-#zp-ajax-birth-data fieldset {
+#zp-ajax-birth-data fieldset,
+.zp-birthplace {
     border: 0;
-    margin: 0 0 1.62em;
+    margin: 0;
     padding: 0.8em 0;
 }
 #zp-ajax-birth-data legend{
 	float:left;
 	margin: 5px 10px 0 0;
 }
+.zp-name-field {
+	margin-bottom: 12px
+}
+.zp-name-field label,
 .zp-birthdate legend,
 .zp-birthtime legend,
 .zp-birthplace label{
