@@ -143,7 +143,7 @@ add_action('admin_head', 'zp_custom_admin_menu_icon');
  * Displays a link to see ZP extensions.
  */
 function zp_extend_link() {
-	echo '<a href="https://cosmicplugins.com/downloads/category/zodiacpress-extensions/" class="zp-button zp-extend-link alignright" target="_blank" rel="nofollow">';
+	echo '<a href="https://cosmicplugins.com/downloads/category/zodiacpress-extensions/" class="button-secondary zp-extend-link alignright" target="_blank" rel="nofollow">';
 	_e( 'See ZodiacPress Extensions', 'zodiacpress' );
 	echo '</a>';
 }
@@ -152,7 +152,7 @@ function zp_extend_link() {
  * Displays a link to rate ZodacPress
  */
 function zp_feedback_link() {
-	echo '<a href="https://wordpress.org/support/plugin/zodiacpress/reviews/" class="zp-button zp-feedback-link alignright" target="_blank" rel="nofollow">';
+	echo '<a href="https://wordpress.org/support/plugin/zodiacpress/reviews/" class="button-secondary zp-feedback-link alignright" target="_blank" rel="nofollow">';
 	_e( 'Feedback', 'zodiacpress' );
 	echo '</a>';
 }
