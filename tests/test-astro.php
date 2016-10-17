@@ -122,9 +122,14 @@ class Test_Astro extends WP_UnitTestCase {
 	 */
 	public function test_is_planet_ingress_today_true_mars() {
 
-		$timestamp = -468518400;// 2/26/1955 8 am
-
-		$actual = zp_is_planet_ingress_today( 4, '29.9308316', $timestamp );
+		// $timestamp = -468518400;// 2/26/1955 8 am
+		$form = array(
+				'month'				=> '2',
+				'day'				=> '26',
+				'year'				=> '1955',			
+				'geo_timezone_id'	=> 'America/Los_Angeles',
+		);
+		$actual = zp_is_planet_ingress_today( 4, '29.9308316', $form );
 
 		$this->assertInternalType('array', $actual);
 		$this->assertEquals( 0, $actual[0] );// aries
@@ -137,9 +142,14 @@ class Test_Astro extends WP_UnitTestCase {
 	 */
 	public function test_is_planet_ingress_today_false_mars() {
 
-		$timestamp = -468432000;//2/27/1955 8 am utc
-
-		$actual = zp_is_planet_ingress_today( 4, '30.6317917', $timestamp );
+		// $timestamp = -468432000;//2/27/1955 8 am utc
+		$form = array(
+				'month'				=> '2',
+				'day'				=> '27',
+				'year'				=> '1955',			
+				'geo_timezone_id'	=> 'America/Los_Angeles',
+		);
+		$actual = zp_is_planet_ingress_today( 4, '30.6317917', $form );
 
 		$this->assertFalse( $actual );
 
@@ -150,9 +160,14 @@ class Test_Astro extends WP_UnitTestCase {
 	 */
 	public function test_is_planet_ingress_today_true_mars_2() {
 
-		$timestamp = 372412800;// 10/20/1981 8 am
-
-		$actual = zp_is_planet_ingress_today( 4, '149.5622890', $timestamp );
+		// $timestamp = 372412800;// 10/20/1981 8 am
+		$form = array(
+				'month'				=> '10',
+				'day'				=> '20',
+				'year'				=> '1981',			
+				'geo_timezone_id'	=> 'America/Los_Angeles',
+		);
+		$actual = zp_is_planet_ingress_today( 4, '149.5622890', $form );
 
 		$this->assertInternalType('array', $actual);
  		$this->assertEquals( 4, $actual[0] );// leo
@@ -164,9 +179,15 @@ class Test_Astro extends WP_UnitTestCase {
 	 */
 	public function test_is_planet_ingress_today_false_mars_2() {
 
-		$timestamp = -372499200;// 10/21/1981 8 am
-
-		$actual = zp_is_planet_ingress_today( 4, '150.1477661', $timestamp );
+		//$timestamp = -372499200;// 10/21/1981 8 am
+		$form = array(
+				'month'				=> '10',
+				'day'				=> '21',
+				'year'				=> '1981',			
+				'geo_timezone_id'	=> 'America/Los_Angeles',
+		);
+		
+		$actual = zp_is_planet_ingress_today( 4, '150.1477661', $form );
 
 		$this->assertFalse( $actual );
 

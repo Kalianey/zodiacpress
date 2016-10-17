@@ -337,6 +337,7 @@ class ZP_Birth_Report {
 				$sign_num	= floor( $this->chart->planets_longitude[ $k ] / 30 );
 
 				$retrograde	= '';
+				$ingress	= '';
 
 				// Check for retrograde, but not for POF, Vertex, Asc, or MC
 				if ( ! in_array( $k, array( 13, 14, 15, 16 ) ) && $this->chart->planets_speed[ $k ] < 0 ) {
@@ -344,25 +345,8 @@ class ZP_Birth_Report {
 				}
 
 				// If birthtime is unknown, check if planet ingress occurs this day
-
 				if ( $this->form['unknown_time'] ) {
-
-					/*	For ephemeris, I need a timestring for midnight, the start of day,
-						at the chart's local date, then convert that to UT. I will look for ingress within 24 hours from that time.
-						Midnight in their local timezone will not be the same as UT midnight.
-						Why use local midnight rather than UT midnight: they don't know their birth time but they know they were born that day at THAT location. I want to look for ingress from local start of day to local end of day.
-						Use the original form date which is their local date in their
-						own timezone, not UT date. ut_date may be different from date entered on form due to adjusting for tz offset. */
-
-					$form_date_midnight = $this->form['year'] . '-' .
-										$this->form['month'] . '-' .
-										$this->form['day'] . ' 00:00:00' . ' ' .
-										$this->form['geo_timezone_id'];
-
-					$timestamp = strtotime( $form_date_midnight );
-
-					$ingress = zp_is_planet_ingress_today( $k, $this->chart->planets_longitude[ $k ], $timestamp );
-
+					$ingress = zp_is_planet_ingress_today( $k, $this->chart->planets_longitude[ $k ], $this->form );
 				}
 
 				$planets_in_signs[] = array(

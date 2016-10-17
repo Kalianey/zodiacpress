@@ -415,15 +415,16 @@ function zp_is_planet_near_ingress( $planet, $longitude ) {
 }
 
 /**
- * Check if a planet ingress into a new sign occurs this day.
+ * Check if a planet ingress into a new sign occurs on the day as entered into the form.
  *
  * @param int $planet The planet's official index key
  * @param string $longitude The longitude decimal of the planet
- * @param int $timestamp UNIX timestamp for midnight on the date to check for ingress
+ * @param array $form The form data for this person/moment
  * @since 1.3
  * @return mixed $ingress array of sign keys if ingress occurs this day, otherwise false 
  */
-function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
+function zp_is_planet_ingress_today( $planet, $longitude, $form ) {
+
 	// Do not check time-sensitve points or planets, i.e. moon, asc, mc, pof, vertex
 	$planets = zp_get_planets();
 	if ( ! empty( $planets[ $planet ]['supports'] ) && in_array( 'birth_time_required', $planets[ $planet ]['supports'] ) ) {
@@ -449,6 +450,21 @@ function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
 				break;
 		}
 
+		/*	For ephemeris, I need a timestring for midnight, the start of day,
+			at the chart's local date, then convert that to UT. I will look for ingress within 24 hours from that time.
+			Midnight in their local timezone will not be the same as UT midnight.
+			Why use local midnight rather than UT midnight: they don't know their birth time but they know they were born that day at THAT location. I want to look for ingress from local start of day to local end of day which will be a different time block than UT start of day to UT end of day.
+			Use the original form date which is their local date in their
+			own timezone, not UT date. ut_date may be different from date entered on form due to adjusting for tz offset. */
+
+		$form_date_midnight = $form['year'] . '-' .
+							$form['month'] . '-' .
+							$form['day'] . ' 00:00:00' . ' ' .
+							$form['geo_timezone_id'];
+
+		// unix timestamp for midnight on the date to check for ingress
+		$timestamp = strtotime( $form_date_midnight );
+		
 		// Convert unix timestamp to UT string for ephemeris. 
 		$ut_date = strftime( "%d.%m.%Y", $timestamp );
 		$ut_time = strftime( "%H:%M:%S", $timestamp );
