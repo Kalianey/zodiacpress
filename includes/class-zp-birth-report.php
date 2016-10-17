@@ -138,7 +138,7 @@ class ZP_Birth_Report {
 			$zodiac_type .= ' ' .
 						sprintf( __( 'ayanamsa = %1$s <span class="zp-mobile-wrap">(%2$s)</span>', 'zodiacpress' ),
 						$ayanamsa,
-						$this->chart->sidereal_methods[ $this->chart->sidereal ]['label'] );
+						zp_get_sidereal_methods()[ $this->chart->sidereal ]['label'] );
 		}
 
 		// Begin header HTML
@@ -161,10 +161,9 @@ class ZP_Birth_Report {
 		// House system used
 
 		if ( empty( $this->form['unknown_time'] ) ) {
-			$houses_label = apply_filters( 'zp_house_system_label', __( 'Placidus', 'zodiacpress' ), $this->chart->house_system );
-
 			$houses = '<tr><td colspan="3">' .
-					sprintf( __( '%s Houses', 'zodiacpress' ), $houses_label ) .
+					sprintf( __( '%s Houses', 'zodiacpress' ),
+					zp_get_house_systems( $this->chart->house_system ) ) .
 					'</td></tr>';
 			// Allow house system to be removed with filter
 			$header .= apply_filters( 'zp_report_header_houses', $houses, $this->form['zp-report-variation'] );

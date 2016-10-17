@@ -157,6 +157,7 @@ class Test_Time extends WP_UnitTestCase {
 			'zp_offset_geo'			=> '-8',
 			'action'				=> 'zp_birthreport',
 			'unknown_time'			=> '',
+			'house_system'			=> false,
 			'sidereal'				=> false,
 			);
 
@@ -192,6 +193,7 @@ class Test_Time extends WP_UnitTestCase {
 			'zp_offset_geo'			=> '5.5',
 			'action'				=> 'zp_birthreport',
 			'unknown_time'			=> '',
+			'house_system'			=> false,
 			'sidereal'				=> false,
 		);
 		$chart = ZP_Chart::get_instance( $person );

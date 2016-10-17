@@ -27,6 +27,7 @@ class ZP_Helper extends WP_UnitTestCase {
 				'action'				=> 'zp_birthreport',
 				'zp-report-variation'	=> 'birthreport',
 				'unknown_time'			=> '',
+				'house_system'			=> false,
 				'sidereal'				=> false
 			),
 			array(
@@ -44,6 +45,7 @@ class ZP_Helper extends WP_UnitTestCase {
 				'action'				=> 'zp_birthreport',
 				'zp-report-variation'	=> 'birthreport',
 				'unknown_time'			=> '',
+				'house_system'			=> false,
 				'sidereal'				=> false
 			)
 		);

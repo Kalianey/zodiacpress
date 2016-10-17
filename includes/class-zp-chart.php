@@ -86,11 +86,6 @@ final class ZP_Chart {
 	public $sidereal;
 
 	/**
-	 * Available sidereal methods
-	 */
-	public $sidereal_methods = array();
-
-	/**
 	 * The calculated Ayanamsa, if this is a sidereal chart.
 	 */
 	public $ayanamsa;	
@@ -117,25 +112,16 @@ final class ZP_Chart {
 	 * @param array $moment Validated form data
 	 */
 	public function __construct( $moment ) {
-
 		// Set Universal time and date for this chart
 		$this->setup_ut( $moment );
 
-		// Set up coordinates
 		$this->latitude		= $moment['zp_lat_decimal'];
 		$this->longitude	= $moment['zp_long_decimal'];
-
-		$this->sidereal = $moment['sidereal'];
-
-		$this->sidereal_methods = array(
-			'fagan/bradley' => array( 'id' => '0',
-									'label' => __( 'Fagan/Bradley', 'zodiacpress' ) ),
-			'lahiri'		=> array( 'id' => '1',
-									'label' => __( 'Lahiri', 'zodiacpress' ) ),
-			'raman'			=> array( 'id' => '3',
-									'label' => __( 'Raman', 'zodiacpress' ) )
-		);
-
+		$this->sidereal		= $moment['sidereal'];
+		// Let the shortcode parameter for house system override the default house system
+		$this->house_system	= $moment['house_system'] ?
+							$moment['house_system'] :
+							apply_filters( 'zp_default_house_system', 'P' );
 		$this->setup_chart();
 
 	}
@@ -211,9 +197,7 @@ final class ZP_Chart {
 	 */
 	private function setup_chart() {
 
-		$this->house_system = apply_filters( 'zp_default_house_system', 'P' );
-
-		// Ephemeris gives wrong calculations for Whole Sign houses, so query it as Placidus, then calculate Whole houses manually.
+		// Ephemeris gives wrong calculations for Whole Sign houses, so query it as Placidus, then calculate Whole Sign houses manually.
 		$final_house_system = ( 'W' == $this->house_system ) ? 'P' : $this->house_system;
 
 		// Args for the ephemeris query
@@ -231,14 +215,14 @@ final class ZP_Chart {
 		if ( $this->sidereal ) {
 
 			// Set the Ayanamsa property so we can show it in the report header
-			$args['options']	= '-ay' . $this->sidereal_methods[ $this->sidereal ]['id'] . ' -roundsec';
+			$args['options']	= '-ay' . zp_get_sidereal_methods()[ $this->sidereal ]['id'] . ' -roundsec';
 			$ephemeris			= new ZP_Ephemeris( $args );
 			$ayanamsa_data		= $ephemeris->query();
 			$row				= explode( ',', $ayanamsa_data[0] );
 			$this->ayanamsa		= trim( $row[1] );
 
 			// Set the sidereal flag for the chart query
-			$args['options'] = '-sid' . $this->sidereal_methods[ $this->sidereal ]['id'];
+			$args['options'] = '-sid' . zp_get_sidereal_methods()[ $this->sidereal ]['id'];
 		}
 
 		$ephemeris	= new ZP_Ephemeris( $args );
@@ -286,7 +270,7 @@ final class ZP_Chart {
 				}
 				// Capture the house cusps, which ephemeris outputs at index 13-24
 				if ( 12 < $key && $key < 25 ) {
-					$this->cusps[ ++$i ] = $row[0];
+					$this->cusps[ ++$i ] = trim( $row[0] );
 				}
 			}
 

@@ -100,7 +100,7 @@ function zp_is_month_before_day() {
 }
 
 /**
- * Returns an array of internationalized months.
+ * Returns internationalized months.
  * @param int $key The month to return
  * @return mixed|array|string If key is passed, a string for that month, otherwise array of all months
  */

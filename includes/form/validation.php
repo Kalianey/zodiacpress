@@ -137,12 +137,22 @@ function zp_validate_form( $data, $partial = false ) {
 
 	// Validate the sidereal hidden field
 	$sidereal = empty( $data['zp_report_sidereal'] ) ? false : sanitize_text_field( $data['zp_report_sidereal'] );
+	if ( ! isset( zp_get_sidereal_methods()[ $sidereal ] ) ) {
+		$sidereal = false;
+	}
+
+	// Validate the house system hidden field
+	$house_system = empty( $data['zp_report_house_system'] ) ? false : sanitize_text_field( $data['zp_report_house_system'] );
+	if ( ! isset( zp_get_house_systems()[ $house_system ] ) ) {
+		$house_system = false;
+	}
 
 	// Update the sanitize values
 	if ( is_array( $out ) ) {
 		$out['zp_offset_geo']	= $offset;
 		$out['name']			= $name;
 		$out['sidereal']		= $sidereal;
+		$out['house_system']	= $house_system;
 	}
 	
 	return $out;

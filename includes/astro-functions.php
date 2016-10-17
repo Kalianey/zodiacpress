@@ -21,7 +21,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * @return array of planets id and label. If no parameters passed, returns all planets.
  */
 function zp_get_planets( $houses = '', $include = '' ) {
-
 	$planets = apply_filters( 'zp_get_planets', array(
 		array(
 			'id'		=> 'sun',
@@ -211,9 +210,7 @@ function zp_get_zodiac_signs() {
 * @param zodiac decimal longitude in 360 degrees notation
 * @return string zodiac sign degrees in 30 degrees notation, sign glyph, minutes, seconds
 */
-
 function zp_get_zodiac_sign_dms( $longitude ) {
-
 	// incoming $longitude should never reach 360. Only 359.999999 then goes to 0 degrees.
 	if ( $longitude >= 360 ) {
 		return 'ERROR 360: undefined';
@@ -284,7 +281,6 @@ function zp_get_zodiac_sign_dms( $longitude ) {
  * @return int|bool The number of house for this planet, 1-12, or false upon error.
  */
 function zp_get_planet_house_num( $planet, $cusps ) {
-
 	if ( empty( $cusps ) || empty( $planet ) ) {
 		return false;
 	}
@@ -337,7 +333,6 @@ function zp_get_planet_house_num( $planet, $cusps ) {
  * @return bool True if planet is conjunct to next house cusp, otherwise false.
  */
 function zp_conjunct_next_cusp( $p_key = '', $p_long, $p_house, $cusps ) {
-
 	if ( '' === $p_key || empty( $p_long ) || empty( $p_house ) || empty( $cusps ) ) {
 		return false;
 	}
@@ -381,7 +376,6 @@ function zp_calculate_descendant( $asc ) {
  * @return bool
  */
 function zp_is_planet_near_ingress( $planet, $longitude ) {
-		
 	// Get the degree position in the sign, as in between 0 - 29.9999
 	$sign_num		= floor( $longitude / 30 );
 	$pos_in_sign	= $longitude - ( $sign_num * 30 );
@@ -430,7 +424,6 @@ function zp_is_planet_near_ingress( $planet, $longitude ) {
  * @return mixed $ingress array of sign keys if ingress occurs this day, otherwise false 
  */
 function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
-
 	// Do not check time-sensitve points or planets, i.e. moon, asc, mc, pof, vertex
 	$planets = zp_get_planets();
 	if ( ! empty( $planets[ $planet ]['supports'] ) && in_array( 'birth_time_required', $planets[ $planet ]['supports'] ) ) {
@@ -487,4 +480,44 @@ function zp_is_planet_ingress_today( $planet, $longitude, $timestamp ) {
 		}
 	}
 	return $ingress;
+}
+
+/**
+ * Returns all house systems if no key is passed, otherwise returns the name of the house system for a key.
+ * @param string $key The letter representing the house system
+ * @return mixed|array|string If key is passed, returns that house system, otherwise array of all house systems
+ */
+function zp_get_house_systems( $key = '' ) {
+	$house_systems = array(
+		'B' => __( 'Alcabitius', 'zodiacpress' ),
+		'C'	=> __( 'Campanus', 'zodiacpress' ),
+		'E'	=> __( 'Equal', 'zodiacpress' ),
+		'K'	=> __( 'Koch', 'zodiacpress' ),
+		'X'	=> __( 'Meridian', 'zodiacpress' ),
+		'M'	=> __( 'Morinus', 'zodiacpress' ),
+		'P'	=> __( 'Placidus', 'zodiacpress' ),
+		'O'	=> __( 'Porphyry', 'zodiacpress' ),
+		'R'	=> __( 'Regiomontanus', 'zodiacpress' ),
+		'T'	=> __( 'Topocentric', 'zodiacpress' ),
+		'V'	=> __( 'Vehlow', 'zodiacpress' ),
+		'W'	=> __( 'Whole Sign', 'zodiacpress' )
+	);
+	return ( $key && isset( $house_systems[ $key ] ) ) ? $house_systems[ $key ] : $house_systems;
+}
+
+/**
+ * Returns all available sidereal methods
+ * @return array $sidereal_methods
+ */
+function zp_get_sidereal_methods() {
+	$sidereal_methods = array(
+			'fagan/bradley' => array( 'id' => '0',
+									'label' => __( 'Fagan/Bradley', 'zodiacpress' ) ),
+			'lahiri'		=> array( 'id' => '1',
+									'label' => __( 'Lahiri', 'zodiacpress' ) ),
+			'raman'			=> array( 'id' => '3',
+									'label' => __( 'Raman', 'zodiacpress' ) )
+	);
+
+	return $sidereal_methods;
 }
