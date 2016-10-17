@@ -18,22 +18,8 @@
 	clear:both;
 	padding-top:1em;
 }
-.zp-button {
-	background: #26264c;
-	border: 0;
-	border-radius: 2px;
-	color: #fff;
-	line-height: 1;
-	padding: 0.84375em 0.875em 0.78125em;
-	box-sizing: border-box;
-	text-decoration: none;
-}
-.zp-button:hover, .zp-button:focus{
-	background-color: #333366;
-	color: #fff;
-}
-.zp-feedback-link {
-	margin-right:7px;
+.button-secondary.zp-feedback-link {
+	margin-right:10px;
 }
 .zp-extend-link::before {
 	font-family: "zodiacpress" !important;
