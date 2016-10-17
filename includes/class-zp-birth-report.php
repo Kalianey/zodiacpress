@@ -148,20 +148,20 @@ class ZP_Birth_Report {
 				'</caption>' .
 				'<tr>' .
 					'<td>' . $birth_data . '</td>' .
-				'</tr><tr>' .
+				'</tr><tr class="zp-report-header-ut">' .
 					'<td>' . __( 'Universal Time:', 'zodiacpress' ) . ' ' . $ut . ' </td>' .
-				'</tr><tr>' .
+				'</tr><tr class="zp-report-header-place">' .
 					'<td>' . stripslashes( $this->form['place'] ) . '</td>' .
-				'</tr><tr>' .					
+				'</tr><tr class="zp-report-header-coordinates">' .					
 					'<td>' . esc_html( $coordinates ) . '</td>' .
-				'</tr><tr>' .
+				'</tr><tr class="zp-report-header-zodiac-type">' .
 					'<td>' . $zodiac_type . '</td>' .
 				'</tr>';
 
 		// House system used
 
 		if ( empty( $this->form['unknown_time'] ) ) {
-			$houses = '<tr><td colspan="3">' .
+			$houses = '<tr class="zp-report-header-houses"><td>' .
 					sprintf( __( '%s Houses', 'zodiacpress' ),
 					zp_get_house_systems( $this->chart->house_system ) ) .
 					'</td></tr>';
