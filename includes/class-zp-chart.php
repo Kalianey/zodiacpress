@@ -299,9 +299,7 @@ final class ZP_Chart {
 		}
 		
 		$this->setup_conjunct_next_cusp();
-		
 		do_action( 'zp_setup_chart', $this );
-
 	}
 
 	/**
