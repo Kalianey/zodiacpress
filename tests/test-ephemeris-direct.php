@@ -31,8 +31,16 @@ class Test_Ephemeris_Direct extends WP_UnitTestCase {
         -glp  report file location of library
         */
 
-		// Regular report
+		// Regular Tropical report
 		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -house-122.41942,37.77493,P -eswe -fPlZ -g, -head", $out);
+
+
+		// Sidereal report
+		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -house-122.41942,37.77493,P -eswe -fPlZ -sid5 -g, -head", $out);
+
+		// Ayanamsa
+		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p -house-122.41942,37.77493,P -eswe -fPlZ -ay5 -g, -head", $out);
+
 
         // Regular with all points (-a)
 		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -pa -house-122.41942,37.77493,P -eswe -fPlZ -g, -head", $out);

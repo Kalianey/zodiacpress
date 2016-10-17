@@ -9,7 +9,7 @@ class ZP_Helper extends WP_UnitTestCase {
 	/**
 	 * Create test charts
 	 */
-	public static function create_charts() {
+	public static function create_charts( $sidereal = false ) {
 
 		$persons = array(
 			array(
@@ -28,7 +28,7 @@ class ZP_Helper extends WP_UnitTestCase {
 				'zp-report-variation'	=> 'birthreport',
 				'unknown_time'			=> '',
 				'house_system'			=> false,
-				'sidereal'				=> false
+				'sidereal'				=> $sidereal
 			),
 			array(
 				'name'					=> 'Michael Jackson',
@@ -46,7 +46,7 @@ class ZP_Helper extends WP_UnitTestCase {
 				'zp-report-variation'	=> 'birthreport',
 				'unknown_time'			=> '',
 				'house_system'			=> false,
-				'sidereal'				=> false
+				'sidereal'				=> $sidereal
 			)
 		);
 

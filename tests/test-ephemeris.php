@@ -113,7 +113,6 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		$this->assertEquals( '172.2929065', trim( $calculated_cusps[0] ), 'GOOD NEWS, the ephemeris may have been fixed to calculate Whole Sign house cusps. Test 12 cusps to be sure.' );
 
 	}
-
 	/**
 	 * Test sidereal Fagan/Bradley, planets and points longitudes
 	 */
@@ -225,8 +224,5 @@ class Test_Ephemeris extends WP_UnitTestCase {
 		$expected	= round( (int) $this->expected_sidereal_lahiri[28], 6 );
 		$actual		= round( (int) trim( $data[28] ), 6 );
 		$this->assertEquals( $expected, $actual, 'Wrong Sidereal Lahiri Vertex' );
-	}
-
-
-
+	}		
 }
