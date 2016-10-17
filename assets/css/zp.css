@@ -63,6 +63,11 @@
 	float:left;
 	margin: 5px 10px 0 0;
 }
+.zp-birthdate legend,
+.zp-birthtime legend,
+.zp-birthplace label{
+	min-width: 120px;
+}
 #zp-birthreport-form .zp-input-text,
 #zp-birthreport-form select{
 	padding:8px;
