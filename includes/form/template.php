@@ -135,9 +135,13 @@ function zp_day_form_field() {
 function zp_form( $report, $args = array() ) {
 
 	global $zodiacpress_options;
-	$allow_unknown_bt_key = $report . '_allow_unknown_bt';
-	$allow_unknown_bt = empty( $zodiacpress_options[ $allow_unknown_bt_key ] ) ? false : true;
-	?>
+
+	$allow_unknown_bt_key_prefix = $report;
+	if ( false !== strpos( $args['report'], 'planet_lookup' ) ) {
+		$allow_unknown_bt_key_prefix = 'planet_lookup';
+	}
+	$allow_unknown_bt_key = $allow_unknown_bt_key_prefix . '_allow_unknown_bt';
+	$allow_unknown_bt = empty( $zodiacpress_options[ $allow_unknown_bt_key ] ) ? false : true; ?>
 	<form id="zp-<?php echo esc_attr( $report ); ?>-form" method="post" class="zp-form">
 	
 		<?php 
@@ -187,11 +191,15 @@ function zp_form( $report, $args = array() ) {
 							<input type="checkbox" id="unknown_time" name="unknown_time" /> <?php echo apply_filters( 'zp_unknown_birth_time_checkbox', 'If birth time is unknown, check this box.', 'zodiacpress' ); ?><strong>*</strong></p>
 					<?php } 			
 				
-				} else { ?>
+				} else { 
 
-					<p class="zp-unknown-time-field zp-small">* <?php echo apply_filters( 'zp_birth_time_required', __( 'Birth time is required for this type of report.', 'zodiacpress' ) ); ?></p>
-
-				<?php } ?>
+					echo apply_filters( 'zp_birth_time_required',
+						'<p class="zp-unknown-time-field zp-small">* ' .
+						__( 'Birth time is required for this type of report.', 'zodiacpress' ) .
+						'</p>',
+						$args );
+	
+				} ?>
 			</fieldset>
 			<p class="zp-birthplace">
 				<label for="place" class="zp-form-label"><?php _e( 'Birth City', 'zodiacpress' ); ?></label>
@@ -230,14 +238,17 @@ function zp_form( $report, $args = array() ) {
 		// Add note about unknown birth time, but not for reports that require a birth time
 		if ( ! in_array( $args['report'], apply_filters( 'zp_reports_require_birthtime', array() ) ) ) {
 				// ...only if unkown time is allowed in settings
-			if ( $allow_unknown_bt ) { ?>
-				<p class="zp-birth-time-note zp-small"><?php _e( '<strong>* NOTE: </strong> If birth time is unknown, the report will not include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or Part of Fortune, nor will it include House positions for any planets.', 'zodiacpress' ); ?></p>
-			<?php }
+			if ( $allow_unknown_bt ) {
+
+				echo apply_filters( 'zp_allow_unknown_time_note',
+						'<p class="zp-birth-time-note zp-small">' .
+						__( '<strong>* NOTE: </strong> If birth time is unknown, the report will not include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or Part of Fortune, nor will it include House positions for any planets.', 'zodiacpress' ) .
+						'</p>',
+						$args );
+			}
 		}
 		
 		do_action( 'zp_form_bottom', $allow_unknown_bt, $report, $args ); ?>
 	</form>
-
 	<?php
-
 }
