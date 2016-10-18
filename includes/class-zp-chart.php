@@ -45,7 +45,7 @@ final class ZP_Chart {
 	 *
 	 * @var array
 	 */
-	private $cusps = array();
+	public $cusps = array();
 
 	/**
 	 * The positions of the planets and points in logitude decimal.
@@ -131,7 +131,6 @@ final class ZP_Chart {
 	 * @param array $moment Validated form data
 	 */
 	private function setup_ut( $moment ) {
-
 		if ( ! is_array( $moment ) ) {
 			return false;
 		}
