@@ -212,14 +212,10 @@ function zp_i18n_coordinates( $key = '' ) {
  * @return string Formated degrees and minutes
  */
 function zp_dd_to_dms( $decimal, $line = '' ) {
-
 	$direction = '';
-
-	// Get the degrees part
-	$d = zp_extract_whole_degrees( $decimal );
-	
-	// Minutes = original decimal minus degrees part, then multiply by 60, round to integer.
-	$m = zp_extract_whole_minutes( $decimal );
+	$dm = zp_extract_degrees_parts( $decimal );
+	$d = $dm[0];
+	$m = $dm[1];
 	
 	if ( $line ) {
 
@@ -248,30 +244,17 @@ function zp_dd_to_dms( $decimal, $line = '' ) {
 }
 
 /**
- * Extract the whole degrees part from a decimal degrees.
- *
+ * Extract whole degrees and whole minutes from a decimal degrees.
  * @param $decimal int The degrees decimal
- * @return int Whole degrees as an absolute value (no negative symbol or direction)
+ * @return $dm array Whole degrees as an absolute value (no negative symbol or direction) and whole minutes
  */
-function zp_extract_whole_degrees( $decimal ) {
-	return floor( abs( $decimal ) );
-}
-
-/**
- * Extract the whole minutes part from a decimal degrees.
- *
- * Instead of DMS (degrees, minutes, seconds), this returns just minutes.
- *
- * @param $decimal int The degrees decimal
- * @return int Whole mintues
- */
-function zp_extract_whole_minutes( $decimal ) {
-
-	$d = zp_extract_whole_degrees( $decimal );
+function zp_extract_degrees_parts( $decimal ) {
+	$dm[] = floor( abs( $decimal ) );
 	// Minutes = original decimal minus degrees part, then multiply by 60, round to integer.
-	$m = round( ( abs( $decimal ) - $d ) * 60 );
-	return $m;
+	$dm[] = round( ( abs( $decimal ) - $dm[0] ) * 60 );
+	return $dm;
 }
+
 /**
  * Internationalize a degrees minutes seconds string
  * @param string $dms A dms string with symbols like 24° 6'50"

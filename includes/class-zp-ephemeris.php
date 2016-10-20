@@ -96,10 +96,12 @@ class ZP_Ephemeris {
 			* (Basically, it seems astro.com is ignoring seconds (and just using degree and minutes to make the decimal), or using less significant digits.)
 			* While GeoNames is more accurate, astro.com's is more widely accepted, and our discrepancy would reduce precision (from astro.com) in house cusps and ASC/MC calculations by many seconds and possibly even minutes. So here, I recalculate the decimal using only degree and minutes, to ignore seconds in favor of precision with astro.com.
 			*/
-			$longitude_degree	= zp_extract_whole_degrees( $longitude );
-			$longitude_minute	= zp_extract_whole_minutes( $longitude );
-			$latitude_degree	= zp_extract_whole_degrees( $latitude );
-			$latitude_minute	= zp_extract_whole_minutes( $latitude );
+			$long_dm = zp_extract_degrees_parts( $longitude );
+			$longitude_degree	= $long_dm[0];
+			$longitude_minute	= $long_dm[1];
+			$lat_dm = zp_extract_degrees_parts( $latitude );
+			$latitude_degree	= $lat_dm[0];
+			$latitude_minute	= $lat_dm[1];
 
 			$east_west		= ( $longitude >= 0 ) ? '1' : '-1';
 			$north_south	= ( $latitude >= 0 ) ? '1' : '-1';
