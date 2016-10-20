@@ -88,7 +88,12 @@ final class ZP_Chart {
 	/**
 	 * The calculated Ayanamsa, if this is a sidereal chart.
 	 */
-	public $ayanamsa;	
+	public $ayanamsa;
+
+	/**
+	 * Whether this chart is for an unknown birth time.
+	 */
+	public $unknown_time = false;
 
 	/**
 	 * Retrieve ZP_Chart instance.
@@ -114,10 +119,12 @@ final class ZP_Chart {
 	public function __construct( $moment ) {
 		// Set Universal time and date for this chart
 		$this->setup_ut( $moment );
-
 		$this->latitude		= $moment['zp_lat_decimal'];
 		$this->longitude	= $moment['zp_long_decimal'];
 		$this->sidereal		= $moment['sidereal'];
+		if ( $moment['unknown_time'] ) {
+			$this->unknown_time = true;
+		}
 		// Let the shortcode parameter for house system override the default house system
 		$this->house_system	= $moment['house_system'] ?
 							$moment['house_system'] :

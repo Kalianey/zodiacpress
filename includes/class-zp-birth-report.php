@@ -82,7 +82,7 @@ class ZP_Birth_Report {
 
 		// Local Time
 
-		if ( $this->form['unknown_time'] ) {
+		if ( $this->chart->unknown_time ) {
 			$birth_time = __( 'unknown birth time', 'zodiacpress' );
 		} else {
 			if ( $this->form['zp_offset_geo'] < 0 ) {
@@ -160,7 +160,7 @@ class ZP_Birth_Report {
 
 		// House system used
 
-		if ( empty( $this->form['unknown_time'] ) ) {
+		if ( empty( $this->chart->unknown_time ) ) {
 			$houses = '<tr class="zp-report-header-houses"><td>' .
 					sprintf( __( '%s Houses', 'zodiacpress' ),
 					zp_get_house_systems( $this->chart->house_system ) ) .
@@ -206,7 +206,7 @@ class ZP_Birth_Report {
 
 			// If birth time is unknown, check if planet ingress happens today
 
-			if ( $this->form['unknown_time'] &&
+			if ( $this->chart->unknown_time &&
 				'planets_in_signs' == $section &&
 				'' !== $v['ingress_0'] &&
 				'' !== $v['ingress_1'] ) {
@@ -299,14 +299,10 @@ class ZP_Birth_Report {
 		}
 
 		// If birthtime is not known, omit planets that require birth time
-
-		if ( $this->form['unknown_time'] ) {
+		if ( $this->chart->unknown_time ) {
 			foreach ( $cleared_planets as $k => $p ) {
-
 				if ( ! empty( $planets[ $k ]['supports'] ) && in_array( 'birth_time_required', $planets[ $k ]['supports'] ) ) {
-
 					unset( $cleared_planets[ $k ] );
-
 				}
 			}
 		}
@@ -345,7 +341,7 @@ class ZP_Birth_Report {
 				}
 
 				// If birthtime is unknown, check if planet ingress occurs this day
-				if ( $this->form['unknown_time'] ) {
+				if ( $this->chart->unknown_time ) {
 					$ingress = zp_is_planet_ingress_today( $k, $this->chart->planets_longitude[ $k ], $this->form );
 				}
 
@@ -390,7 +386,7 @@ class ZP_Birth_Report {
 	private function setup_in_houses() {
 
 		// If birthtime is not known, omit planets in houses
-		if ( $this->form['unknown_time'] ) {
+		if ( $this->chart->unknown_time ) {
 			return;
 		}
 
