@@ -100,9 +100,9 @@ final class ZP_Chart {
 	 * @return ZP_Chart|false Chart object, false otherwise.
 	 */
 	public static function get_instance( $moment = array() ) {
-		if ( ! $moment )
+		if ( ! $moment ) {
 			return false;
-
+		}
 		return new ZP_Chart( $moment );
 	}
 
