@@ -524,7 +524,6 @@ class ZP_Birth_Report {
 	 * Return all parts of the birth report.
 	 */
 	public function get_report() {
-
 		global $zodiacpress_options;
 
 		if ( ! is_array( $this->form ) ) {
@@ -539,7 +538,7 @@ class ZP_Birth_Report {
 		$report_var = $this->form['zp-report-variation'];
 
 		$out = '';
-		$out .= apply_filters( 'zp_report_header', $this->header(), $report_var );
+		$out .= apply_filters( 'zp_report_header', $this->header(), $report_var, $this->chart );
 
 		if ( 'birthreport' == $report_var ) {
 			
