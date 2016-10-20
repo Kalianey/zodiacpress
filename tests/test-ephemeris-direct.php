@@ -32,8 +32,10 @@ class Test_Ephemeris_Direct extends WP_UnitTestCase {
         */
 
 		// Regular Tropical report
-		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -house-122.41942,37.77493,P -eswe -fPlZ -g, -head", $out);
+		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -house-122.41942,37.77493,P -eswe -fPl -g, -head", $out);
 
+		// Regular, no houses
+		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -eswe -fPl -g, -head", $out);
 
 		// Sidereal report
 		// exec( "swetest -edir{$this->sweph} -b25.2.1955 -ut03:15 -p0123456789DAt -house-122.41942,37.77493,P -eswe -fPlZ -sid5 -g, -head", $out);

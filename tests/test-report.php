@@ -263,7 +263,7 @@ class Test_Report extends WP_UnitTestCase {
 		foreach ( $this->charts as $person => $chart ) {
 
 			// Get calculated planets_in_signs
-			$zp_object = new ZP_Birth_Report( $chart, array( 'unknown_time' => '' ) );		
+			$zp_object = new ZP_Birth_Report( $chart, array( 'unknown_time' => '' ) );
 			$property = ZP_Helper::get_private_property( 'ZP_Birth_Report', 'enabled_planets_in_signs' );
 			$calculated_planets_in_signs = $property->getValue( $zp_object );
 
