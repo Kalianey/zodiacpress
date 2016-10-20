@@ -24,8 +24,8 @@ function zp_get_interps_option_name( $tab, $section ) {
 	}
 	$name = 'zp_' . $tab;
 		
-	// Large Interps Tabs that get a seperate option per section due to large size
-	$large_tabs = apply_filters( 'zp_large_tabs_seperate_options', array( 'natal_aspects' ) );
+	// Large Interps Tabs that get a separate option per section due to large size
+	$large_tabs = apply_filters( 'zp_large_tabs_separate_options', array( 'natal_aspects' ) );
 
 	// If tab is large, append section to the option name
 	if ( in_array( $tab, $large_tabs ) ) {
@@ -85,8 +85,8 @@ function zp_get_interps_section_title( $tab, $section ) {
 */
 function zp_register_interps() {
 
-	// Large Interps Tabs get a seperate option per section due to large size
-	$large_tabs = apply_filters( 'zp_large_tabs_seperate_options', array( 'natal_aspects' ) );
+	// Large Interps Tabs get a separate option per section due to large size
+	$large_tabs = apply_filters( 'zp_large_tabs_separate_options', array( 'natal_aspects' ) );
 
 	foreach ( zp_get_enabled_interps() as $tab => $sections ) {
 

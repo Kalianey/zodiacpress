@@ -95,8 +95,8 @@ function zp_get_all_interps_options_names() {
 
 	$option_names = array();
 
-	// Large Interps Tabs get a seperate option per section due to large size
-	$large_tabs = apply_filters( 'zp_large_tabs_seperate_options', array( 'natal_aspects' ) );
+	// Large Interps Tabs get a separate option per section due to large size
+	$large_tabs = apply_filters( 'zp_large_tabs_separate_options', array( 'natal_aspects' ) );
 
 	foreach ( zp_get_interps_tabs() as $tab => $label ) {
 

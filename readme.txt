@@ -125,7 +125,7 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * New - Add filter to omit name field on form.
 * New - Allow Start Over link to be removed with a filter.
 * New - Added a Feedback link in the ZP admin.
-* New - New ZP_Ephemeris class to query the Swiss Ephemeris to seperate this from the ZP_Chart class. The ZP_Chart::query_ephemeris method is deprecated. Use the new ZP_Ephemeris instead
+* New - New ZP_Ephemeris class to query the Swiss Ephemeris to separate this from the ZP_Chart class. The ZP_Chart::query_ephemeris method is deprecated. Use the new ZP_Ephemeris instead
 * Fix - the Birth City field was broken and/or missing many cities because urlencode() was breaking the autocomplete cities list.
 * Tweak - Update Lilith's label to Black Moon Lilith.
 * Tweak - Simplified form no longer shows coordinates.
