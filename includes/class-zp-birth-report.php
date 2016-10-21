@@ -148,9 +148,13 @@ class ZP_Birth_Report {
 				'</caption>' .
 				'<tr>' .
 					'<td>' . $birth_data . '</td>' .
-				'</tr><tr class="zp-report-header-ut">' .
+				'</tr>';
+		if ( empty( $this->chart->unknown_time ) ) {
+			$header .= '<tr class="zp-report-header-ut">' .
 					'<td>' . __( 'Universal Time:', 'zodiacpress' ) . ' ' . $ut . ' </td>' .
-				'</tr><tr class="zp-report-header-place">' .
+				'</tr>';
+		}
+		$header .= '<tr class="zp-report-header-place">' .
 					'<td>' . stripslashes( $this->form['place'] ) . '</td>' .
 				'</tr><tr class="zp-report-header-coordinates">' .					
 					'<td>' . esc_html( $coordinates ) . '</td>' .
@@ -159,7 +163,6 @@ class ZP_Birth_Report {
 				'</tr>';
 
 		// House system used
-
 		if ( empty( $this->chart->unknown_time ) ) {
 			$houses = '<tr class="zp-report-header-houses"><td>' .
 					sprintf( __( '%s Houses', 'zodiacpress' ),
