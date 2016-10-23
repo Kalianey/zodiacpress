@@ -232,7 +232,7 @@ function zp_get_zodiac_sign_dms( $longitude ) {
 		$min++;
 	}
 	if ( $min >= 60 ) {
-		$min	= $min - 60;
+		$min = $min - 60;
 		$deg++;
 	}
 	if ( $deg >= 30 ) {
