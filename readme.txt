@@ -1,4 +1,4 @@
-=== ZodiacPress  ===
+=== ZodiacPress ===
 Contributors: isabel104
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZQKG2M58G&lc=US&no_note=1&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
@@ -74,7 +74,7 @@ Need help? I'm glad to help via the plugin's official support forum (link above)
 **Quick Setup**
 
 1. In your WordPress dashboard, go to ZodiacPress –> Settings, and click the Misc tab. 
-2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses Geonames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports.
+2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses Geonames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports. After you create your GeoNames account, you have to enable their free web services by going to their [manage account page](http://www.geonames.org/manageaccount) and click to enable them at the bottom where it says "Free Web Services."
 3. Add the `[birthreport]` shortcode to a page or post. This is where the birth report form will appear. Go to this page on the front of your site to generate a birth report.
 
 That’s it for the Quick Setup. This allows you to generate a basic report which lists the planets in the signs, planets in the houses, and aspects. Interpretations will not be included in the report until you enter your own natal interpretations. 
