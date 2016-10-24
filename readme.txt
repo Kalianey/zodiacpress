@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZ
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
 Tested up to: 4.7
-Stable tag: 1.3
+Stable tag: 1.4
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Need help? I'm glad to help via the plugin's official support forum (link above)
 **Quick Setup**
 
 1. In your WordPress dashboard, go to ZodiacPress –> Settings, and click the Misc tab. 
-2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses Geonames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports. After you create your GeoNames account, you have to enable their free web services by going to their [manage account page](http://www.geonames.org/manageaccount) and click to enable them at the bottom where it says "Free Web Services."
+2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses Geonames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports. After you create your GeoNames account, you have to enable their free web services by going to their [manage account page](http://www.geonames.org/manageaccount) and click to enable them at the bottom where it says "Free Web Services." (Optional: if you have a Premium GeoNames account, then you should take advantage of [Enhanced GeoNames](https://cosmicplugins.com/downloads/zodiacpress-enhanced-geonames/).)
 3. Add the `[birthreport]` shortcode to a page or post. This is where the birth report form will appear. Go to this page on the front of your site to generate a birth report.
 
 That’s it for the Quick Setup. This allows you to generate a basic report which lists the planets in the signs, planets in the houses, and aspects. Interpretations will not be included in the report until you enter your own natal interpretations. 
@@ -116,6 +116,17 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
  
 == Changelog ==
 
+= 1.4 =
+* New - Improved city field response. The Next/Submit button will be disabled until it is really ready. Previously, clicking Next too early would give a 'Please select a Birth City' error. This is because some things are happening in the background, for example, grabbing the city coordinates and timezone ID. If the background processes are not complete, you get an error. This problem should be greatly reduced now since the Next button will only be clickable when the background processes are complete.
+* New - Add support for the Enhanced GeoNames extension which sends requests to GeoNames webservices from the browser rather than from the server side. This extension makes the city field and Next button faster and better.
+* Fix - Only the caption should be bold in the report header data box, not the whole header data.
+* Fix - Do not show Universal Time (GMT) on report header if birth time is unknown.
+* Tweak - Better form styling and form fields alignment.
+* API - Added $unknown_time property to ZP_Chart class to tell whether this report request was submitted with an unknown birth time.
+* API - Added 3rd parameter to zp_report_header filter. The 3rd parameter is the chart object.
+* API - ZP_Chart::cusps property is now public.
+* API - The 2 functions, zp_extract_whole_degrees() and zp_extract_whole_minutes() have been merged into one function, zp_extract_degrees_parts(), that returns an array of the whole degrees and whole minutes.
+
 = 1.3 =
 * New - Option to use the Sidereal zodiac. Choose from 4 sidereal methods - Hindu/Lahiri, Fagan/Bradley, Raman, or Krishnamurti.
 * New - You can now set the house system to be used in the shortcode. 12 house systems are included.
@@ -141,6 +152,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.4 =
+Improved city field response on the form.
 
 = 1.3 =
 Fixes the Birth City field.
