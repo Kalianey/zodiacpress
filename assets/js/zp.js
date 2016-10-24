@@ -1,31 +1,7 @@
 (function( $ ) {
 
-	// Insert hidden input with Geonames Timezone ID
-	function getGeoTZ(latdeci, longdeci) {
-		// Get timezone id by coordinates from Geonames webservice
-		$.ajax({
-			url: zp_ajax_object.timezone_ajaxurl,
-			dataType: zp_ajax_object.dataType,
-			type: zp_ajax_object.type,
-			data: {
-				action: zp_ajax_object.timezone_id_action ? zp_ajax_object.timezone_id_action : undefined,
-				lat: latdeci,
-				lng: longdeci,
-				username: zp_ajax_object.geonames_user
-			},
-			success: function( response ) {
-				$('<input>').attr({
-					type: 'hidden',
-					id: 'geo_timezone_id',
-					name: 'geo_timezone_id',
-					value:  response.timezoneId
-				}).appendTo( '#zp-timezone-id' );
-				
-			}
-		});
-	}
-
-	$(function() {
+		// Disable Next button until ajax response is ready
+		$( "#zp-fetch-offset" ).prop( 'disabled', true );
 		
 		// Autocomplete city
 
@@ -35,7 +11,6 @@
 					url: zp_ajax_object.autocomplete_ajaxurl,
 					dataType: zp_ajax_object.dataType,
 					type: zp_ajax_object.type,
-
 					data: {
 						featureClass: "P",
 						style: "full",
@@ -46,11 +21,15 @@
 						lang: zp_ajax_object.lang
 					},
 					success: function( data ) {
+
+						$( "#zp-fetch-offset" ).prop( 'disabled', true );
+							// disable also submit button in case of changing city after offset is calculated
+						$( "#zp-fetch-birthreport" ).prop( 'disabled', true );
+
 						response( $.map( data.geonames, function( item ) {
 							return {
 								value: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName, 
 								label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-
 								lngdeci: item.lng,
 								latdeci: item.lat
 							}
@@ -62,34 +41,57 @@
 			select: function( event, ui ) {
 
 				$( '.ui-state-error' ).hide();
+	
+				// Get timezone id by coordinates from Geonames webservice
+				// timezone id is used to calculate offset
 
-				// Reset the Offset section in case of changing city.
-				
-				$( '#zp-offset-wrap' ).hide();
-				$( '#zp-fetch-birthreport' ).hide();
-				$( '#zp-form-tip' ).hide();
-				$( '#zp-fetch-offset' ).show();
+				$.ajax({
+					url: zp_ajax_object.timezone_ajaxurl,
+					dataType: zp_ajax_object.dataType,
+					type: zp_ajax_object.type,
+					data: {
+						action: zp_ajax_object.timezone_id_action ? zp_ajax_object.timezone_id_action : undefined,
+						lat: ui.item.latdeci,
+						lng: ui.item.lngdeci,
+						username: zp_ajax_object.geonames_user
+					},
+					success: function( response ) {
 
-				// get timezone, which will be used to get offset
+						// Insert hidden input with Geonames Timezone ID
+						$('<input>').attr({
+							type: 'hidden',
+							id: 'geo_timezone_id',
+							name: 'geo_timezone_id',
+							value:  response.timezoneId
+						}).appendTo( '#zp-timezone-id' );
 
-				getGeoTZ( ui.item.latdeci, ui.item.lngdeci );
+						// Grab the birthplace coordinates
 
-				// Grab the birthplace coordinates
+						$('<input>').attr({
+							type: 'hidden',
+							id: 'zp_lat_decimal',
+							name: 'zp_lat_decimal',
+							value:  ui.item.latdeci
+						}).appendTo( '#zp-timezone-id' );
+						
+						$('<input>').attr({
+							type: 'hidden',
+							id: 'zp_long_decimal',
+							name: 'zp_long_decimal',
+							value:  ui.item.lngdeci
+						}).appendTo( '#zp-timezone-id' );
 
-				$('<input>').attr({
-					type: 'hidden',
-					id: 'zp_lat_decimal',
-					name: 'zp_lat_decimal',
-					value:  ui.item.latdeci
-				}).appendTo( '#zp-timezone-id' );
-				
-				$('<input>').attr({
-					type: 'hidden',
-					id: 'zp_long_decimal',
-					name: 'zp_long_decimal',
-					value:  ui.item.lngdeci
-				}).appendTo( '#zp-timezone-id' );
+						// Reset the Offset section in case of changing city.
+						$( '#zp-offset-wrap' ).hide();
+						$( '#zp-fetch-birthreport' ).hide();
+						$( '#zp-form-tip' ).hide();
+						$( '#zp-fetch-offset' ).show();
 
+						// Enable the button
+						$( "#zp-fetch-offset" ).prop( 'disabled', false );
+						
+					}
+				});
 			}
 		});
 	
@@ -128,6 +130,7 @@
 							// Switch buttons
 							$( '#zp-fetch-offset' ).hide();
 							$( '#zp-fetch-birthreport' ).show();
+							$( "#zp-fetch-birthreport" ).prop( 'disabled', false );
 						}
 					}
 					
@@ -191,6 +194,4 @@
 			}
 		});
 
-	});
-	
 })( jQuery );
