@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the ZodiacPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ZodiacPress 1.0\n"
+"Project-Id-Version: ZodiacPress 1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zodiacpress\n"
-"POT-Creation-Date: 2016-09-27 14:51:37+00:00\n"
+"POT-Creation-Date: 2016-10-24 20:32:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,25 +12,25 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: includes/EDD_SL_Plugin_Updater.php:195
+#: includes/EDD_SL_Plugin_Updater.php:194
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:203
+#: includes/EDD_SL_Plugin_Updater.php:202
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s "
 "or %5$supdate now%6$s."
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:357
+#: includes/EDD_SL_Plugin_Updater.php:356
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:357 includes/admin/tools.php:323
-#: includes/admin/tools.php:327 includes/admin/tools.php:332
-#: includes/admin/tools.php:392 includes/admin/tools.php:396
-#: includes/admin/tools.php:401 includes/class-zp-license.php:286
+#: includes/EDD_SL_Plugin_Updater.php:356 includes/admin/tools.php:324
+#: includes/admin/tools.php:328 includes/admin/tools.php:333
+#: includes/admin/tools.php:393 includes/admin/tools.php:397
+#: includes/admin/tools.php:402 includes/class-zp-license.php:285
 msgid "Error"
 msgstr ""
 
@@ -80,7 +80,11 @@ msgstr ""
 msgid "See ZodiacPress Extensions"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (ZodiacPress 1.0)  #-#-#-#-#
+#: includes/admin/admin-functions.php:156
+msgid "Feedback"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (ZodiacPress 1.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/admin-pages.php:17
 #: includes/admin/settings/display-interpretations.php:40
@@ -140,70 +144,60 @@ msgid "In Houses"
 msgstr ""
 
 #: includes/admin/settings/register-interpretations.php:297
-#: includes/admin/settings/register-settings.php:351
-#: includes/class-zp-birth-report.php:202
+#: includes/admin/settings/register-settings.php:336
+#: includes/class-zp-birth-report.php:259
 msgid "Aspects"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:81
+#: includes/admin/settings/register-settings.php:80
 msgid "Planets and Points Settings"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:87
+#: includes/admin/settings/register-settings.php:86
 msgid "Enable Planets (and Points) in Signs"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:88
+#: includes/admin/settings/register-settings.php:87
 msgid "Choose which to show on the \"In The Signs\" section of the report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:95
+#: includes/admin/settings/register-settings.php:94
 msgid "Enable Planets (and Points) in Houses"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:96
+#: includes/admin/settings/register-settings.php:95
 msgid "Choose which to show on the \"In The Houses\" section of the report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:105
+#: includes/admin/settings/register-settings.php:104
 msgid "Aspects Settings"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:111
+#: includes/admin/settings/register-settings.php:110
 msgid "Enable Aspects"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:112
+#: includes/admin/settings/register-settings.php:111
 msgid "Choose which aspects to show on the report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:119
+#: includes/admin/settings/register-settings.php:118
 msgid "Aspects To Planets (and Points)"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:120
+#: includes/admin/settings/register-settings.php:119
 msgid "Choose which planets/points to calculate aspects for."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:127
-msgid "Orb For Natal Aspects"
-msgstr ""
-
 #: includes/admin/settings/register-settings.php:128
-msgid ""
-"The orb (in degrees) to use for natal aspects. Enter just the number. If "
-"blank, default is 8."
-msgstr ""
-
-#: includes/admin/settings/register-settings.php:137
 msgid "Report Settings"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:143
+#: includes/admin/settings/register-settings.php:134
 msgid "Allow Unknown Birth Time"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:145
+#: includes/admin/settings/register-settings.php:136
 msgid ""
 "Allow people with unknown birth times to generate a birth report. If "
 "enabled, this will allow them to generate a basic report, excluding items "
@@ -211,477 +205,570 @@ msgid ""
 "Midheaven, Vertex, and Part of Fortune)."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:149
+#: includes/admin/settings/register-settings.php:140
 msgid "Birth Report Intro"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:151
+#: includes/admin/settings/register-settings.php:142
 msgid "Optional \"Introduction\" text for the Birth Report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:155
+#: includes/admin/settings/register-settings.php:146
 msgid "Birth Report Closing"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:157
+#: includes/admin/settings/register-settings.php:148
 msgid ""
 "Optional \"Closing\" text for the Birth Report. This will appear at the end "
 "of the report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:168
-#: includes/admin/settings/register-settings.php:356
+#: includes/admin/settings/register-settings.php:158
+#: includes/admin/settings/register-settings.php:342
 msgid "Misc Settings"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:174
+#: includes/admin/settings/register-settings.php:164
 msgid "GeoNames Username"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:175
+#: includes/admin/settings/register-settings.php:165
 msgid ""
 "Your username from GeoNames.org is needed to get timezone info from their "
 "webservice. (%1$screate free account%2$s)"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:182
+#: includes/admin/settings/register-settings.php:172
 msgid "Remove Data on Uninstall"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:184
+#: includes/admin/settings/register-settings.php:174
 msgid ""
 "Check this box if you would like ZP to completely remove all of its data "
 "(INCLUDING INTERPRETATIONS TEXT) when the plugin is deleted."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:251
+#: includes/admin/settings/register-settings.php:242
 msgid "Settings updated."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:305
+#: includes/admin/settings/register-settings.php:293
 msgid "Natal Report"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:306
+#: includes/admin/settings/register-settings.php:294
 msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:309
+#: includes/admin/settings/register-settings.php:297
 msgid "Licenses"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:350
+#: includes/admin/settings/register-settings.php:335
 msgid "Planets and Points"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:352
+#: includes/admin/settings/register-settings.php:337
+msgid "Orbs"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:338
 msgid "Report"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:474
+#: includes/admin/settings/register-settings.php:460
 msgid "The callback function used for the %s setting is missing."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:571
+#: includes/admin/settings/register-settings.php:556
 msgid ""
 "Your license key expired on %1$s. Please <a href=\"%2$s\" target=\"_blank\" "
 "rel=\"nofollow\">renew your license key</a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:582
+#: includes/admin/settings/register-settings.php:567
 msgid ""
 "Your license key has been disabled. Please <a href=\"%s\" target=\"_blank\" "
 "rel=\"nofollow\">contact support</a> for more information."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:593
+#: includes/admin/settings/register-settings.php:578
 msgid ""
 "Invalid license. Please <a href=\"%s\" target=\"_blank\" rel=\"nofollow"
 "\">visit your account page</a> and verify it."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:605
+#: includes/admin/settings/register-settings.php:590
 msgid ""
 "Your %1$s is not active for this URL. Please <a href=\"%2$s\" target=\"_blank"
 "\" rel=\"nofollow\">visit your account page</a> to manage your license key "
 "URLs."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:616
+#: includes/admin/settings/register-settings.php:601
 msgid "This appears to be an invalid license key for %s."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:624
+#: includes/admin/settings/register-settings.php:609
 msgid ""
 "Your license key has reached its activation limit. <a href=\"%s\" rel="
 "\"nofollow\">View possible upgrades</a> now."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:631
+#: includes/admin/settings/register-settings.php:616
 msgid ""
 "The key you entered belongs to a bundle, please use the product specific "
 "license key."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:638
+#: includes/admin/settings/register-settings.php:623
 msgid ""
 "There was an error with this license key: %1$s. Please correct the license "
 "key or <a href=\"%2$s\" rel=\"nofollow\">contact our support team for help</"
 "a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:655
+#: includes/admin/settings/register-settings.php:640
 msgid "License key never expires."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:662
+#: includes/admin/settings/register-settings.php:647
 msgid ""
 "Your license key expires soon! It expires on %1$s. <a href=\"%2$s\" target="
 "\"_blank\">Renew your license key</a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:671
+#: includes/admin/settings/register-settings.php:656
 msgid "Your license key expires on %s."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:690
+#: includes/admin/settings/register-settings.php:675
 msgid "To receive updates, please enter your valid %s license key."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:701
+#: includes/admin/settings/register-settings.php:686
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/admin/tools.php:52
-msgid "Cleanup"
+#: includes/admin/settings/register-settings.php:726
+msgid ""
+"For each aspect, set the orb to use for each planet. If blank, the default "
+"(8) will be used."
 msgstr ""
 
 #: includes/admin/tools.php:53
-msgid "System Info"
+msgid "Cleanup"
 msgstr ""
 
 #: includes/admin/tools.php:54
+msgid "System Info"
+msgstr ""
+
+#: includes/admin/tools.php:55
 msgid "Export/Import"
 msgstr ""
 
-#: includes/admin/tools.php:79
+#: includes/admin/tools.php:80
 msgid "Natal Planets in Signs"
 msgstr ""
 
-#: includes/admin/tools.php:80
+#: includes/admin/tools.php:81
 msgid "Delete all interpretations text for natal planets/points in the signs."
 msgstr ""
 
-#: includes/admin/tools.php:83
+#: includes/admin/tools.php:84
 msgid "Natal Planets in Houses"
 msgstr ""
 
-#: includes/admin/tools.php:84
+#: includes/admin/tools.php:85
 msgid "Delete all interpretations text for natal planets/points in the houses."
 msgstr ""
 
-#: includes/admin/tools.php:87
+#: includes/admin/tools.php:88
 msgid "Natal Aspects"
 msgstr ""
 
-#: includes/admin/tools.php:88
+#: includes/admin/tools.php:89
 msgid "Delete all interpretations text for natal aspects."
 msgstr ""
 
-#: includes/admin/tools.php:99
+#: includes/admin/tools.php:100
 msgid ""
 "Use these tools to <strong>permanently delete</strong> your Interpretations "
 "text. Be aware that clicking these buttons will <strong>permanently erase</"
 "strong> your Interpretations."
 msgstr ""
 
-#: includes/admin/tools.php:103
+#: includes/admin/tools.php:104
 msgid "Cleanup Interpretations"
 msgstr ""
 
-#: includes/admin/tools.php:112
+#: includes/admin/tools.php:113
 msgid "Delete"
 msgstr ""
 
-#: includes/admin/tools.php:177
+#: includes/admin/tools.php:178
 msgid ""
 "The system info is a built-in debugging tool. If you contact support, please "
 "provide this system info. <strong>Click the button below</strong> to "
 "download a text file with this system report."
 msgstr ""
 
-#: includes/admin/tools.php:216 includes/admin/tools.php:223
+#: includes/admin/tools.php:217 includes/admin/tools.php:224
 msgid "Export Interpretations"
 msgstr ""
 
-#: includes/admin/tools.php:218
+#: includes/admin/tools.php:219
 msgid ""
 "Export your ZodiacPress interpretations for this site as a .json file. This "
 "allows you to easily import your interpretations into another site."
 msgstr ""
 
-#: includes/admin/tools.php:230 includes/admin/tools.php:241
+#: includes/admin/tools.php:231 includes/admin/tools.php:242
 msgid "Import Interpretations"
 msgstr ""
 
-#: includes/admin/tools.php:232
+#: includes/admin/tools.php:233
 msgid ""
 "Import your ZodiacPress interpretations from a .json file. This file can be "
 "obtained by exporting the interpretations on another site using the button "
 "above."
 msgstr ""
 
-#: includes/admin/tools.php:233
+#: includes/admin/tools.php:234
 msgid ""
 "NOTE: IMPORTED INTERPRETATIONS WILL COMPLETELY OVERRIDE ANY CURRENT EXISTING "
 "INTERPRETATIONS ON THIS SITE. ANY EXISTING INTERPRETATIONS ON THIS SITE WILL "
 "BE DELETED."
 msgstr ""
 
-#: includes/admin/tools.php:248 includes/admin/tools.php:255
+#: includes/admin/tools.php:249 includes/admin/tools.php:256
 msgid "Export Settings"
 msgstr ""
 
-#: includes/admin/tools.php:250
+#: includes/admin/tools.php:251
 msgid ""
 "Export the ZodiacPress settings for this site as a .json file. This allows "
 "you to easily import the configuration into another site."
 msgstr ""
 
-#: includes/admin/tools.php:262 includes/admin/tools.php:272
+#: includes/admin/tools.php:263 includes/admin/tools.php:273
 msgid "Import Settings"
 msgstr ""
 
-#: includes/admin/tools.php:264
+#: includes/admin/tools.php:265
 msgid ""
 "Import the ZodiacPress settings from a .json file. This file can be obtained "
 "by exporting the settings on another site using the button above."
 msgstr ""
 
-#: includes/admin/tools.php:323 includes/admin/tools.php:392
+#: includes/admin/tools.php:324 includes/admin/tools.php:393
 msgid "Please upload a valid .json file"
 msgstr ""
 
-#: includes/admin/tools.php:327
+#: includes/admin/tools.php:328
 msgid "Please upload a valid ZodiacPress zp-settings-export file"
 msgstr ""
 
-#: includes/admin/tools.php:332 includes/admin/tools.php:401
+#: includes/admin/tools.php:333 includes/admin/tools.php:402
 msgid "Please upload a file to import"
 msgstr ""
 
-#: includes/admin/tools.php:396
+#: includes/admin/tools.php:397
 msgid "Please upload a valid ZodiacPress interpretations file"
 msgstr ""
 
-#: includes/ajax-functions.php:58
+#: includes/ajax-functions.php:129
 msgid "The Swiss Ephemeris is not working."
 msgstr ""
 
-#: includes/ajax-functions.php:63
+#: includes/ajax-functions.php:134
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/astro-functions.php:28
+#: includes/astro-functions.php:27
 msgid "Sun"
 msgstr ""
 
-#: includes/astro-functions.php:33
+#: includes/astro-functions.php:32
 msgid "Moon"
 msgstr ""
 
-#: includes/astro-functions.php:38
+#: includes/astro-functions.php:37
 msgid "Mercury"
 msgstr ""
 
-#: includes/astro-functions.php:43
+#: includes/astro-functions.php:42
 msgid "Venus"
 msgstr ""
 
-#: includes/astro-functions.php:48
+#: includes/astro-functions.php:47
 msgid "Mars"
 msgstr ""
 
-#: includes/astro-functions.php:53
+#: includes/astro-functions.php:52
 msgid "Jupiter"
 msgstr ""
 
-#: includes/astro-functions.php:58
+#: includes/astro-functions.php:57
 msgid "Saturn"
 msgstr ""
 
-#: includes/astro-functions.php:63
+#: includes/astro-functions.php:62
 msgid "Uranus"
 msgstr ""
 
-#: includes/astro-functions.php:68
+#: includes/astro-functions.php:67
 msgid "Neptune"
 msgstr ""
 
-#: includes/astro-functions.php:73
+#: includes/astro-functions.php:72
 msgid "Pluto"
 msgstr ""
 
-#: includes/astro-functions.php:78
+#: includes/astro-functions.php:77
 msgid "Chiron"
 msgstr ""
 
-#: includes/astro-functions.php:83
-msgid "Lilith"
+#: includes/astro-functions.php:82
+msgid "Black Moon Lilith"
 msgstr ""
 
-#: includes/astro-functions.php:88
+#: includes/astro-functions.php:87
 msgid "North Node"
 msgstr ""
 
-#: includes/astro-functions.php:93
+#: includes/astro-functions.php:92
 msgid "Part of Fortune"
 msgstr ""
 
-#: includes/astro-functions.php:98
+#: includes/astro-functions.php:97
 msgid "Vertex"
 msgstr ""
 
-#: includes/astro-functions.php:103
+#: includes/astro-functions.php:102
 msgid "Ascendant"
 msgstr ""
 
-#: includes/astro-functions.php:108
+#: includes/astro-functions.php:107
 msgid "Midheaven"
 msgstr ""
 
-#: includes/astro-functions.php:138
+#: includes/astro-functions.php:137
 msgid "Conjunction"
 msgstr ""
 
-#: includes/astro-functions.php:142
+#: includes/astro-functions.php:141
 msgid "Sextile"
 msgstr ""
 
-#: includes/astro-functions.php:146
+#: includes/astro-functions.php:145
 msgid "Square"
 msgstr ""
 
-#: includes/astro-functions.php:150
+#: includes/astro-functions.php:149
 msgid "Trine"
 msgstr ""
 
-#: includes/astro-functions.php:154
+#: includes/astro-functions.php:153
 msgid "Quincunx"
 msgstr ""
 
-#: includes/astro-functions.php:158
+#: includes/astro-functions.php:157
 msgid "Opposition"
 msgstr ""
 
-#: includes/astro-functions.php:171
+#: includes/astro-functions.php:170
 msgid "Aries"
 msgstr ""
 
-#: includes/astro-functions.php:174
+#: includes/astro-functions.php:173
 msgid "Taurus"
 msgstr ""
 
-#: includes/astro-functions.php:177
+#: includes/astro-functions.php:176
 msgid "Gemini"
 msgstr ""
 
-#: includes/astro-functions.php:180
+#: includes/astro-functions.php:179
 msgid "Cancer"
 msgstr ""
 
-#: includes/astro-functions.php:183
+#: includes/astro-functions.php:182
 msgid "Leo"
 msgstr ""
 
-#: includes/astro-functions.php:186
+#: includes/astro-functions.php:185
 msgid "Virgo"
 msgstr ""
 
-#: includes/astro-functions.php:189
+#: includes/astro-functions.php:188
 msgid "Libra"
 msgstr ""
 
-#: includes/astro-functions.php:192
+#: includes/astro-functions.php:191
 msgid "Scorpio"
 msgstr ""
 
-#: includes/astro-functions.php:195
+#: includes/astro-functions.php:194
 msgid "Sagittarius"
 msgstr ""
 
-#: includes/astro-functions.php:198
+#: includes/astro-functions.php:197
 msgid "Capricorn"
 msgstr ""
 
-#: includes/astro-functions.php:201
+#: includes/astro-functions.php:200
 msgid "Aquarius"
 msgstr ""
 
-#: includes/astro-functions.php:204
+#: includes/astro-functions.php:203
 msgid "Pisces"
 msgstr ""
 
 #. translators: Attention RTL languages. 6 placeholders are zodiac sign
 #. degrees, zodiac sign glyph, minutes, minutes symbol, seconds, seconds
 #. symbol.
-#: includes/astro-functions.php:266
+#: includes/astro-functions.php:263
 msgid "%1$s %2$s %3$s%4$s %5$s%6$s"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:85
-msgid "unknown birth time"
+#: includes/astro-functions.php:508
+msgid "Alcabitius"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:99
-msgid "%1$s (time zone = UTC %2$s)"
+#: includes/astro-functions.php:509
+msgid "Campanus"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:105
-msgid "%1$s at %2$s"
+#: includes/astro-functions.php:510
+msgid "Equal"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:113
-msgid "Chart Data For %s"
+#: includes/astro-functions.php:511
+msgid "Koch"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:123
+#: includes/astro-functions.php:512
+msgid "Meridian"
+msgstr ""
+
+#: includes/astro-functions.php:513
+msgid "Morinus"
+msgstr ""
+
+#: includes/astro-functions.php:514
 msgid "Placidus"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:125
+#: includes/astro-functions.php:515
+msgid "Porphyry"
+msgstr ""
+
+#: includes/astro-functions.php:516
+msgid "Regiomontanus"
+msgstr ""
+
+#: includes/astro-functions.php:517
+msgid "Topocentric"
+msgstr ""
+
+#: includes/astro-functions.php:518
+msgid "Vehlow"
+msgstr ""
+
+#: includes/astro-functions.php:519
+msgid "Whole Sign"
+msgstr ""
+
+#: includes/astro-functions.php:531
+msgid "Fagan/Bradley"
+msgstr ""
+
+#: includes/astro-functions.php:533
+msgid "Lahiri"
+msgstr ""
+
+#: includes/astro-functions.php:535
+msgid "Raman"
+msgstr ""
+
+#: includes/astro-functions.php:537
+msgid "Krishnamurti"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:86
+msgid "unknown birth time"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:100
+msgid "%1$s <span class=\"zp-mobile-wrap\">(time zone = UTC %2$s)</span>"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:106
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:132
+msgid "Tropical Zodiac"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:134
+msgid "Sidereal Zodiac,"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:139
+msgid "ayanamsa = %1$s <span class=\"zp-mobile-wrap\">(%2$s)</span>"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:147
+msgid "Chart Data For %s"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:152
+msgid "Universal Time:"
+msgstr ""
+
+#: includes/class-zp-birth-report.php:165
 msgid "%s Houses"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:182
+#: includes/class-zp-birth-report.php:215
+msgid ""
+"NOTE: %1$s changed signs the day you were born. It moved from %2$s to %3$s. "
+"Therefore, you will need your exact time of birth to know which of these two "
+"signs your %1$s is in."
+msgstr ""
+
+#: includes/class-zp-birth-report.php:237
 msgid ""
 "NOTE: Since %s is very close to the next house cusp, the next item is also "
 "relevant."
 msgstr ""
 
-#: includes/class-zp-birth-report.php:196
+#: includes/class-zp-birth-report.php:253
 msgid "Planets and Points in The Signs"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:199
+#: includes/class-zp-birth-report.php:256
 msgid "Planets and Points in The Houses"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:312
-#: includes/class-zp-birth-report.php:350
+#: includes/class-zp-birth-report.php:377
+#: includes/class-zp-birth-report.php:415
 msgid "%1$s in %2$s House"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:426
-#: includes/class-zp-birth-report.php:441
+#: includes/class-zp-birth-report.php:491
+#: includes/class-zp-birth-report.php:506
 msgid "orb"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:483
+#: includes/class-zp-birth-report.php:548
 msgid "Introduction"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:494
+#: includes/class-zp-birth-report.php:559
 msgid "Closing"
 msgstr ""
 
@@ -689,106 +776,106 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: includes/class-zp-license.php:180
+#: includes/class-zp-license.php:179
 msgid ""
 "Enter your extension license keys here to receive updates for purchased "
 "extensions. If your license key has expired, please <a href=\"%s\" target="
 "\"_blank\" rel=\"nofollow\">renew your license</a>."
 msgstr ""
 
-#: includes/class-zp-license.php:286
+#: includes/class-zp-license.php:285
 msgid "Nonce verification failed"
 msgstr ""
 
-#: includes/class-zp-license.php:396
+#: includes/class-zp-license.php:395
 msgid ""
 "You have invalid or expired license keys for ZodiacPress. Please go to the "
 "<a href=\"%s\">Licenses page</a> to correct this issue."
 msgstr ""
 
-#: includes/class-zp-license.php:427
+#: includes/class-zp-license.php:426
 msgid "Enter valid license key for automatic updates."
 msgstr ""
 
 #: includes/form/template.php:19
-msgid "Month"
-msgstr ""
-
-#: includes/form/template.php:36
-msgid "Day"
-msgstr ""
-
-#: includes/form/template.php:49
-msgid "Year"
-msgstr ""
-
-#: includes/form/template.php:72
-msgid "Hour"
-msgstr ""
-
-#: includes/form/template.php:87
-msgid "Minute"
-msgstr ""
-
-#: includes/form/template.php:101
-msgid "Birth Month"
-msgstr ""
-
-#: includes/form/template.php:112
-msgid "Birth Day"
-msgstr ""
-
-#: includes/form/template.php:136
 msgid "Name"
 msgstr ""
 
-#: includes/form/template.php:144
+#: includes/form/template.php:30
+msgid "Month"
+msgstr ""
+
+#: includes/form/template.php:47
+msgid "Day"
+msgstr ""
+
+#: includes/form/template.php:60
+msgid "Year"
+msgstr ""
+
+#: includes/form/template.php:83
+msgid "Hour"
+msgstr ""
+
+#: includes/form/template.php:98
+msgid "Minute"
+msgstr ""
+
+#: includes/form/template.php:112
+msgid "Birth Month"
+msgstr ""
+
+#: includes/form/template.php:123
+msgid "Birth Day"
+msgstr ""
+
+#: includes/form/template.php:160
 msgid "Birth Date"
 msgstr ""
 
-#: includes/form/template.php:156
+#: includes/form/template.php:172
 msgid "Birth Year"
 msgstr ""
 
-#: includes/form/template.php:161
+#: includes/form/template.php:177
 msgid "Exact Birth Time"
 msgstr ""
 
-#: includes/form/template.php:163
+#: includes/form/template.php:179
 msgid "Birth Hour"
 msgstr ""
 
-#: includes/form/template.php:166
+#: includes/form/template.php:182
 msgid "Birth Minute"
 msgstr ""
 
-#: includes/form/template.php:174
+#: includes/form/template.php:190
 msgid "Unknown Birth Time"
 msgstr ""
 
-#: includes/form/template.php:180
+#: includes/form/template.php:198
 msgid "Birth time is required for this type of report."
 msgstr ""
 
-#: includes/form/template.php:186
+#: includes/form/template.php:205
 msgid "Birth City"
 msgstr ""
 
-#: includes/form/template.php:211
+#: includes/form/template.php:225
 msgid "Next"
 msgstr ""
 
-#: includes/form/template.php:213
+#: includes/form/template.php:233
 msgid "Submit"
 msgstr ""
 
-#: includes/form/template.php:215
+#: includes/form/template.php:235
 msgid ""
 "Tip: Make sure the <strong>UTC time offset</strong> is correct. If it's "
 "wrong, you can change it."
 msgstr ""
 
-#: includes/form/template.php:222
+#: includes/form/template.php:245
 msgid ""
 "<strong>* NOTE: </strong> If birth time is unknown, the report will not "
 "include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or "
@@ -823,11 +910,11 @@ msgstr ""
 msgid "Please select a Birth City"
 msgstr ""
 
-#: includes/form/validation.php:110
+#: includes/form/validation.php:112
 msgid "Please enter a Name"
 msgstr ""
 
-#: includes/form/validation.php:132
+#: includes/form/validation.php:135
 msgid ""
 "UTC time offset must be a number (like 5). Include a negative sign or "
 "decimal point if needed (like -9.5). If you want the offset to be calculated "
@@ -890,19 +977,7 @@ msgstr ""
 msgid "Once Weekly"
 msgstr ""
 
-#: includes/scripts.php:35
-msgid "Selected:"
-msgstr ""
-
-#: includes/scripts.php:36
-msgid "Latitude:"
-msgstr ""
-
-#: includes/scripts.php:37
-msgid "Longitude:"
-msgstr ""
-
-#: includes/scripts.php:38
+#: includes/scripts.php:31
 msgid "UTC time offset:"
 msgstr ""
 
@@ -910,7 +985,7 @@ msgstr ""
 msgid "Get An Astrology Birth Report"
 msgstr ""
 
-#: includes/shortcode.php:33
+#: includes/shortcode.php:36
 msgid "Start Over"
 msgstr ""
 
@@ -982,1246 +1057,1252 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1900"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1901"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1902"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1903"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1904"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1905"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1906"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1907"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1908"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1909"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1910"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1911"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1912"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1913"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1914"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1915"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1916"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1917"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1918"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1919"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1920"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1921"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1922"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1923"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1924"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1925"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1926"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1927"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1928"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1929"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1930"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1931"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1932"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1933"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1934"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1935"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1936"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1937"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1938"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1939"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1940"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1941"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1942"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1943"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1944"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1945"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1946"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1947"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1948"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1949"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1950"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1951"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1952"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1953"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1954"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1955"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1956"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1957"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1958"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1959"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1960"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1961"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1962"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1963"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1964"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1965"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1966"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1967"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1968"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1969"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1970"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1971"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1972"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1973"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1974"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1975"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1976"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1977"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1978"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1979"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1980"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1981"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1982"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1983"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1984"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1985"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1986"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1987"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1988"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1989"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1990"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1991"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1992"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1993"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1994"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1995"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1996"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1997"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1998"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "1999"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2000"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2001"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2002"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2003"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2004"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2005"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2006"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2007"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2008"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2009"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2010"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2011"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2012"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2013"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2014"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2015"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2016"
 msgstr ""
 
-#: includes/time-functions.php:136
+#: includes/time-functions.php:135
 msgid "2017"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "1"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "2"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "3"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "4"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "5"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "6"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "7"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "8"
 msgstr ""
 
-#: includes/time-functions.php:150
+#: includes/time-functions.php:149
 msgid "9"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "10"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "11"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "12"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "13"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "14"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "15"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "16"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "17"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "18"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "19"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "20"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "21"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "22"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "23"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "24"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "25"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "26"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "27"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "28"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "29"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "30"
 msgstr ""
 
-#: includes/time-functions.php:150 includes/time-functions.php:171
+#: includes/time-functions.php:149 includes/time-functions.php:170
 msgid "31"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "00"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "01"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "02"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "03"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "04"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "05"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "06"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "07"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "08"
 msgstr ""
 
-#: includes/time-functions.php:171
+#: includes/time-functions.php:170
 msgid "09"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "32"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "33"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "34"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "35"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "36"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "37"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "38"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "39"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "40"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "41"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "42"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "43"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "44"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "45"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "46"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "47"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "48"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "49"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "50"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "51"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "52"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "53"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "54"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "55"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "56"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "57"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "58"
 msgstr ""
 
-#: includes/time-functions.php:171 includes/time-functions.php:190
+#: includes/time-functions.php:170 includes/time-functions.php:189
 msgid "59"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "60"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "61"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "62"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "63"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "64"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "65"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "66"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "67"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "68"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "69"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "70"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "71"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "72"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "73"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "74"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "75"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "76"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "77"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "78"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "79"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "80"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "81"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "82"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "83"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "84"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "85"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "86"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "87"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "88"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "89"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "90"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "91"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "92"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "93"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "94"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "95"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "96"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "97"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "98"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "99"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "100"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "101"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "102"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "103"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "104"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "105"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "106"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "107"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "108"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "109"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "110"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "111"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "112"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "113"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "114"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "115"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "116"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "117"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "118"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "119"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "120"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "121"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "122"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "123"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "124"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "125"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "126"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "127"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "128"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "129"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "130"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "131"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "132"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "133"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "134"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "135"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "136"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "137"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "138"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "139"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "140"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "141"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "142"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "143"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "144"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "145"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "146"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "147"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "148"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "149"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "150"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "151"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "152"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "153"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "154"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "155"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "156"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "157"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "158"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "159"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "160"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "161"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "162"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "163"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "164"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "165"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "166"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "167"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "168"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "169"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "170"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "171"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "172"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "173"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "174"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "175"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "176"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "177"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "178"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "179"
 msgstr ""
 
-#: includes/time-functions.php:190
+#: includes/time-functions.php:189
 msgid "180"
 msgstr ""
 
-#: includes/time-functions.php:195
+#: includes/time-functions.php:194
 msgid "0"
 msgstr ""
 
 #. translators: Attention RTL languages. 3 placeholders are degrees, cardinal
 #. direction, minutes for coordinates.
-#: includes/time-functions.php:242
+#: includes/time-functions.php:241
 msgid "%1$s%2$s%3$s'"
+msgstr ""
+
+#. translators: Attention RTL languages. 5 placeholders are degrees, minutes,
+#. minutes symbol, seconds, seconds symbol.
+#: includes/time-functions.php:300
+msgid "%1$s %2$s%3$s%4$s%5$s"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
