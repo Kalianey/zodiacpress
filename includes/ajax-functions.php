@@ -24,16 +24,12 @@ function zp_ajax_autocomplete_cities() {
 		return;
 	}
 
-	global $zodiacpress_options;	
-
-	$geonames_user = empty( $zodiacpress_options[ 'geonames_user' ] ) ? 'demo' : trim( $zodiacpress_options[ 'geonames_user' ] );
-
 	$api_params = array(
 		'featureClass'		=> 'P',
 		'style'				=> 'full',
 		'maxRows'			=> 12,
 		'name_startsWith'	=> sanitize_text_field( $_POST['name_startsWith'] ),
-		'username'			=> urlencode( $geonames_user ),
+		'username'			=> urlencode( sanitize_text_field( $_POST['username'] ) ),
 		'lang'				=> ! empty( $_POST['lang'] ) ? sanitize_text_field( $_POST['lang'] ) : '',
 	);
 
@@ -48,7 +44,6 @@ function zp_ajax_autocomplete_cities() {
 	wp_die();
 
 }
-
 add_action( 'wp_ajax_zp_get_cities_list', 'zp_ajax_autocomplete_cities' );
 add_action( 'wp_ajax_nopriv_zp_get_cities_list', 'zp_ajax_autocomplete_cities' );
 
@@ -60,14 +55,10 @@ add_action( 'wp_ajax_nopriv_zp_get_cities_list', 'zp_ajax_autocomplete_cities' )
  */
 function zp_ajax_get_geonames_timezone_id() {
 
-	global $zodiacpress_options;	
-
-	$geonames_user = empty( $zodiacpress_options[ 'geonames_user' ] ) ? 'demo' : trim( $zodiacpress_options[ 'geonames_user' ] );
-
 	$api_params = array(
-		'username'			=> urlencode( $geonames_user ),
-		'lat'				=> ! empty( $_POST['lat'] ) ? sanitize_text_field( $_POST['lat'] ) : '',
-		'lng'				=> ! empty( $_POST['lng'] ) ? sanitize_text_field( $_POST['lng'] ) : '',
+		'username'	=> urlencode( sanitize_text_field( $_POST['username'] ) ),
+		'lat'		=> ! empty( $_POST['lat'] ) ? sanitize_text_field( $_POST['lat'] ) : '',
+		'lng'		=> ! empty( $_POST['lng'] ) ? sanitize_text_field( $_POST['lng'] ) : '',
 	);
 
 	$request = wp_remote_post( 'http://api.geonames.org/timezoneJSON', array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
@@ -80,7 +71,6 @@ function zp_ajax_get_geonames_timezone_id() {
 	echo $request;
 	wp_die();
 }
-
 add_action( 'wp_ajax_zp_get_timezone_id', 'zp_ajax_get_geonames_timezone_id' );
 add_action( 'wp_ajax_nopriv_zp_get_timezone_id', 'zp_ajax_get_geonames_timezone_id' );
 

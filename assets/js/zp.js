@@ -1,16 +1,17 @@
 (function( $ ) {
+
 	// Insert hidden input with Geonames Timezone ID
 	function getGeoTZ(latdeci, longdeci) {
-		
 		// Get timezone id by coordinates from Geonames webservice
 		$.ajax({
-			url: zp_ajax_object.ajaxurl,
-			dataType: "json",
-			type: "POST",		
+			url: zp_ajax_object.timezone_ajaxurl,
+			dataType: zp_ajax_object.dataType,
+			type: zp_ajax_object.type,
 			data: {
-				action: 'zp_get_timezone_id',
+				action: zp_ajax_object.timezone_id_action ? zp_ajax_object.timezone_id_action : undefined,
 				lat: latdeci,
 				lng: longdeci,
+				username: zp_ajax_object.geonames_user
 			},
 			success: function( response ) {
 				$('<input>').attr({
@@ -31,11 +32,16 @@
 		$( '#place' ).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
-					url: zp_ajax_object.ajaxurl,
-					dataType: "json",
-					type: "POST",
+					url: zp_ajax_object.autocomplete_ajaxurl,
+					dataType: zp_ajax_object.dataType,
+					type: zp_ajax_object.type,
+
 					data: {
-						action: 'zp_get_cities_list',
+						featureClass: "P",
+						style: "full",
+						maxRows: 12,
+						username: zp_ajax_object.geonames_user,
+						action: zp_ajax_object.autocomplete_action ? zp_ajax_object.autocomplete_action : undefined,
 						name_startsWith: request.term,
 						lang: zp_ajax_object.lang
 					},

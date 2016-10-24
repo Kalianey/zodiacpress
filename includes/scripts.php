@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function zp_register_scripts() {
 
+	global $zodiacpress_options;
+
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style( 'zp', ZODIACPRESS_URL . 'assets/css/zp' . $suffix . '.css', array(), ZODIACPRESS_VERSION );
@@ -26,10 +28,19 @@ function zp_register_scripts() {
 	$langcode = substr( $wplang, 0, 2 );
 	$city_list_lang = ( 'en' != $langcode ) ? $langcode : '';
 
+	$geonames_username = empty( $zodiacpress_options[ 'geonames_user' ] ) ? 'demo' : trim( $zodiacpress_options[ 'geonames_user' ] );
+
 	$data = array(
-			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
-			'utc'		=> __( 'UTC time offset:', 'zodiacpress' ),
-			'lang'		=> $city_list_lang
+			'ajaxurl'				=> admin_url( 'admin-ajax.php' ),
+			'autocomplete_ajaxurl'	=> apply_filters( 'zp_autocomplete_ajaxurl', admin_url( 'admin-ajax.php' ) ),
+			'timezone_ajaxurl'		=> apply_filters( 'zp_timezone_ajaxurl', admin_url( 'admin-ajax.php' ) ),
+			'autocomplete_action'	=> apply_filters( 'zp_ajax_geonames_action', 'zp_get_cities_list' ),
+			'timezone_id_action'	=> apply_filters( 'zp_ajax_geonames_action', 'zp_get_timezone_id' ),
+			'dataType'				=> apply_filters( 'zp_ajax_datatype', 'json' ),
+			'type'					=> apply_filters( 'zp_ajax_type', 'POST' ),			
+			'utc'					=> __( 'UTC time offset:', 'zodiacpress' ),
+			'lang'					=> $city_list_lang,
+			'geonames_user'			=> $geonames_username
 		);
 	wp_localize_script( 'zp', 'zp_ajax_object', $data );
 
