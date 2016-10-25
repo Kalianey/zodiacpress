@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZ
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
 Tested up to: 4.7
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -116,6 +116,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
  
 == Changelog ==
 
+= 1.4.1 =
+* Tweak - Add disabled button CSS styles for themes that may not have any.
+
 = 1.4 =
 * New - Improved city field response. The Next/Submit button will be disabled until it is really ready. Previously, clicking Next too early would give a 'Please select a Birth City' error. This is because some things are happening in the background, for example, grabbing the city coordinates and timezone ID. If the background processes are not complete, you get an error. This problem should be greatly reduced now since the Next button will only be clickable when the background processes are complete.
 * New - Add support for the Enhanced GeoNames extension which sends requests to GeoNames webservices from the browser rather than from the server side. This extension makes the city field and Next button faster and better.
@@ -152,6 +155,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.4.1 =
+Improved city field response on the form.
 
 = 1.4 =
 Improved city field response on the form.
