@@ -39,6 +39,11 @@
 	font-family: Arial,Helvetica,sans-serif;
 	font-size: 1em;
 }
+#zp-birthreport-form .zp-input-text:focus,#zp-ajax-birth-data select:focus{
+	border: 1px solid #009bff;
+	outline: none;
+	transition: 0.2s ease-in;
+}
 #zp-form-wrap h2,
 #zp-form-wrap .zp-form {
     max-width: 500px;
