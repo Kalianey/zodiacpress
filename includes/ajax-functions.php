@@ -106,7 +106,7 @@ add_action( 'wp_ajax_zp_tz_offset', 'zp_ajax_get_time_offset' );
 add_action( 'wp_ajax_nopriv_zp_tz_offset', 'zp_ajax_get_time_offset' );
 
 /**
- * Handles ajax request get the Birth Report upon form submission.
+ * Handles ajax request to get the Birth Report upon form submission.
  */
 function zp_ajax_get_birthreport() {
 	$validated = zp_validate_form( $_POST );
