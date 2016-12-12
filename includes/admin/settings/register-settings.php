@@ -134,7 +134,19 @@ function zp_get_registered_settings() {
 						'name'	=> __( 'Allow Unknown Birth Time', 'zodiacpress' ),
 						'type'	=> 'checkbox',
 						'desc'	=> __( 'Allow people with unknown birth times to generate a birth report. If enabled, this will allow them to generate a basic report, excluding items that require a birth time (i.e. excluding Houses, Moon, Ascendant, Midheaven, Vertex, and Part of Fortune).', 'zodiacpress' )
-					),					
+					),
+					'add_drawing_to_birthreport' => array(
+								'id'	=> 'add_drawing_to_birthreport',
+								'name'	=> __( 'Add Chart Wheel To Natal Report', 'zodiacpress' ),
+								'type'	=> 'select',
+								'desc'	=> __( 'Would you like to add the chart drawing to the birth report?', 'zodiacpress' ),
+								'options'	=> array(
+									'no' => __( 'do not add', 'zodiacpress' ),
+									'bottom' => __( 'add to bottom of report', 'zodiacpress' ),
+									'top' => __( 'add to top of report', 'zodiacpress' ),
+								),
+								'std'		=> 'no'
+					),
 					'birthreport_intro' => array(
 						'id'	=> 'birthreport_intro',
 						'name'	=> __( 'Birth Report Intro', 'zodiacpress' ),
