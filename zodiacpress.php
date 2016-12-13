@@ -102,7 +102,7 @@ final class ZodiacPress {
 		require_once ZODIACPRESS_PATH . 'includes/time-functions.php';
 		// anything that handles ajax scripts must be loaded both in front and back.
 		require_once ZODIACPRESS_PATH . 'includes/form/validation.php';
-
+		require_once ZODIACPRESS_PATH . 'includes/chart-drawing.php';
 
 		if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 
