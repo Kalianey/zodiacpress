@@ -29,6 +29,7 @@ if ( isset( $_GET['zpi'] ) ) {
 }
 
 if ( isset( $_GET['zpcustom'] ) ) {
+
 	$customizer_raw = unserialize( $_GET['zpcustom'] );
 
 	foreach ( $customizer_raw as $key => $value ) {
@@ -38,7 +39,7 @@ if ( isset( $_GET['zpcustom'] ) ) {
 
 header ('Content-Type: image/png');
 
-$dir = rtrim( dirname( __FILE__ ), '/\\' ) . '/assets/fonts/';// @test now
+$dir = rtrim( dirname( __FILE__ ), '/\\' ) . '/assets/fonts/';
 
 $first_house = $cusps[1];
 // create the blank image
@@ -60,62 +61,77 @@ $gray = imagecolorallocate($im,233,233,233);
 $off_white = imagecolorallocate($im,248,248,248);
 
 // Convert customizer hex colors to rbg values
+// @todo merge this into the above as we're getting customizer values, convert them there.
 if ( ! empty( $customizer ) ) {
 	foreach ( $customizer as $k => $hex ) {
 		$customizer_rgb[ $k ] = zpcd_hex2rgb( $hex );
 	}
 }
 
-/************************************************************
-*
-* @test
-*
-************************************************************/
-// $debug3 = '';
-// if(isset( $customizer_rgb['outer_bg_color'] ) ) {
-
-// 	$debug3 = print_r( $customizer_rgb['outer_bg_color'], true );
-// }
-// if(isset( $cusps ) ) {
-
-// 	$debug3 = print_r( $cusps, true );
-// }
-
-
-
-
-
-
 // ------------------------------------------
 
-// Set default colors and get customizer colors
+// Set default colors and override with customizer colors
 
 $outer_bg_color = isset( $customizer_rgb['outer_bg_color'] ) ?
 				imagecolorallocate($im,$customizer_rgb['outer_bg_color'][0], $customizer_rgb['outer_bg_color'][1],$customizer_rgb['outer_bg_color'][2]) :
 				$gray;
-
 $signs_wheel_color = isset( $customizer_rgb['signs_wheel_color'] ) ?
 				imagecolorallocate($im,$customizer_rgb['signs_wheel_color'][0], $customizer_rgb['signs_wheel_color'][1],$customizer_rgb['signs_wheel_color'][2]) :
 				$white;
-
-$signs_divider_color = $black;
-$signs_border_color = $black;
-$wheel_bg_color = $off_white;
-$houses_border_color = $black;
-$houses_divider_color = $black;
-$angles_arrow_color = $black;
-$planet_glyph_color = $black;
-$house_number_color = $black;
-$angle_degree_color = $bright_blue;
-$inner_wheel_color = $white;
-$inner_wheel_border_color = $black;
-$hard_aspect_color = $bright_red;
-$soft_aspect_color = $blues_blue;
-$minor_aspect_color = $bright_green;
-$fire_sign_color = $red;
-$earth_sign_color = $green;
-$air_sign_color = $orange;
-$water_sign_color = $blue;
+$signs_divider_color = isset( $customizer_rgb['signs_divider_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['signs_divider_color'][0], $customizer_rgb['signs_divider_color'][1], $customizer_rgb['signs_divider_color'][2]) :
+				$black;
+$signs_border_color = isset( $customizer_rgb['signs_border_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['signs_border_color'][0], $customizer_rgb['signs_border_color'][1], $customizer_rgb['signs_border_color'][2]) :
+				$black;
+$wheel_bg_color = isset( $customizer_rgb['wheel_bg_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['wheel_bg_color'][0], $customizer_rgb['wheel_bg_color'][1], $customizer_rgb['wheel_bg_color'][2]) :
+				$off_white;
+$houses_border_color = isset( $customizer_rgb['houses_border_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['houses_border_color'][0], $customizer_rgb['houses_border_color'][1], $customizer_rgb['houses_border_color'][2]) :
+				$black;
+$houses_divider_color = isset( $customizer_rgb['houses_divider_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['houses_divider_color'][0], $customizer_rgb['houses_divider_color'][1], $customizer_rgb['houses_divider_color'][2]) :
+				$black;
+$angles_arrow_color = isset( $customizer_rgb['angles_arrow_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['angles_arrow_color'][0], $customizer_rgb['angles_arrow_color'][1], $customizer_rgb['angles_arrow_color'][2]) :
+				$black;
+$planet_glyph_color = isset( $customizer_rgb['planet_glyph_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['planet_glyph_color'][0], $customizer_rgb['planet_glyph_color'][1], $customizer_rgb['planet_glyph_color'][2]) :
+				$black;
+$house_number_color = isset( $customizer_rgb['house_number_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['house_number_color'][0], $customizer_rgb['house_number_color'][1], $customizer_rgb['house_number_color'][2]) :
+				$black;
+$angle_degree_color = isset( $customizer_rgb['angle_degree_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['angle_degree_color'][0], $customizer_rgb['angle_degree_color'][1], $customizer_rgb['angle_degree_color'][2]) :
+				$bright_blue;
+$inner_wheel_color = isset( $customizer_rgb['inner_wheel_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['inner_wheel_color'][0], $customizer_rgb['inner_wheel_color'][1], $customizer_rgb['inner_wheel_color'][2]) :
+				$white;
+$inner_wheel_border_color = isset( $customizer_rgb['inner_wheel_border_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['inner_wheel_border_color'][0], $customizer_rgb['inner_wheel_border_color'][1], $customizer_rgb['inner_wheel_border_color'][2]) :
+				$black;
+$hard_aspect_color = isset( $customizer_rgb['hard_aspect_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['hard_aspect_color'][0], $customizer_rgb['hard_aspect_color'][1], $customizer_rgb['hard_aspect_color'][2]) :
+				$bright_red;
+$soft_aspect_color = isset( $customizer_rgb['soft_aspect_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['soft_aspect_color'][0], $customizer_rgb['soft_aspect_color'][1], $customizer_rgb['soft_aspect_color'][2]) :
+				$blues_blue;
+$minor_aspect_color = isset( $customizer_rgb['minor_aspect_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['minor_aspect_color'][0], $customizer_rgb['minor_aspect_color'][1], $customizer_rgb['minor_aspect_color'][2]) :
+				$bright_green;
+$fire_sign_color = isset( $customizer_rgb['fire_sign_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['fire_sign_color'][0], $customizer_rgb['fire_sign_color'][1], $customizer_rgb['fire_sign_color'][2]) :
+				$red;
+$earth_sign_color = isset( $customizer_rgb['earth_sign_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['earth_sign_color'][0], $customizer_rgb['earth_sign_color'][1], $customizer_rgb['earth_sign_color'][2]) :
+				$green;
+$air_sign_color = isset( $customizer_rgb['air_sign_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['air_sign_color'][0], $customizer_rgb['air_sign_color'][1], $customizer_rgb['air_sign_color'][2]) :
+				$orange;
+$water_sign_color = isset( $customizer_rgb['water_sign_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['water_sign_color'][0], $customizer_rgb['water_sign_color'][1], $customizer_rgb['water_sign_color'][2]) :
+				$blue;
 
 // ------------------------------------------
 
@@ -123,7 +139,6 @@ $diameter = 500; // diameter of houses circle
 $outer_diameter = 600; // diameter of signs circle
 $outer_diameter_distance = ($outer_diameter - $diameter) / 2; // distance between outer-outer diameter and diameter
 $inner_diameter_offset = 90; // diameter of inner circle
-
 $dist_from_diameter_i = 40;	// distance inner planet glyph is from circumference of wheel
 $dist_from_diameter_line_i = 12;// distance of line to inner planet glyph
 $dist_from_diameter_dms_i = 60;	// distance of dms from circumference of wheel for inner planet
@@ -368,7 +383,7 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 		$degree_color = $angle_degree_color;
 	} else {
 
-		$degree_color = $bright_blue; // @todo this will be a setting in customizer
+		$degree_color = $bright_blue; // @todo this will be a setting in customizer. @todo add customizer setting for this.
 
 		// draw line from planet to circumference
 		if ( false == $flag ) {
@@ -527,7 +542,7 @@ if ( ! empty( $unknown_time ) ) {
 	// imagestring( $im, 2, 8, 48, 'Placidus', $black );
 
 	
-	// imagestring( $im, 2, 8, 8, $debug3, $black );// @test now
+	// imagestring( $im, 2, 8, 8, $debug3, $black );// @test
 
 
 	imagepng( $im );
@@ -537,8 +552,6 @@ if ( ! empty( $unknown_time ) ) {
 *
 
 @todo now get orb from settings for aspect lines to be drawn only if within orb.
-Are settings even accessible in here??? must send them in the image src url
-
 *
 ************************************************************/
 

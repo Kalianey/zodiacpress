@@ -3,7 +3,7 @@
 Plugin Name: ZodiacPress
 Plugin URI: https://cosmicplugins.com/downloads/zodiacpress/
 Description: Generate astrology birth reports with your custom interpretations.
-Version: 1.4.2.alpha1
+Version: 1.5.alpha2
 Author: Isabel Castillo, Cosmic Plugins
 Author URI: http://isabelcastillo.com
 License: GNU GPLv2
@@ -68,7 +68,6 @@ final class ZodiacPress {
 	 * @return void
 	 */
 	private function setup_constants() {
-
 		if ( ! defined( 'ZODIACPRESS_VERSION' ) ) {
 			define( 'ZODIACPRESS_VERSION', '1.4.1' );// @todo update
 		}
@@ -87,7 +86,6 @@ final class ZodiacPress {
 	 * @return void
 	 */
 	private function includes() {
-
 		global $zodiacpress_options;
 		require_once ZODIACPRESS_PATH . 'includes/admin/settings/register-settings.php';
 		$zodiacpress_options = get_option( 'zodiacpress_settings' );
@@ -103,6 +101,8 @@ final class ZodiacPress {
 		// anything that handles ajax scripts must be loaded both in front and back.
 		require_once ZODIACPRESS_PATH . 'includes/form/validation.php';
 		require_once ZODIACPRESS_PATH . 'includes/chart-drawing.php';
+		
+		require_once ZODIACPRESS_PATH . 'includes/class-zp-customize.php';
 
 		if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 
@@ -138,7 +138,6 @@ final class ZodiacPress {
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
 	public static function activate( $network_wide = false ) {
-
 		global $wpdb;
 		if ( is_multisite() && $network_wide ) {
 			foreach ( $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs LIMIT 100" ) as $blog_id ) {
@@ -155,7 +154,6 @@ final class ZodiacPress {
 	 * Fired for each blog when the plugin is activated.
 	 */
 	private static function single_activate() {
-
 		// If no existing settings, set up default ones.
 		if ( false == get_option( 'zodiacpress_settings' ) ) {
 

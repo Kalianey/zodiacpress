@@ -2,7 +2,7 @@
 /**
  * AJAX Functions
  *
- * Process the front-end AJAX actions.
+ * Process the AJAX actions.
  *
  * @package     ZodiacPress
  * @subpackage  Functions/AJAX
@@ -127,3 +127,21 @@ function zp_ajax_get_birthreport() {
 }
 add_action( 'wp_ajax_zp_birthreport', 'zp_ajax_get_birthreport' );
 add_action( 'wp_ajax_nopriv_zp_birthreport', 'zp_ajax_get_birthreport' );
+
+/**
+ * Handles ajax request to get the chartwheel image for the customizer preview.
+ */
+function zp_ajax_get_customizer_image() {
+	$colors = array();
+
+	foreach( $_POST['post_data'] as $k => $color ) {
+		$colors[ $k ] = sanitize_hex_color( $color );
+	}
+
+	$image = zp_get_sample_chart_drawing( $colors );
+
+	echo json_encode( array( 'image' => $image ) );
+	wp_die();
+}
+add_action( 'wp_ajax_zp_customize_preview_image', 'zp_ajax_get_customizer_image' );
+add_action( 'wp_ajax_nopriv_zp_customize_preview_image', 'zp_ajax_get_customizer_image' );
