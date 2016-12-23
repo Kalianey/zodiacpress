@@ -1,7 +1,5 @@
 ( function( $ ) {
 	'use strict';
-	console.log('using strict');
-
 	wp.customize.section( 'zp_chart_colors', function( section ) {
 
 		// Set a custom Preview URL only for the ZP Chart section
@@ -10,7 +8,7 @@
 		clearPreviousUrl = function() {
 			previousUrl = null;
 		};
-			  
+			
 		section.expanded.bind( function( isExpanded ) {
 			var keys, zpGetSettings, replaceImage;
 
@@ -18,11 +16,11 @@
 
 				keys = ['outer_bg_color','signs_wheel_color','signs_divider_color',
 							'signs_border_color','wheel_bg_color','houses_border_color',
-							'houses_divider_color','angles_arrow_color','angle_degree_color',
-							'planet_glyph_color','house_number_color','inner_wheel_color',
-							'inner_wheel_border_color','hard_aspect_color','soft_aspect_color',
-							'minor_aspect_color','fire_sign_color','earth_sign_color','air_sign_color',
-							'water_sign_color'];
+							'houses_divider_color','angles_arrow_color','planet_glyph_color',
+							'house_number_color','degree_color','angle_degree_color',
+							'inner_wheel_color','inner_wheel_border_color','hard_aspect_color',
+							'soft_aspect_color','minor_aspect_color','fire_sign_color',
+							'earth_sign_color','air_sign_color','water_sign_color'];
 
 				// Grab all our live customizer ZP settings, even those not saved yet
 				zpGetSettings = function () {

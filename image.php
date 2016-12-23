@@ -27,13 +27,12 @@ if ( isset( $_GET['zpi'] ) ) {
 		$i18n[ $key ] = zpci_sanitize_data( $str );
 	}
 }
-
 if ( isset( $_GET['zpcustom'] ) ) {
-
 	$customizer_raw = unserialize( $_GET['zpcustom'] );
-
 	foreach ( $customizer_raw as $key => $value ) {
-		$customizer[ $key ] = zpci_sanitize_data( $value );
+		$hex = zpci_sanitize_data( $value );
+		// Convert customizer hex colors to rbg values
+		$customizer_rgb[ $key ] = zpci_hex2rgb( $hex );
 	}
 }
 
@@ -59,14 +58,6 @@ $bright_green = imagecolorallocate($im, 0, 224, 0);
 $blues_blue = imagecolorallocate($im, 31,141,186);
 $gray = imagecolorallocate($im,233,233,233);
 $off_white = imagecolorallocate($im,248,248,248);
-
-// Convert customizer hex colors to rbg values
-// @todo merge this into the above as we're getting customizer values, convert them there.
-if ( ! empty( $customizer ) ) {
-	foreach ( $customizer as $k => $hex ) {
-		$customizer_rgb[ $k ] = zpci_hex2rgb( $hex );
-	}
-}
 
 // ------------------------------------------
 
@@ -102,6 +93,9 @@ $planet_glyph_color = isset( $customizer_rgb['planet_glyph_color'] ) ?
 $house_number_color = isset( $customizer_rgb['house_number_color'] ) ?
 				imagecolorallocate($im, $customizer_rgb['house_number_color'][0], $customizer_rgb['house_number_color'][1], $customizer_rgb['house_number_color'][2]) :
 				$black;
+$degree_color = isset( $customizer_rgb['degree_color'] ) ?
+				imagecolorallocate($im, $customizer_rgb['degree_color'][0], $customizer_rgb['degree_color'][1], $customizer_rgb['degree_color'][2]) :
+				$bright_blue;
 $angle_degree_color = isset( $customizer_rgb['angle_degree_color'] ) ?
 				imagecolorallocate($im, $customizer_rgb['angle_degree_color'][0], $customizer_rgb['angle_degree_color'][1], $customizer_rgb['angle_degree_color'][2]) :
 				$bright_blue;
@@ -370,20 +364,19 @@ zpci_sort_planets_by_descending_longitude( $num_planets, $longitudes, $sort, $so
 $flag = false;
 
 for ($i = $num_planets - 1; $i >= 0; $i--) {
+	unset( $current_degree_color );
 	// $sort holds longitudes in descending order from 360 down to 0
 	// $sort_pos holds the planet number corresponding to that longitude
 	$angle_to_use = deg2rad($sort[ $i ] - $first_house);
-
-
 
 	// Asc and MC go outside the circle
 	if ( in_array( $sort_pos[ $i ], array( 15, 16 ) ) ) {
 		$glyph_radius = $radius_outer;
 		$dms_radius = $radius_outer;
-		$degree_color = $angle_degree_color;
+		$current_degree_color = $angle_degree_color;
 	} else {
 
-		$degree_color = $bright_blue; // @todo this will be a setting in customizer. @todo add customizer setting for this.
+		$current_degree_color = $degree_color;
 
 		// draw line from planet to circumference
 		if ( false == $flag ) {
@@ -401,7 +394,7 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 			$x2 = (-$radius + 6) * cos($angle_to_use);
 			$y2 = ($radius - 6) * sin($angle_to_use);
 		}
-		zpci_image_smooth_line( $im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, $degree_color );
+		zpci_image_smooth_line( $im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, $current_degree_color );
 		$flag = ! $flag;
 	}
 
@@ -432,7 +425,7 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 
 	// Display degrees, but not for Asc or MC if time is unknown
 	if ( ! ( ! empty( $unknown_time ) && in_array( $sort_pos[ $i ], array( 15, 16 ) ) ) ) {
-		imagettftext( $im, 8, 0, $xy_dms[0] + $center_pt, $xy_dms[1] + $center_pt, $degree_color, $dir . 'HamburgSymbols.ttf', $degrees );
+		imagettftext( $im, 8, 0, $xy_dms[0] + $center_pt, $xy_dms[1] + $center_pt, $current_degree_color, $dir . 'HamburgSymbols.ttf', $degrees );
 	}
 
 }
