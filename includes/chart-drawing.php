@@ -12,25 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Returns the chart drawing image element
  */
-function zp_get_chart_drawing( $default, $arg, $chart, $colors ) {
-
-	/************************************************************
-	*
-	* @todo consider, do i need both $default and $arg params?
-
-	Will prob use this to make sure chartwheel does not come out in other reports
-		such as House Systems report or planet lookup report.
-	*
-	
-	isa_log('in zp_get_chart_drawing(). incoming $default =');// @test
-	isa_log($default);// @test
-	isa_log('in zp_get_chart_drawing(). incoming $arg =');// @test
-	isa_log($arg);// @test
-
-
-	************************************************************/
-
-
+function zp_get_chart_drawing( $default, $arg, $chart, $colors = '' ) {
 	$i18n = array(
 		'hypothetical'	=> __( 'Hypothetical', 'zp-chart-drawing' ),
 		'time'			=> __( 'Time: 12:00pm', 'zp-chart-drawing' )
@@ -59,7 +41,13 @@ function zp_get_chart_drawing( $default, $arg, $chart, $colors ) {
  * Insert chart drawing in the Birth Report, if enabled.
  */
 function zp_report_append_drawing( $default, $arg, $chart ) {
-	return $default . zp_get_chart_drawing( $default, $arg, $chart );
+	$report_variation = is_array( $arg ) ? $arg['zp-report-variation'] : $arg;
+
+	if ( 'birthreport' == $report_variation )  {
+		$default .= zp_get_chart_drawing( $default, $arg, $chart );
+	}
+
+	return $default;
 }
 
 /**
@@ -96,7 +84,7 @@ function zp_insert_chart_drawing() {
 	$zp_options = get_option( 'zodiacpress_settings' );
 	if ( isset( $zp_options['add_drawing_to_birthreport'] ) ) {
 		if ( 'top' == $zp_options['add_drawing_to_birthreport'] ) {
-			add_filter( 'zp_report_header', 'zp_report_append_drawing', 10, 3 );
+			add_filter( 'zp_report_header', 'zp_report_append_drawing', 20, 3 );
 		} elseif ( 'bottom' == $zp_options['add_drawing_to_birthreport'] ) {
 			add_filter( 'zp_report_aspects', 'zp_report_append_drawing', 10, 3 );
 		}
