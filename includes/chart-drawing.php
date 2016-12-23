@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function zp_get_chart_drawing( $default, $arg, $chart, $colors = '' ) {
 	$i18n = array(
-		'hypothetical'	=> __( 'Hypothetical', 'zp-chart-drawing' ),
-		'time'			=> __( 'Time: 12:00pm', 'zp-chart-drawing' )
+		'hypothetical'	=> __( 'Hypothetical', 'zodiacpress' ),
+		'time'			=> __( 'Time: 12:00pm', 'zodiacpress' )
 	);
 
 	if ( empty( $colors ) ) {
