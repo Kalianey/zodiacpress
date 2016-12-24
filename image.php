@@ -522,12 +522,12 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 
 // If time is unknown, print note that this is a hypothetical birth time of noon
 if ( ! empty( $unknown_time ) ) {
-
-	$noon = isset( $i18n['time'] ) ? $i18n['time'] : 'Time: 12:00pm';
 	$hypothetical = isset( $i18n['hypothetical'] ) ? $i18n['hypothetical'] : '';
-
-	imagestring( $im, 2, 8, 16, $noon, $black );
-	imagestring( $im, 2, 8, 32, $hypothetical, $black );
+	$noon = isset( $i18n['time'] ) ? $i18n['time'] : '12:00 pm';
+	
+	imagestring( $im, 4, 8, 16, $hypothetical, $black );
+	imagestring( $im, 4, 8, 40, $noon, $black );
+	
 }
 
 	// @todo remove unused...
