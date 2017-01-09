@@ -141,7 +141,9 @@ function zp_form( $report, $args = array() ) {
 		$allow_unknown_bt_key_prefix = 'planet_lookup';
 	}
 	$allow_unknown_bt_key = $allow_unknown_bt_key_prefix . '_allow_unknown_bt';
-	$allow_unknown_bt = empty( $zodiacpress_options[ $allow_unknown_bt_key ] ) ? false : true; ?>
+	$allow_unknown_bt = empty( $zodiacpress_options[ $allow_unknown_bt_key ] ) ? false : true;
+	?>
+	<noscript class="ui-state-highlight"><?php _e( 'This form requires JavaScript. Your browser either does not support JavaScript or has it disabled.', 'zodiacpress' ); ?></noscript>
 	<form id="zp-<?php echo esc_attr( $report ); ?>-form" method="post" class="zp-form">
 	
 		<?php 
