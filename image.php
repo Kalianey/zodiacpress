@@ -148,24 +148,24 @@ $center_pt = $overall_size / 2; // center of circle
 $last_planet_num = 16;
 $num_planets = $last_planet_num + 1; // add 1 for sorting functions
 
-// glyphs used for planets - HamburgSymbols.ttf - Sun, Moon - Pluto
-$pl_glyph[0] = 81;
-$pl_glyph[1] = 87;
-$pl_glyph[2] = 69;
-$pl_glyph[3] = 82;
+// glyphs used for planets - HamburgSymbols.ttf
+$pl_glyph[0] = 81;// Sun
+$pl_glyph[1] = 87;// Moon
+$pl_glyph[2] = 69;// Mercury
+$pl_glyph[3] = 82;// Venus
 $pl_glyph[4] = 84;
 $pl_glyph[5] = 89;
 $pl_glyph[6] = 85;
 $pl_glyph[7] = 73;
 $pl_glyph[8] = 79;
-$pl_glyph[9] = 80;
-$pl_glyph[10] = 77; // chiron
+$pl_glyph[9] = 80;// Pluto
+$pl_glyph[10] = 77;// Chiron
 $pl_glyph[11] = 96;
 $pl_glyph[12] = 141;
-$pl_glyph[13] = 60; //Part of Fortune
-$pl_glyph[14] = 109; //vertex
-$pl_glyph[15] = 90; //Ascendant
-$pl_glyph[16] = 88; //Midheaven
+$pl_glyph[13] = 60;//Part of Fortune
+$pl_glyph[14] = 109;//vertex
+$pl_glyph[15] = 90;//Ascendant
+$pl_glyph[16] = 88;//Midheaven
 
 // glyphs used for planets - HamburgSymbols.ttf - Aries - Pisces
 $sign_glyph[1] = 97;
@@ -433,33 +433,40 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 // ------------------------------------------
 
 // draw in the aspect lines
-	for ($i = 0; $i <= $last_planet_num; $i++)
-	{
-		for ($j = 0; $j <= $last_planet_num; $j++)
-		{
-			$q = 0;
-			$da = Abs( $longitudes[ $sort_pos[ $i ] ] - $longitudes[ $sort_pos[ $j ] ] );
+for ($i = 0; $i <= $last_planet_num; $i++) {
+	for ($j = 0; $j <= $last_planet_num; $j++) {
 
-			if ($da > 180)
-			{
-				$da = 360 - $da;
-			}
+		/************************************************************
+		*
+		* @todo @test now
+		*
+		************************************************************/
+		// Don't show aspect lines for Chiron (10), Lilith (11), Node (12), POF (13), vertex (14)
+		$pl_to_exclude = range( 10, 14 );
+		if ( in_array( $sort_pos[ $i ], $pl_to_exclude ) ||
+			in_array( $sort_pos[ $j ], $pl_to_exclude ) ) {
+			continue;
+		}
 
-			// set orb - 8 if Sun or Moon, 6 if not Sun or Moon
-			if ($sort_pos[ $i ] == 0 || $sort_pos[ $i ] == 1 || $sort_pos[$j] == 0 || $sort_pos[$j] == 1)
-			{
-				$orb = 8;
-			}
-			else
-			{
-				$orb = 6;
-			}
 
-			// is there an aspect within orb?
-			if ($da <= $orb)
-			{
-				$q = 1;
-			}
+		$q = 0;
+		$da = Abs( $longitudes[ $sort_pos[ $i ] ] - $longitudes[ $sort_pos[ $j ] ] );
+
+		if ($da > 180) {
+			$da = 360 - $da;
+		}
+
+		// set orb - 8 if Sun or Moon, 6 if not Sun or Moon
+		if ($sort_pos[ $i ] == 0 || $sort_pos[ $i ] == 1 || $sort_pos[$j] == 0 || $sort_pos[$j] == 1) {
+			$orb = 8;
+		} else {
+			$orb = 6;
+		}
+
+		// is there an aspect within orb?
+		if ($da <= $orb) {
+			$q = 1;
+		}
 			elseif (($da <= (60 + $orb)) And ($da >= (60 - $orb)))
 			{
 				$q = 6;
@@ -517,8 +524,12 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 				}
 			}
 
-		}
 	}
+}
+
+// ------------------------------------------
+
+
 
 // If time is unknown, print note that this is a hypothetical birth time of noon
 if ( ! empty( $unknown_time ) ) {
