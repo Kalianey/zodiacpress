@@ -3,7 +3,7 @@
  * ZP_Chart class
  *
  * @package     ZodiacPress
- * @copyright   Copyright (c) 2016, Isabel Castillo
+ * @copyright   Copyright (c) 2016-2017, Isabel Castillo
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */

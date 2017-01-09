@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zodiacpress
 Domain Path: /languages
 
-Copyright 2106 Isabel Castillo
+Copyright 2016-2017 Isabel Castillo
 
 This file is part of ZodiacPress.
 
