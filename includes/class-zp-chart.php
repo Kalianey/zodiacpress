@@ -169,36 +169,6 @@ final class ZP_Chart {
 	}
 
 	/**
-	 * Deprecated. Will be removed in an upcoming version. 
-	 * Query the Ephemeris.
-	 * @todo remove after ZPHS is updated to 1.2
-	 *
-	 * @param string $planets Planets and points to calculate. Leave blank for only houses.
-	 * @param string $format The format for the output, in sequence letters.
-	 * @param string $house_system The house system to use for house cusp calculations
-	 * @param string $options Additional arbitrary options
-	 */
-	public function query_ephemeris( $planets = '', $format = '', $house_system = '', $options = '' ) {
-		
-		// Args for the ephemeris query
-		$args = array(
-			'planets'		=> $planets,
-			'format'		=> $format,
-			'house_system'	=> $house_system,
-			'latitude'		=> $this->latitude,
-			'longitude'		=> $this->longitude,
-			'ut_date'		=> $this->ut_date,
-			'ut_time'		=> $this->ut_time,
-			'options'		=> $options
-		);
-
-		$ephemeris	= new ZP_Ephemeris( $args );
-
-		return $ephemeris->query();
-		
-	}	
-
-	/**
 	 * Set up the chart data.
 	 */
 	private function setup_chart() {
