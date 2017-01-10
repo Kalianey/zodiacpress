@@ -129,7 +129,7 @@ add_action( 'wp_ajax_zp_birthreport', 'zp_ajax_get_birthreport' );
 add_action( 'wp_ajax_nopriv_zp_birthreport', 'zp_ajax_get_birthreport' );
 
 /**
- * Handles ajax request to get the chartwheel image for the customizer preview.
+ * Handles ajax request to get the chartwheel image for the live color preview for customizer.
  */
 function zp_ajax_get_customizer_image() {
 	$colors = array();
