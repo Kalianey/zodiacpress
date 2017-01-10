@@ -1,4 +1,6 @@
-<?php // This file creates the chart image
+<?php // This file creates the ZodiaPress chart image
+global $zpci_orbs;
+
 if ( isset( $_GET['zpl'] ) ) {
 	$longitudes_raw = unserialize( $_GET['zpl'] );
 	for ( $n = 0; $n <= 16; $n++ ) {
@@ -15,6 +17,12 @@ if ( isset( $_GET['zps'] ) ) {
 	$speed_raw = unserialize( $_GET['zps'] );
 	for ( $s = 0; $s <= 12; $s++ ) {
 		$speed[ $s ] = zpci_sanitize_data( $speed_raw[ $s ] );
+	}
+}
+if ( isset( $_GET['zpo'] ) ) {
+	$orbs_raw = unserialize( $_GET['zpo'] );
+	foreach ( $orbs_raw as $key => $value ) {
+		$zpci_orbs[ $key ] = zpci_sanitize_data( $value );
 	}
 }
 if ( isset( $_GET['zpu'] ) ) {
@@ -61,7 +69,7 @@ $off_white = imagecolorallocate($im,248,248,248);
 
 // ------------------------------------------
 
-// Set default colors and override with customizer colors
+// Set default colors and override with Customizer colors
 
 $outer_bg_color = isset( $customizer_rgb['outer_bg_color'] ) ?
 				imagecolorallocate($im,$customizer_rgb['outer_bg_color'][0], $customizer_rgb['outer_bg_color'][1],$customizer_rgb['outer_bg_color'][2]) :
@@ -148,46 +156,83 @@ $center_pt = $overall_size / 2; // center of circle
 $last_planet_num = 16;
 $num_planets = $last_planet_num + 1; // add 1 for sorting functions
 
+// HamburgSymbols font code for planet glyphs
+$pl_glyph = array(
+	0 => 81,// Sun
+	1 => 87,// Moon
+	2 => 69,// Mercury
+	3 => 82,// Venus
+	4 => 84,// Mercury
+	5 => 89,
+	6 => 85,
+	7 => 73,
+	8 => 79,
+	9 => 80,// Pluto
+	10 => 77,// Chiron
+	11 => 96,
+	12 => 141,
+	13 => 60,// Part of Fortune
+	14 => 109,// vertex
+	15 => 90,// Ascendant
+	16 => 88,// Midheaven
+);
+
+// HamburgSymbols font code for zodiac sign glyphs
+$sign_glyph = array(
+	1 => 97,// Aries
+	2 => 115,// Taurus
+	3 => 100,
+	4 => 102,
+	5 => 103,
+	6 => 104,
+	7 => 106,
+	8 => 107,
+	9 => 108,
+	10 => 122,
+	11 => 120,
+	12 => 99
+);
+
 // glyphs used for planets - HamburgSymbols.ttf
-$pl_glyph[0] = 81;// Sun
-$pl_glyph[1] = 87;// Moon
-$pl_glyph[2] = 69;// Mercury
-$pl_glyph[3] = 82;// Venus
-$pl_glyph[4] = 84;
-$pl_glyph[5] = 89;
-$pl_glyph[6] = 85;
-$pl_glyph[7] = 73;
-$pl_glyph[8] = 79;
-$pl_glyph[9] = 80;// Pluto
-$pl_glyph[10] = 77;// Chiron
-$pl_glyph[11] = 96;
-$pl_glyph[12] = 141;
-$pl_glyph[13] = 60;//Part of Fortune
-$pl_glyph[14] = 109;//vertex
-$pl_glyph[15] = 90;//Ascendant
-$pl_glyph[16] = 88;//Midheaven
+// $pl_glyph[0] = 81;// Sun
+// $pl_glyph[1] = 87;// Moon
+// $pl_glyph[2] = 69;// Mercury
+// $pl_glyph[3] = 82;// Venus
+// $pl_glyph[4] = 84;
+// $pl_glyph[5] = 89;
+// $pl_glyph[6] = 85;
+// $pl_glyph[7] = 73;
+// $pl_glyph[8] = 79;
+// $pl_glyph[9] = 80;// Pluto
+// $pl_glyph[10] = 77;// Chiron
+// $pl_glyph[11] = 96;
+// $pl_glyph[12] = 141;
+// $pl_glyph[13] = 60;//Part of Fortune
+// $pl_glyph[14] = 109;//vertex
+// $pl_glyph[15] = 90;//Ascendant
+// $pl_glyph[16] = 88;//Midheaven
 
 // glyphs used for planets - HamburgSymbols.ttf - Aries - Pisces
-$sign_glyph[1] = 97;
-$sign_glyph[2] = 115;
-$sign_glyph[3] = 100;
-$sign_glyph[4] = 102;
-$sign_glyph[5] = 103;
-$sign_glyph[6] = 104;
-$sign_glyph[7] = 106;
-$sign_glyph[8] = 107;
-$sign_glyph[9] = 108;
-$sign_glyph[10] = 122;
-$sign_glyph[11] = 120;
-$sign_glyph[12] = 99;
+// $sign_glyph[1] = 97;
+// $sign_glyph[2] = 115;
+// $sign_glyph[3] = 100;
+// $sign_glyph[4] = 102;
+// $sign_glyph[5] = 103;
+// $sign_glyph[6] = 104;
+// $sign_glyph[7] = 106;
+// $sign_glyph[8] = 107;
+// $sign_glyph[9] = 108;
+// $sign_glyph[10] = 122;
+// $sign_glyph[11] = 120;
+// $sign_glyph[12] = 99;
 
 // ------------------------------------------
 
 // create colored rectangle on blank image
 imagefilledrectangle( $im, 0, 0, $overall_size, $overall_size, $white );
 
-// draw the outer border of the chartwheel
-imagefilledellipse( $im, $center_pt, $center_pt, $overall_size - 1, $overall_size - 1, $outer_bg_color );// make it smaller to fit antialiased border
+// Draw the outer border of the chartwheel. Make it smaller to fit antialiased border.
+imagefilledellipse( $im, $center_pt, $center_pt, $overall_size - 1, $overall_size - 1, $outer_bg_color );
 
 // antialias border to overall outer
 zpci_antialiased_ellipse($im, $center_pt, $center_pt, $center_pt - 0.5, $center_pt - 0.5, $outer_bg_color);
@@ -360,13 +405,14 @@ for ( $i = 1; $i <= 12; $i++ ) {
 	
 // sort longitudes in descending order from 360 down to 0
 zpci_sort_planets_by_descending_longitude( $num_planets, $longitudes, $sort, $sort_pos );
+	// $sort holds longitudes in descending order from 360 down to 0
+	// $sort_pos holds the planet number corresponding to that longitude
 
 $flag = false;
 
 for ($i = $num_planets - 1; $i >= 0; $i--) {
 	unset( $current_degree_color );
-	// $sort holds longitudes in descending order from 360 down to 0
-	// $sort_pos holds the planet number corresponding to that longitude
+
 	$angle_to_use = deg2rad($sort[ $i ] - $first_house);
 
 	// Asc and MC go outside the circle
@@ -432,104 +478,108 @@ for ($i = $num_planets - 1; $i >= 0; $i--) {
 
 // ------------------------------------------
 
-// draw in the aspect lines
+// Draw the aspect lines
+
+// Loop through pairs of planets to check for aspects
 for ($i = 0; $i <= $last_planet_num; $i++) {
 	for ($j = 0; $j <= $last_planet_num; $j++) {
 
-		/************************************************************
-		*
-		* @todo @test now
-		*
-		************************************************************/
-		// Don't show aspect lines for Chiron (10), Lilith (11), Node (12), POF (13), vertex (14)
+		// Don't draw aspect lines for Chiron (10), Lilith (11), Node (12), POF (13), vertex (14)
 		$pl_to_exclude = range( 10, 14 );
 		if ( in_array( $sort_pos[ $i ], $pl_to_exclude ) ||
 			in_array( $sort_pos[ $j ], $pl_to_exclude ) ) {
 			continue;
 		}
 
+		$pl_id = array(
+			0 => 'sun',
+			1 => 'moon',
+			2 => 'mercury',
+			3 => 'venus',
+			4 => 'mars',
+			5 => 'jupiter',
+			6 => 'saturn',
+			7 => 'uranus',
+			8 => 'neptune',
+			9 => 'pluto',
+			10 => 'chiron',
+			11 => 'lilith',
+			12 => 'nn',
+			13 => 'pof',
+			14 => 'vertex',
+			15 => 'asc',
+			16 => 'mc'
+		);
 
 		$q = 0;
-		$da = Abs( $longitudes[ $sort_pos[ $i ] ] - $longitudes[ $sort_pos[ $j ] ] );
 
-		if ($da > 180) {
-			$da = 360 - $da;
+		$angular_distance = abs( $longitudes[ $sort_pos[ $i ] ] - $longitudes[ $sort_pos[ $j ] ] );
+
+		if ($angular_distance > 180) {
+			$angular_distance = 360 - $angular_distance;
 		}
 
-		// set orb - 8 if Sun or Moon, 6 if not Sun or Moon
-		if ($sort_pos[ $i ] == 0 || $sort_pos[ $i ] == 1 || $sort_pos[$j] == 0 || $sort_pos[$j] == 1) {
-			$orb = 8;
-		} else {
-			$orb = 6;
-		}
+		// Get allowed orbs for these 2 planets.
+		$orb_sextile = zpci_get_allowed_orb( 'sextile', $pl_id[ $sort_pos[ $i ] ], $pl_id[ $sort_pos[ $j ] ] );
+		$orb_square = zpci_get_allowed_orb( 'square', $pl_id[ $sort_pos[ $i ] ], $pl_id[ $sort_pos[ $j ] ] );
+		$orb_trine = zpci_get_allowed_orb( 'trine', $pl_id[ $sort_pos[ $i ] ], $pl_id[ $sort_pos[ $j ] ] );
+		$orb_quincunx = zpci_get_allowed_orb( 'quincunx', $pl_id[ $sort_pos[ $i ] ], $pl_id[ $sort_pos[ $j ] ] );
+		$orb_opposition = zpci_get_allowed_orb( 'opposition', $pl_id[ $sort_pos[ $i ] ], $pl_id[ $sort_pos[ $j ] ] );
 
-		// is there an aspect within orb?
-		if ($da <= $orb) {
-			$q = 1;
-		}
-			elseif (($da <= (60 + $orb)) And ($da >= (60 - $orb)))
-			{
+		// Check for sextile
+		if ( ( $angular_distance <= ( 60 + $orb_sextile ) ) &&
+			( $angular_distance >= ( 60 - $orb_sextile ) ) ) {
 				$q = 6;
-			}
-			elseif (($da <= (90 + $orb)) And ($da >= (90 - $orb)))
-			{
+
+		// Check for square
+		} elseif ( ( $angular_distance <= ( 90 + $orb_square ) ) &&
+			( $angular_distance >= ( 90 - $orb_square ) ) ) {
 				$q = 4;
-			}
-			elseif (($da <= (120 + $orb)) And ($da >= (120 - $orb)))
-			{
+
+		// Check for trine
+		} elseif ( ( $angular_distance <= ( 120 + $orb_trine ) ) &&
+			( $angular_distance >= ( 120 - $orb_trine ) ) ) {
 				$q = 3;
-			}
-			elseif (($da <= (150 + $orb)) And ($da >= (150 - $orb)))
-			{
+
+		// Check for quincunx
+		} elseif ( ( $angular_distance <= ( 150 + $orb_quincunx ) ) &&
+			( $angular_distance >= ( 150 - $orb_quincunx ) ) ) {
 				$q = 5;
+
+		// Check for opposition
+		} elseif ( $angular_distance >= ( 180 - $orb_opposition ) ) {
+			$q = 2;
+		}
+
+		if ($q > 0) {
+			if ( $q == 3 || $q == 6 ) {
+				$aspect_color = $soft_aspect_color;
+			} elseif ($q == 4 || $q == 2) {
+				$aspect_color = $hard_aspect_color;
+			} elseif ($q == 5) {
+				$aspect_color = $minor_aspect_color;
 			}
-			elseif ($da >= (180 - $orb))
-			{
-				$q = 2;
+
+			$x1 = (-$radius + $inner_diameter_offset) * cos(deg2rad($sort[ $i ] - $first_house));
+			$y1 = ($radius - $inner_diameter_offset) * sin(deg2rad($sort[ $i ] - $first_house));
+			$x2 = (-$radius + $inner_diameter_offset) * cos(deg2rad($sort[$j] - $first_house));
+			$y2 = ($radius - $inner_diameter_offset) * sin(deg2rad($sort[$j] - $first_house));
+
+			// dashed line for inconjunct
+			if ($q == 5) {
+				$style = array_merge(array_fill(0, 8, $aspect_color), array_fill(0, 8, $inner_wheel_color));
+				imagesetstyle($im, $style);
+				imageline($im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, IMG_COLOR_STYLED);	
+			} else {
+				zpci_image_smooth_line($im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, $aspect_color);	
 			}
-
-			if ($q > 0)
-			{
-				if ($q == 1 || $q == 3 || $q == 6)
-				{
-					$aspect_color = $soft_aspect_color;
-				}
-				elseif ($q == 4 || $q == 2)
-				{
-					$aspect_color = $hard_aspect_color;
-				}
-				elseif ($q == 5)
-				{
-					$aspect_color = $minor_aspect_color;
-				}
-
-				if ($q != 1)
-				{
-					//non-conjunctions
-					$x1 = (-$radius + $inner_diameter_offset) * cos(deg2rad($sort[ $i ] - $first_house));
-					$y1 = ($radius - $inner_diameter_offset) * sin(deg2rad($sort[ $i ] - $first_house));
-					$x2 = (-$radius + $inner_diameter_offset) * cos(deg2rad($sort[$j] - $first_house));
-					$y2 = ($radius - $inner_diameter_offset) * sin(deg2rad($sort[$j] - $first_house));
-
-					// dashed line for inconjunct
-					if ($q == 5) {
-						$style = array_merge(array_fill(0, 8, $aspect_color), array_fill(0, 8, $inner_wheel_color));
-						imagesetstyle($im, $style);
-						imageline($im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, IMG_COLOR_STYLED);	
-					} else {
-						zpci_image_smooth_line($im, $x1 + $center_pt, $y1 + $center_pt, $x2 + $center_pt, $y2 + $center_pt, $aspect_color);	
-					}
-
 					
-				}
-			}
+		}
 
 	}
 }
 
 // ------------------------------------------
-
-
 
 // If time is unknown, print note that this is a hypothetical birth time of noon
 if ( ! empty( $unknown_time ) ) {
@@ -541,23 +591,8 @@ if ( ! empty( $unknown_time ) ) {
 	
 }
 
-	// @todo remove unused...
-	// imagestring( $im, 2, 8, 32, 'Tropical Zodiac', $black );
-	// imagestring( $im, 2, 8, 48, 'Placidus', $black );
-
-	
-	// imagestring( $im, 2, 8, 8, $debug3, $black );// @test
-
-
-	imagepng( $im );
-	imagedestroy( $im );
-
-/************************************************************
-*
-
-@todo now get orb from settings for aspect lines to be drawn only if within orb.
-*
-************************************************************/
+imagepng( $im );
+imagedestroy( $im );
 
 /**
  * Strip all tags and whitespace
@@ -570,20 +605,15 @@ function zpci_sanitize_data( $data ) {
 }
 
 function zpci_sort_planets_by_descending_longitude($num_planets, $longitude, &$sort, &$sort_pos) {
-// load all $longitude() into sort() and keep track of the planet numbers in $sort_pos()
-	for ($i = 0; $i <= $num_planets - 1; $i++)
-	{
+	// load all $longitude() into sort() and keep track of the planet numbers in $sort_pos()
+	for ($i = 0; $i <= $num_planets - 1; $i++) {
 		$sort[ $i ] = $longitude[ $i ];
 		$sort_pos[ $i ] = $i;
 	}
-
-// do the actual sort
-	for ($i = 0; $i <= $num_planets - 2; $i++)
-	{
-		for ($j = $i + 1; $j <= $num_planets - 1; $j++)
-		{
-			if ($sort[$j] > $sort[ $i ])
-			{
+	// do the actual sort
+	for ($i = 0; $i <= $num_planets - 2; $i++) {
+		for ($j = $i + 1; $j <= $num_planets - 1; $j++) {
+			if ($sort[$j] > $sort[ $i ]) {
 				$temp = $sort[ $i ];
 				$temp1 = $sort_pos[ $i ];
 
@@ -860,6 +890,10 @@ function zpci_antialiased_ellipse( $img, $cx, $cy, $radius_x, $radius_y, $color 
 		zpci_setpixel4($img, $cx, $cy, floor($x)+1, $y, $alpha2);
 	}
 }
+/**
+ * Convert hex color code into array of rgb values
+ * @return array with the r,g,b values
+ */
 function zpci_hex2rgb( $hex ) {
 	$hex = ltrim( $hex, '#');
 	if(strlen($hex) == 3) {
@@ -871,6 +905,31 @@ function zpci_hex2rgb( $hex ) {
 		$g = hexdec(substr($hex,2,2));
 		$b = hexdec(substr($hex,4,2));
 	}
-	return array($r, $g, $b); // returns an array with the rgb values
+	return array($r, $g, $b);
+}
+
+/**
+ * Get the smallest allowed orb for an aspect between 2 points
+ * @param $asp string The aspect in question
+ * @param $p_1 string The id of the first point
+ * @param $p_2 string The id of the second point
+ *
+ * @return int allowed orb in degrees
+ */
+function zpci_get_allowed_orb( $asp, $p_1, $p_2 ) {
+	global $zpci_orbs;
+
+	$key1			= 'orb_' . $asp . '_' . $p_1;
+
+	$allowed_orb1	= empty( $zpci_orbs[ $key1 ] ) ? 8 : $zpci_orbs[ $key1 ];
+	$allowed_orb1	= is_numeric( $allowed_orb1 ) ? abs( $allowed_orb1 ) : 8;
+
+	$key2			= 'orb_' . $asp . '_' . $p_2;
+
+	$allowed_orb2	= empty( $zpci_orbs[ $key2 ] ) ? 8 : $zpci_orbs[ $key2 ];
+	$allowed_orb2	= is_numeric( $allowed_orb2 ) ? abs( $allowed_orb2 ) : 8;
+	
+	return min( $allowed_orb1, $allowed_orb2 );
+
 }
 ?>

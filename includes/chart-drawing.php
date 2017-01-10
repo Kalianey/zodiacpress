@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Returns the chart drawing image element
  */
 function zp_get_chart_drawing( $default, $arg, $chart, $colors = '' ) {
+	global $zodiacpress_options;
 	$i18n = array(
 		'hypothetical'	=> __( 'Hypothetical Time:', 'zodiacpress' ),
 		'time'			=> __( '12:00 pm', 'zodiacpress' )
@@ -24,15 +25,29 @@ function zp_get_chart_drawing( $default, $arg, $chart, $colors = '' ) {
 		// incorporate live customizer colors
 		$customizer_settings = ZP_Customize::merge_settings( $colors );
 	}
+	
+	// Get all orbs settings...
+	
+	$orb_settings = array();
+	foreach ( $zodiacpress_options as $k => $v ) {
+		// No need to pass conjunction orbs
+		if ( 0 === strpos( $k, 'orb_' ) && false === strpos( $k, 'orb_conjunction_' ) ) {
+			// No need to pass orbs that are the default 8
+			if ( ! empty( $v ) || 8 != $v ) {
+				$orb_settings[ $k ] = $v;
+			}
+		}
+	}
 
 	$custom = rawurlencode( serialize( $customizer_settings ) );
 	$i = rawurlencode( serialize( $i18n ) );
 	$l = rawurlencode( serialize( $chart->planets_longitude ) );
 	$s = rawurlencode( serialize( $chart->planets_speed ) );
 	$c = rawurlencode( serialize( $chart->cusps ) );
+	$o =  rawurlencode( serialize( $orb_settings ) );
 	$u = urlencode( serialize( $chart->unknown_time ) );
 
-	$out = '<img src="' . ZODIACPRESS_URL . 'image.php?zpl=' . $l . '&zps=' . $s . '&zpc=' . $c . '&zpi=' . $i . '&zpcustom=' . $custom . '&zpu=' . $u . '" class="zp-chart-drawing" alt="chart drawing" />';
+	$out = '<img src="' . ZODIACPRESS_URL . 'image.php?zpl=' . $l . '&zps=' . $s . '&zpc=' . $c . '&zpi=' . $i . '&zpo=' . $o . '&zpcustom=' . $custom . '&zpu=' . $u . '" class="zp-chart-drawing" alt="chart drawing" />';
 
 	return $out;
 }
@@ -51,7 +66,7 @@ function zp_report_append_drawing( $default, $arg, $chart ) {
 }
 
 /**
- * Get a test sample chart drawing
+ * Get a test sample chart drawing. Used for the Customizer preview.
  * @param array $colors The current customizer preview color settings
  */
 function zp_get_sample_chart_drawing( $colors = false ) {
