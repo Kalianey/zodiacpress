@@ -204,8 +204,14 @@ form .zp-button:hover, .zp-button:focus{
 	border:0;
 	white-space: nowrap;
 }
+.zp-report-header tr {
+	border:0;
+}
 .zp-report-header tr:last-child td {
 	padding-bottom:5px;
+}
+.zp-chart-drawing {
+	margin-top:1em;	
 }
 .zp-zodiacal-dms {
 	font-weight: 400;padding-left:1em;font-size:.9em;
