@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZ
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
 Tested up to: 4.7
-Stable tag: 1.4.1
+Stable tag: 1.5
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Need help? I'm glad to help via the plugin's official support forum (link above)
 **Quick Setup**
 
 1. In your WordPress dashboard, go to ZodiacPress –> Settings, and click the Misc tab. 
-2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses Geonames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports. After you create your GeoNames account, you have to enable their free web services by going to their [manage account page](http://www.geonames.org/manageaccount) and click to enable them at the bottom where it says "Free Web Services." (Optional: if you have a Premium GeoNames account, then you should take advantage of [Enhanced GeoNames](https://cosmicplugins.com/downloads/zodiacpress-enhanced-geonames/).)
+2. Enter your GeoNames Username and click “Save Changes.” You can quickly create a free [GeoNames account here](http://www.geonames.org/login). This is required because the plugin uses GeoNames webservice to get birth place latitude/longitude coordinates and timezone ids for the birth reports. After you create your GeoNames account, you have to enable their free web services by going to their [manage account page](http://www.geonames.org/manageaccount) and click to enable them at the bottom where it says "Free Web Services." (Optional: if you have a Premium GeoNames account, then you should take advantage of [Enhanced GeoNames](https://cosmicplugins.com/downloads/zodiacpress-enhanced-geonames/).)
 3. Add the `[birthreport]` shortcode to a page or post. This is where the birth report form will appear. Go to this page on the front of your site to generate a birth report.
 
 That’s it for the Quick Setup. This allows you to generate a basic report which lists the planets in the signs, planets in the houses, and aspects. Interpretations will not be included in the report until you enter your own natal interpretations. 
@@ -83,7 +83,7 @@ To enter your interpretations, go to “ZodiacPress” in your dashboard menu. S
 
 **If your website uses Windows hosting**
 
-If your website is running on a Windows operating system (i.e. using Windows hosting), then you’ll need to use the [ZodiacPress Windows Server](https://cosmicplugins.com/downloads/zodiacpress-windows-server/) plugin to make the Ephemeris work on your server. This is because the ephemeris included in ZodiacPress will not run on Windows, by default. Just install and activate the “ZodiacPress Windows Server” plugin, and it will automatically solve this problem.
+If your website is running on a Windows operating system (i.e. using Windows hosting), then you'll need to use the [ZodiacPress Windows Server](https://cosmicplugins.com/downloads/zodiacpress-windows-server/) plugin to make the Ephemeris work on your server. This is because the ephemeris included in ZodiacPress will not run on Windows, by default. Just install and activate the “ZodiacPress Windows Server” plugin, and it will automatically solve this problem.
 
 == Frequently Asked Questions ==
 
@@ -115,6 +115,13 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 8. The form to generate a birth report. The month and day fields will switch places according to your local date settings.
  
 == Changelog ==
+
+= 1.5 =
+* New - You can add a chart wheel to the birth report, either above or below the report. See https://cosmicplugins.com/docs/add-chart-wheel-birth-report/. The chart wheel colors can be changed in the WordPress Customizer, with the ability to preview the color changes on a sample chart wheel image right in the customizer.
+* New - Added CSS styles for the form input:focus to highlight the input field that is being entered. This makes for a better user experience while filling out the form.
+* New - Notify the user if JavaScript is disabled in their browser since the form will not work if Javascript is disabled.
+* New - Updated the birth report form to accept a date with the year 2018.
+* API - Removed the deprecated ZP_Chart::query_ephemeris method. Use the ZP_Ephemeris class instead.
 
 = 1.4.1 =
 * Tweak - Add disabled button CSS styles for themes that may not have any.
@@ -155,6 +162,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.5 =
+New - You can add a chart wheel to the birth report.
 
 = 1.4.1 =
 Improved city field response on the form.
