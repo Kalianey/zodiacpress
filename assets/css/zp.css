@@ -120,12 +120,18 @@ form .zp-button:hover, .zp-button:focus{
 }
 #zp-fetch-offset, #zp-fetch-birthreport {
 	margin: 24px 0 36px;
-	width:100%;
+	width: 100%;
+	cursor: pointer;
 }
-#zp-fetch-birthreport[disabled],#zp-fetch-offset[disabled] {
+#zp-fetch-birthreport[disabled],
+#zp-fetch-offset[disabled],
+#zp-fetch-birthreport[disabled]:hover,
+#zp-fetch-offset[disabled]:hover {
 	cursor: default;
 	cursor: not-allowed;
 	opacity: .5;
+    background: #333;
+    border-color: #333;
 }
 
 /* Ajax
