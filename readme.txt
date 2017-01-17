@@ -3,8 +3,8 @@ Contributors: isabel104
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZQKG2M58G&lc=US&no_note=1&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
-Tested up to: 4.7
-Stable tag: 1.5
+Tested up to: 4.7.1
+Stable tag: 1.5.1
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,8 @@ The birth report includes three parts:
 3. Aspects
 
 You can choose which planets and aspects to include in the birth report.
+
+You can choose to add a chart wheel drawing to the report.
 
 Tropical zodiac is the default, but you can choose to use the Sidereal Zodiac. Choose from 4 sidereal methods: Hindu/Lahiri, Fagan/Bradley, Raman, or Krishnamurti.
 
@@ -116,6 +118,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
  
 == Changelog ==
 
+= 1.5.1 = 
+* Tweak - Improved form button styles for themes that do not already add cursor:pointer style to submission buttons. Also, the submit button will appear grayed out while it's not ready to be submitted.
+
 = 1.5 =
 * New - You can add a chart wheel to the birth report, either above or below the report. See https://cosmicplugins.com/docs/add-chart-wheel-birth-report/. The chart wheel colors can be changed in the WordPress Customizer, with the ability to preview the color changes on a sample chart wheel image right in the customizer.
 * New - Added CSS styles for the form input:focus to highlight the input field that is being entered. This makes for a better user experience while filling out the form.
@@ -162,6 +167,9 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.5.1 =
+Improved form button styles.
 
 = 1.5 =
 New - You can add a chart wheel to the birth report.

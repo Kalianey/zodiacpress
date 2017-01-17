@@ -1,14 +1,14 @@
-# Copyright (C) 2016 ZodiacPress
+# Copyright (C) 2017 ZodiacPress
 # This file is distributed under the same license as the ZodiacPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ZodiacPress 1.3\n"
+"Project-Id-Version: ZodiacPress 1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zodiacpress\n"
-"POT-Creation-Date: 2016-10-24 20:32:25+00:00\n"
+"POT-Creation-Date: 2017-01-10 23:07:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (ZodiacPress 1.3)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (ZodiacPress 1.5)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/admin-pages.php:17
 #: includes/admin/settings/display-interpretations.php:40
@@ -144,8 +144,8 @@ msgid "In Houses"
 msgstr ""
 
 #: includes/admin/settings/register-interpretations.php:297
-#: includes/admin/settings/register-settings.php:336
-#: includes/class-zp-birth-report.php:259
+#: includes/admin/settings/register-settings.php:348
+#: includes/class-zp-birth-report.php:262
 msgid "Aspects"
 msgstr ""
 
@@ -206,151 +206,171 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/register-settings.php:140
-msgid "Birth Report Intro"
+msgid "Add Chart Wheel To Natal Report"
 msgstr ""
 
 #: includes/admin/settings/register-settings.php:142
-msgid "Optional \"Introduction\" text for the Birth Report."
+msgid "Would you like to add the chart drawing to the birth report?"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:144
+msgid "do not add"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:145
+msgid "add to bottom of report"
 msgstr ""
 
 #: includes/admin/settings/register-settings.php:146
+msgid "add to top of report"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:152
+msgid "Birth Report Intro"
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:154
+msgid "Optional \"Introduction\" text for the Birth Report."
+msgstr ""
+
+#: includes/admin/settings/register-settings.php:158
 msgid "Birth Report Closing"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:148
+#: includes/admin/settings/register-settings.php:160
 msgid ""
 "Optional \"Closing\" text for the Birth Report. This will appear at the end "
 "of the report."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:158
-#: includes/admin/settings/register-settings.php:342
+#: includes/admin/settings/register-settings.php:170
+#: includes/admin/settings/register-settings.php:354
 msgid "Misc Settings"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:164
+#: includes/admin/settings/register-settings.php:176
 msgid "GeoNames Username"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:165
+#: includes/admin/settings/register-settings.php:177
 msgid ""
 "Your username from GeoNames.org is needed to get timezone info from their "
 "webservice. (%1$screate free account%2$s)"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:172
+#: includes/admin/settings/register-settings.php:184
 msgid "Remove Data on Uninstall"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:174
+#: includes/admin/settings/register-settings.php:186
 msgid ""
 "Check this box if you would like ZP to completely remove all of its data "
 "(INCLUDING INTERPRETATIONS TEXT) when the plugin is deleted."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:242
+#: includes/admin/settings/register-settings.php:254
 msgid "Settings updated."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:293
+#: includes/admin/settings/register-settings.php:305
 msgid "Natal Report"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:294
+#: includes/admin/settings/register-settings.php:306
 msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:297
+#: includes/admin/settings/register-settings.php:309
 msgid "Licenses"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:335
+#: includes/admin/settings/register-settings.php:347
 msgid "Planets and Points"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:337
+#: includes/admin/settings/register-settings.php:349
 msgid "Orbs"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:338
+#: includes/admin/settings/register-settings.php:350
 msgid "Report"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:460
+#: includes/admin/settings/register-settings.php:472
 msgid "The callback function used for the %s setting is missing."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:556
+#: includes/admin/settings/register-settings.php:568
 msgid ""
 "Your license key expired on %1$s. Please <a href=\"%2$s\" target=\"_blank\" "
 "rel=\"nofollow\">renew your license key</a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:567
+#: includes/admin/settings/register-settings.php:579
 msgid ""
 "Your license key has been disabled. Please <a href=\"%s\" target=\"_blank\" "
 "rel=\"nofollow\">contact support</a> for more information."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:578
+#: includes/admin/settings/register-settings.php:590
 msgid ""
 "Invalid license. Please <a href=\"%s\" target=\"_blank\" rel=\"nofollow"
 "\">visit your account page</a> and verify it."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:590
+#: includes/admin/settings/register-settings.php:602
 msgid ""
 "Your %1$s is not active for this URL. Please <a href=\"%2$s\" target=\"_blank"
 "\" rel=\"nofollow\">visit your account page</a> to manage your license key "
 "URLs."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:601
+#: includes/admin/settings/register-settings.php:613
 msgid "This appears to be an invalid license key for %s."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:609
+#: includes/admin/settings/register-settings.php:621
 msgid ""
 "Your license key has reached its activation limit. <a href=\"%s\" rel="
 "\"nofollow\">View possible upgrades</a> now."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:616
+#: includes/admin/settings/register-settings.php:628
 msgid ""
 "The key you entered belongs to a bundle, please use the product specific "
 "license key."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:623
+#: includes/admin/settings/register-settings.php:635
 msgid ""
 "There was an error with this license key: %1$s. Please correct the license "
 "key or <a href=\"%2$s\" rel=\"nofollow\">contact our support team for help</"
 "a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:640
+#: includes/admin/settings/register-settings.php:652
 msgid "License key never expires."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:647
+#: includes/admin/settings/register-settings.php:659
 msgid ""
 "Your license key expires soon! It expires on %1$s. <a href=\"%2$s\" target="
 "\"_blank\">Renew your license key</a>."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:656
+#: includes/admin/settings/register-settings.php:668
 msgid "Your license key expires on %s."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:675
+#: includes/admin/settings/register-settings.php:687
 msgid "To receive updates, please enter your valid %s license key."
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:686
+#: includes/admin/settings/register-settings.php:698
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/admin/settings/register-settings.php:726
+#: includes/admin/settings/register-settings.php:738
 msgid ""
 "For each aspect, set the orb to use for each planet. If blank, the default "
 "(8) will be used."
@@ -478,11 +498,11 @@ msgstr ""
 msgid "Please upload a valid ZodiacPress interpretations file"
 msgstr ""
 
-#: includes/ajax-functions.php:129
+#: includes/ajax-functions.php:119
 msgid "The Swiss Ephemeris is not working."
 msgstr ""
 
-#: includes/ajax-functions.php:134
+#: includes/ajax-functions.php:124
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -697,6 +717,14 @@ msgstr ""
 msgid "Krishnamurti"
 msgstr ""
 
+#: includes/chart-drawing.php:18
+msgid "Hypothetical Time:"
+msgstr ""
+
+#: includes/chart-drawing.php:19
+msgid "12:00 pm"
+msgstr ""
+
 #: includes/class-zp-birth-report.php:86
 msgid "unknown birth time"
 msgstr ""
@@ -725,51 +753,143 @@ msgstr ""
 msgid "Chart Data For %s"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:152
+#: includes/class-zp-birth-report.php:154
 msgid "Universal Time:"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:165
+#: includes/class-zp-birth-report.php:168
 msgid "%s Houses"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:215
+#: includes/class-zp-birth-report.php:218
 msgid ""
 "NOTE: %1$s changed signs the day you were born. It moved from %2$s to %3$s. "
 "Therefore, you will need your exact time of birth to know which of these two "
 "signs your %1$s is in."
 msgstr ""
 
-#: includes/class-zp-birth-report.php:237
+#: includes/class-zp-birth-report.php:240
 msgid ""
 "NOTE: Since %s is very close to the next house cusp, the next item is also "
 "relevant."
 msgstr ""
 
-#: includes/class-zp-birth-report.php:253
+#: includes/class-zp-birth-report.php:256
 msgid "Planets and Points in The Signs"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:256
+#: includes/class-zp-birth-report.php:259
 msgid "Planets and Points in The Houses"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:377
-#: includes/class-zp-birth-report.php:415
+#: includes/class-zp-birth-report.php:376
+#: includes/class-zp-birth-report.php:414
 msgid "%1$s in %2$s House"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:491
-#: includes/class-zp-birth-report.php:506
+#: includes/class-zp-birth-report.php:490
+#: includes/class-zp-birth-report.php:505
 msgid "orb"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:548
+#: includes/class-zp-birth-report.php:546
 msgid "Introduction"
 msgstr ""
 
-#: includes/class-zp-birth-report.php:559
+#: includes/class-zp-birth-report.php:557
 msgid "Closing"
+msgstr ""
+
+#: includes/class-zp-customize.php:12
+msgid "Outer Background Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:14
+msgid "Signs Wheel Background Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:16
+msgid "Signs Divider Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:18
+msgid "Signs Border Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:20
+msgid "Wheel Background Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:22
+msgid "Houses Border Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:24
+msgid "Houses Divider Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:26
+msgid "Angles Arrow Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:28
+msgid "Planet Glyph Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:30
+msgid "House Number Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:32
+msgid "Degree Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:34
+msgid "Angle Degree Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:36
+msgid "Inner Wheel Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:38
+msgid "Inner Wheel Border Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:40
+msgid "Hard Aspect Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:42
+msgid "Soft Aspect Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:44
+msgid "Minor Aspect Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:46
+msgid "Fire Sign Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:48
+msgid "Earth Sign Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:50
+msgid "Air Sign Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:52
+msgid "Water Sign Color"
+msgstr ""
+
+#: includes/class-zp-customize.php:64
+msgid "ZodiacPress Chart Drawing"
+msgstr ""
+
+#: includes/class-zp-customize.php:97
+msgid "ZP Chart Drawing Preview"
 msgstr ""
 
 #: includes/class-zp-license.php:149
@@ -829,53 +949,59 @@ msgstr ""
 msgid "Birth Day"
 msgstr ""
 
-#: includes/form/template.php:160
+#: includes/form/template.php:146
+msgid ""
+"This form requires JavaScript. Your browser either does not support "
+"JavaScript or has it disabled."
+msgstr ""
+
+#: includes/form/template.php:162
 msgid "Birth Date"
 msgstr ""
 
-#: includes/form/template.php:172
+#: includes/form/template.php:174
 msgid "Birth Year"
 msgstr ""
 
-#: includes/form/template.php:177
+#: includes/form/template.php:179
 msgid "Exact Birth Time"
 msgstr ""
 
-#: includes/form/template.php:179
+#: includes/form/template.php:181
 msgid "Birth Hour"
 msgstr ""
 
-#: includes/form/template.php:182
+#: includes/form/template.php:184
 msgid "Birth Minute"
 msgstr ""
 
-#: includes/form/template.php:190
+#: includes/form/template.php:192
 msgid "Unknown Birth Time"
 msgstr ""
 
-#: includes/form/template.php:198
+#: includes/form/template.php:200
 msgid "Birth time is required for this type of report."
 msgstr ""
 
-#: includes/form/template.php:205
+#: includes/form/template.php:207
 msgid "Birth City"
 msgstr ""
 
-#: includes/form/template.php:225
+#: includes/form/template.php:227
 msgid "Next"
 msgstr ""
 
-#: includes/form/template.php:233
+#: includes/form/template.php:235
 msgid "Submit"
 msgstr ""
 
-#: includes/form/template.php:235
+#: includes/form/template.php:237
 msgid ""
 "Tip: Make sure the <strong>UTC time offset</strong> is correct. If it's "
 "wrong, you can change it."
 msgstr ""
 
-#: includes/form/template.php:245
+#: includes/form/template.php:247
 msgid ""
 "<strong>* NOTE: </strong> If birth time is unknown, the report will not "
 "include positions or aspects for the Moon, Ascendant, Midheaven, Vertex, or "
@@ -977,7 +1103,7 @@ msgstr ""
 msgid "Once Weekly"
 msgstr ""
 
-#: includes/scripts.php:31
+#: includes/scripts.php:40
 msgid "UTC time offset:"
 msgstr ""
 
@@ -1527,6 +1653,10 @@ msgstr ""
 
 #: includes/time-functions.php:135
 msgid "2017"
+msgstr ""
+
+#: includes/time-functions.php:135
+msgid "2018"
 msgstr ""
 
 #: includes/time-functions.php:149
@@ -2295,13 +2425,13 @@ msgstr ""
 
 #. translators: Attention RTL languages. 3 placeholders are degrees, cardinal
 #. direction, minutes for coordinates.
-#: includes/time-functions.php:241
+#: includes/time-functions.php:237
 msgid "%1$s%2$s%3$s'"
 msgstr ""
 
 #. translators: Attention RTL languages. 5 placeholders are degrees, minutes,
 #. minutes symbol, seconds, seconds symbol.
-#: includes/time-functions.php:300
+#: includes/time-functions.php:283
 msgid "%1$s %2$s%3$s%4$s%5$s"
 msgstr ""
 
