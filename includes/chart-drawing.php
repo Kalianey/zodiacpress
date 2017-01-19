@@ -48,7 +48,7 @@ function zp_get_chart_drawing( $default, $arg, $chart, $colors = '' ) {
 	$u = urlencode( serialize( $chart->unknown_time ) );
 
 	$src = ZODIACPRESS_URL . 'image.php?zpl=' . $l . '&zps=' . $s . '&zpc=' . $c . '&zpi=' . $i . '&zpo=' . $o . '&zpcustom=' . $custom . '&zpu=' . $u;
-	$out = '<img src="' . esc_url( $src ) . '" class="zp-chart-drawing @test esc_url" alt="chart drawing" />';
+	$out = '<img src="' . esc_url( $src ) . '" class="zp-chart-drawing" alt="chart drawing" />';
 
 	return $out;
 }
