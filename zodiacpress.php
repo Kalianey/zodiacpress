@@ -3,9 +3,9 @@
 Plugin Name: ZodiacPress
 Plugin URI: https://cosmicplugins.com/downloads/zodiacpress/
 Description: Generate astrology birth reports with your custom interpretations.
-Version: 1.5.1
+Version: 1.5.2-alpha1
 Author: Isabel Castillo, Cosmic Plugins
-Author URI: http://isabelcastillo.com
+Author URI: https://isabelcastillo.com
 License: GNU GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zodiacpress
