@@ -137,8 +137,6 @@ function zp_tools_sysinfo_display() {
 	$out .= 'Ephemeris permissions:    ' . ( zp_is_sweph_executable() ? 'Executable' : 'Not executable' ) . "\n";
 
 	$out .= "\n" . '-- WordPress Info' . "\n\n";
-	$out .= 'Site URL:                 ' . site_url() . "\n";
-	$out .= 'Home URL:                 ' . home_url() . "\n";
 	$out .= 'WP Version:               ' . get_bloginfo('version') . "\n";
 	$out .= 'Multisite:                ' . ( is_multisite() ? 'Yes' : 'No' ) . "\n";
 	$out .= 'WP_DEBUG:                 ' . ( defined( 'WP_DEBUG' ) ? WP_DEBUG ? 'Enabled' : 'Disabled' : 'Not set' ) . "\n";
@@ -174,37 +172,16 @@ function zp_tools_sysinfo_display() {
 	}
 	$out .= "\n\n" . '### End System Info ###';
 	?>
-
-	<p><?php _e( 'The system info is a built-in debugging tool. If you contact support, please provide this system info. <strong>Click the button below</strong> to download a text file with this system report.', 'zodiacpress' ); ?></p>
+	<p><?php _e( 'The system info is a built-in debugging tool. If you contact support, please provide this info.', 'zodiacpress' ); ?></p>
+	<p><?php _e( '(Do not be afraid to paste this info into the support forum because this info does not reveal your website name or URL.)', 'zodiacpress' ); ?></p>
 	<form action="<?php echo esc_url( admin_url( 'admin.php?page=zodiacpress-tools&tab=sysinfo' ) ); ?>" method="post" dir="ltr">
-	<textarea readonly="readonly" onclick="this.focus(); this.select()" id="system-info-textarea" name="zp-sysinfo" title="To copy the system info, click below then press Ctrl + C (PC) or Cmd + C (Mac)."><?php echo esc_textarea( $out ); ?>
+	<textarea readonly="readonly" onclick="this.focus(); this.select()" id="system-info-textarea" name="zp-sysinfo" title="To copy the system info, click below then press Ctrl + C (on a PC) or Cmd + C (on a Mac)."><?php echo esc_textarea( $out ); ?>
 	</textarea>
-	<p class="submit">
-	<input type="hidden" name="zp-action" value="download_sysinfo" />
-	<?php submit_button( 'Download System Info File', 'primary', 'zp-download-sysinfo', false ); ?>
-	</p></form>
+	</form>
 	<?php
 
 }
 add_action( 'zp_tools_tab_sysinfo', 'zp_tools_sysinfo_display' );
-
-/**
- * Generates a System Info download file
- *
- * @return      void
- */
-function zp_tools_sysinfo_download() {
-
-	if( ! current_user_can( 'manage_zodiacpress_settings' ) ) {
-		return;
-	}
-	nocache_headers();
-	header( 'Content-Type: text/plain' );
-	header( 'Content-Disposition: attachment; filename="zp-system-info.txt"' );
-	echo wp_strip_all_tags( $_POST['zp-sysinfo'] );
-	exit;
-}
-add_action( 'zp_download_sysinfo', 'zp_tools_sysinfo_download' );
 
 /**
  * Display the tools export/import tab
