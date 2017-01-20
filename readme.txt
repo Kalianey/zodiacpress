@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=B4ZUZ
 Tags: zodiacpress, zodiac, astrology, horoscope, natal report, birth report, birth reports, astrology reports, sidereal
 Requires at least: 3.7
 Tested up to: 4.7.1
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GNU GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,11 @@ Please [rate](https://wordpress.org/support/plugin/zodiacpress/reviews/) the plu
 8. The form to generate a birth report. The month and day fields will switch places according to your local date settings.
  
 == Changelog ==
+
+= 1.5.2 =
+* Tweak - Escaped the chart drawing image src url.
+* Tweak - Sanitized the chart drawing image element in the customizer with wp_kses_post.
+* Tweak - Removed the site URL from System Info to make the System Info completely anonymous so that people who need support for this plugin will feel comfortable posting this info into the support forum. This allows for faster and more productive support.
 
 = 1.5.1 = 
 * Tweak - Improved form button styles for themes that do not already add cursor:pointer style to submission buttons. Also, the submit button will appear grayed out while it's not ready to be submitted.
