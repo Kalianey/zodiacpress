@@ -129,7 +129,7 @@ add_action( 'wp_ajax_zp_birthreport', 'zp_ajax_get_birthreport' );
 add_action( 'wp_ajax_nopriv_zp_birthreport', 'zp_ajax_get_birthreport' );
 
 /**
- * Handles ajax request to get the chartwheel image for the live color preview for customizer.
+ * Handles ajax request to get an updated chartwheel image for the live color preview for customizer.
  */
 function zp_ajax_get_customizer_image() {
 	$colors = array();
@@ -138,8 +138,7 @@ function zp_ajax_get_customizer_image() {
 		$colors[ $k ] = sanitize_hex_color( $color );
 	}
 
-	$image = zp_get_sample_chart_drawing( $colors );
-
+	$image = wp_kses_post( zp_get_sample_chart_drawing( $colors ) );
 	echo json_encode( array( 'image' => $image ) );
 	wp_die();
 }
