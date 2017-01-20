@@ -45,10 +45,8 @@ if ( isset( $_GET['zpcustom'] ) ) {
 }
 
 header ('Content-Type: image/png');
-
 $dir = rtrim( dirname( __FILE__ ), '/\\' ) . '/assets/fonts/';
 
-$first_house = $cusps[1];
 // create the blank image
 $overall_size = 660;
 $im = @imagecreatetruecolor( $overall_size, $overall_size ) or die( 'Cannot initialize new GD image stream' );
@@ -169,8 +167,8 @@ $pl_glyph = array(
 	8 => 79,
 	9 => 80,// Pluto
 	10 => 77,// Chiron
-	11 => 96,
-	12 => 141,
+	11 => 96,// Black Moon Lilith
+	12 => 141,// True North Node
 	13 => 60,// Part of Fortune
 	14 => 109,// vertex
 	15 => 90,// Ascendant
@@ -181,7 +179,7 @@ $pl_glyph = array(
 $sign_glyph = array(
 	1 => 97,// Aries
 	2 => 115,// Taurus
-	3 => 100,
+	3 => 100,// Gemini
 	4 => 102,
 	5 => 103,
 	6 => 104,
@@ -192,39 +190,6 @@ $sign_glyph = array(
 	11 => 120,
 	12 => 99
 );
-
-// glyphs used for planets - HamburgSymbols.ttf
-// $pl_glyph[0] = 81;// Sun
-// $pl_glyph[1] = 87;// Moon
-// $pl_glyph[2] = 69;// Mercury
-// $pl_glyph[3] = 82;// Venus
-// $pl_glyph[4] = 84;
-// $pl_glyph[5] = 89;
-// $pl_glyph[6] = 85;
-// $pl_glyph[7] = 73;
-// $pl_glyph[8] = 79;
-// $pl_glyph[9] = 80;// Pluto
-// $pl_glyph[10] = 77;// Chiron
-// $pl_glyph[11] = 96;
-// $pl_glyph[12] = 141;
-// $pl_glyph[13] = 60;//Part of Fortune
-// $pl_glyph[14] = 109;//vertex
-// $pl_glyph[15] = 90;//Ascendant
-// $pl_glyph[16] = 88;//Midheaven
-
-// glyphs used for planets - HamburgSymbols.ttf - Aries - Pisces
-// $sign_glyph[1] = 97;
-// $sign_glyph[2] = 115;
-// $sign_glyph[3] = 100;
-// $sign_glyph[4] = 102;
-// $sign_glyph[5] = 103;
-// $sign_glyph[6] = 104;
-// $sign_glyph[7] = 106;
-// $sign_glyph[8] = 107;
-// $sign_glyph[9] = 108;
-// $sign_glyph[10] = 122;
-// $sign_glyph[11] = 120;
-// $sign_glyph[12] = 99;
 
 // ------------------------------------------
 
@@ -253,6 +218,7 @@ zpci_antialiased_ellipse($im, $center_pt, $center_pt, $radius_inner, $radius_inn
 // ------------------------------------------
 
 // draw the dividing lines between the signs
+$first_house = $cusps[1];
 $offset_from_start_of_sign = $first_house - (floor($first_house / 30) * 30);
 
 for ($i = $offset_from_start_of_sign; $i <= $offset_from_start_of_sign + 330; $i = $i + 30) {
