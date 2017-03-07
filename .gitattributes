@@ -2,5 +2,5 @@
 .gitignore export-ignore
 /tests/ export-ignore
 README.md export-ignore
-deploy.sh export-ignore
+*.sh export-ignore
 phpunit.xml export-ignore
